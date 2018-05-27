@@ -19,14 +19,20 @@ function wpbootstrap_scripts_with_jquery()
 }
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 
-// If a sidebar exists, display it.
-if ( function_exists('register_sidebar-1') )
-	register_sidebar(array(
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
+//Register our sidebars and widgetized areas.
+function cheapflightsfromtampa_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Single Deal Post Sidebar',
+		'id'            => 'single_deal_post_sidebar',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="deal-sidebar-title">',
+		'after_title'   => '</h3>',
+	) );
+
+}
+add_action( 'widgets_init', 'cheapflightsfromtampa_widgets_init' );
 
 // Gotta have featured images!
 add_theme_support( 'post-thumbnails', array( 'post', 'portfolio', 'background', 'page', 'blog_posts' ) );
@@ -65,6 +71,18 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' 	=> 'Other Content',
 		'menu_title'	=> 'Other Content',
 		'menu_slug' 	=> 'other-content',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}
+
+// Add Single Deal Post Funnel Options page
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Single Deal Post Funnel',
+		'menu_title'	=> 'Single Deal Post Funnel',
+		'menu_slug' 	=> 'single-deal-post-funnel',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
