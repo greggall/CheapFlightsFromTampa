@@ -172,41 +172,30 @@
 			
 	  </div>--><!--/.coming-soon-wrapper-->
 	  
-	  
 	  <nav class="navbar navbar-default">
 	    <div class="container-fluid">
 	      <!-- Brand and toggle get grouped for better mobile display -->
 	      <div class="navbar-header">
-	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	          <span class="sr-only">Toggle navigation</span>
 	          <span class="icon-bar"></span>
 	          <span class="icon-bar"></span>
 	          <span class="icon-bar"></span>
 	        </button>
-		  <div>
-	        <a class="navbar-brand" href="https://cheapflightsfromtampa.com"><img class="logo" src="https://cheapflightsfromtampa.com/wp-content/uploads/2017/06/Cheap-Flights-From-Tampa-Logo-White.png" alt="Cheap Flights From Tampa"></img></a>
-		  </div>
+	        <a class="navbar-brand" href="<?php echo site_url(); ?>"><img class="logo" src="https://cheapflightsfromtampa.com/wp-content/uploads/2017/06/Cheap-Flights-From-Tampa-Logo-White.png" alt="Cheap Flights From Tampa"></img></a> 
 	      </div>
-		  
 
-
-      <!-- V1.0 does not require header menu. Later versions may. -->
-      <!-- Collect the nav links, forms, and other content for toggling -->
-		  <?php /* Primary navigation */
-		  //wp_nav_menu( array(
-		  //'theme_location'	=> 'header-menu',
-			//'menu' 				=> 'top_menu',
-		  //'depth' 			=> 2,
-			//'container'  		=> 'div',
-			//'container_class'   => 'collapse navbar-collapse',
-			//'container_id'      => 'bs-example-navbar-collapse-1',
-      //'menu_class'        => 'nav navbar-nav',
-			//'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-			//'walker'            => new wp_bootstrap_navwalker())
-		  //);
-		  ?>
+	      <!-- Collect the nav links, forms, and other content for toggling -->
+  		  <?php
+  			  wp_nav_menu( array(
+  				'theme_location'	=> 'Header-Menu',
+  				'menu' 				=> 'Header',
+  				'container_class'   => 'collapse navbar-collapse',
+  				'container_id'      => 'bs-example-navbar-collapse-1',
+  				'menu_class'        => 'nav navbar-nav',
+  				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+  				'walker'            => new wp_bootstrap_navwalker())
+  			  );
+  		  ?>
 	    </div><!-- /.container-fluid -->
-		
-		<div class="login-button button-input-secondary"><a href="https://cheapflightsfromtampa.com/login/"><button class="button-secondary">Premium Login</button></a></div>
-		
 	  </nav>
