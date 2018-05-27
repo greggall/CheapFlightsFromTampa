@@ -1,0 +1,46 @@
+/*_variables.scss */
+// Colors
+$primary-blue: #1976D2;
+$primary-color-blue-rgba: rgba(25, 118, 210, 0.7);
+$secondary-dark-blue: #324B5A;
+$primary-color-dark-blue-rgba: rgba(50, 75, 90, 0.7);
+$tertiary-green: #4CAF50;
+$primary-grey: #efefef;
+$secondary-grey: #fafafa;
+$white: #ffffff;
+
+// Font Sizes
+$base-font-size: 18px;
+$title-font-size: 41px;
+$super-title-font-size: 61px;
+$subtitle-font-size: 27px;
+$secondary-text-font-size: 12px;
+$tertiary-font-size: 8px;
+
+// Font Families
+$base-font-family: "Nunito", Georgia, serif;
+$title-font-family: "Nunito Sans", HelveticaNeue, Arial, sans-serif;
+
+// Font Weights
+$base-font-weight: 400;
+$title-font-weight: bold;
+$extra-weight: 900;
+
+// Padding
+$title-padding: 0 0 50px 0;
+$section-padding: 100px 0;
+
+//  Margin
+$title-margin-top: 150px;
+$title-margin-bottom: 50px;
+
+// Border Radius
+$base-border-radius: 5px;
+$section-border-radius: 15px;
+
+// Line Heights - These need to be verified.
+$base-line-height: 31px;
+$title-line-height: 99px;
+$subtitle-line-height: 41px;
+$secondary-text-line-height: 29px;
+$teriary-line-height: 21px;

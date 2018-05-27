@@ -1,0 +1,232 @@
+/*_variables.scss */
+
+button {
+  border: none;
+  padding: 10px 20px;
+  background: $primary-blue;
+  color: $white;
+  border-radius: $base-border-radius;
+  margin: 50px 10px 5px 10px;
+  @include transition(all);
+}
+
+.single button:hover {
+	transform: translate(0px, -2px);
+}
+
+.blog .button-first-input-secondary:after {
+	left: -5px;
+}
+
+.button-input:after {
+	border-bottom: 7px solid darken($tertiary-green, 20%);
+	content: "";
+	display: block;
+	position: relative;
+	z-index: 0;
+	top: -4px;
+	width: 295px;
+	left: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin: 0 auto;
+}
+
+input[type="submit"] {
+ 	background-color: $tertiary-green;
+	border: none;
+	border-radius: $base-border-radius;
+	color: $white;
+	padding: 5px 30px;
+	margin-top: 10px;
+	width: 295px;
+	position: relative;
+	z-index: 1;
+	@include transition(all);
+}
+
+input[type="submit"]:hover {
+	transform: translate(0px, -2px);
+}
+
+.button-secondary {
+ 	background-color: $primary-blue;
+	border: none;
+	border-radius: $base-border-radius;
+	color: $white;
+	padding: 5px 20px;
+	margin-top: 10px;
+	margin-left: 0;
+	width: 165px;
+	position: relative;
+	z-index: 1;
+	@include transition(all);
+}
+
+.button-secondary:hover {
+	transform: translate(0px, -2px);
+}
+
+.button-input-secondary {
+	float: left;
+}
+
+@media(max-width: 992px) {
+	.button-input-secondary {
+		float: none;
+	}
+}
+
+.button-input-secondary:after {
+	border-bottom: 11px solid darken($primary-blue, 20%);
+	content: "";
+	display: block;
+	position: relative;
+	z-index: 0;
+	top: -13px;
+	width: 165px;
+	left: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin: 0 auto;
+	margin-left: 0;		
+}
+
+.recent-deal-button {
+	width: 156px;
+}
+
+.recent-deal-button:after {
+	border-bottom: 5px solid darken($primary-blue, 20%);
+	content: "";
+	display: inline-block;
+	position: relative;
+	z-index: -1;
+	top: -23px;
+	left: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin: 0 auto;
+	width: 156px;
+}
+
+.recent-deal-button {
+	position: relative;
+	z-index: 1;
+}
+
+// First 'See The Deal' button on blog page
+.button-first-secondary {
+ 	background-color: $primary-blue;
+	border: none;
+	border-radius: $base-border-radius;
+	color: $white;
+	padding: 10px 20px;
+	margin-top: 10px;
+	margin-left: 0;
+	width: 156px;
+	position: relative;
+	z-index: 1;
+	@include transition(all);
+}
+
+.button-first-secondary:hover {
+	transform: translate(0px, -2px);
+}
+
+.button-first-input-secondary:after {
+	border-bottom: 11px solid darken($primary-blue, 20%);
+	content: "";
+	display: block;
+	position: relative;
+	z-index: 0;
+	top: -13px;
+	width: 156px;
+	left: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin: 0 auto;	
+}
+
+// Single Button
+.single-button {
+	@extend .button-secondary;
+	width: auto;
+}
+
+// Mailhcimp buttons
+.home button {
+	background-color: transparent;
+	margin: auto;
+}
+
+.home .button-secondary {
+	background-color: $primary-blue;
+	margin-right: 15px;
+}
+
+.home .button-secondary:after {
+	display: none;
+}
+
+.home .button-input-secondary:after {
+	top: -8px;
+}
+
+.page-id-187 button:after {
+	display: none;
+}
+
+#mc_embed_signup {
+	background-color: transparent !important;
+}
+
+#mc_embed_signup_scroll {
+	text-align: center;
+}
+
+#mc_embed_signup input.email {
+	margin: 0 auto !important;
+	font-family: $base-font-family !important;
+	margin-bottom: 15px !important;
+	font-size: $base-font-size !important;
+	padding: 5px .4em;
+}
+
+@media(max-width: 992px) {
+	#mc_embed_signup input.email {
+		width: 90% !important;
+	}
+}
+
+#mc_embed_signup input.button {
+	margin: 0 auto !important;
+	font-family: $base-font-family !important;
+	font-size: $base-font-size !important;	
+	min-width: 300px !important;
+	position: relative;
+	height: 40px;
+}
+
+#mc_embed_signup .button {
+	background-color: $tertiary-green !important;
+	border-radius: 5px !important;
+}
+
+button:after, .last-resort:after {
+	border-bottom: 7px solid darken($tertiary-green, 20%);
+	content: "";
+	display: block;
+	position: relative;
+	z-index: 0;
+	top: -4px;
+	width: 300px;
+	left: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin: 0 auto;
+}
+
+.blog button:after {
+	display: none;
+}
