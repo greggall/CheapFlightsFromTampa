@@ -10,6 +10,7 @@ button {
   @include transition(all);
 }
 
+/*
 .single button:hover {
 	transform: translate(0px, -2px);
 }
@@ -154,7 +155,7 @@ input[type="submit"]:hover {
 	width: auto;
 }
 
-// Mailhcimp buttons
+// Mailchimp buttons
 .home button {
 	background-color: transparent;
 	margin: auto;
@@ -230,3 +231,4 @@ button:after, .last-resort:after {
 .blog button:after {
 	display: none;
 }
+*/
