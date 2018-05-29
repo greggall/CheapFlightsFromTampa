@@ -13,6 +13,8 @@ $white: #ffffff;
 $h1: 61px;
 $h2: 36px;
 $h3: 24px;
+$h4: 18px;
+$h5: 12px;
 $base-font-size: 18px;
 $secondary-text-font-size: 12px;
 $tertiary-font-size: 8px;
@@ -44,3 +46,9 @@ $title-line-height: 99px;
 $subtitle-line-height: 41px;
 $secondary-text-line-height: 29px;
 $teriary-line-height: 21px;
+
+// Box Shadow
+$x: 0;
+$y: 2px; 
+$blur: 20px; 
+$color: rgba(0,0,0,.20);

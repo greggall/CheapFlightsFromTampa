@@ -181,6 +181,11 @@ img {
 	position: absolute;
 }
 
+.single .navbar-default {
+	position: relative;
+	background-color: $secondary-dark-blue;
+}
+
 .email {
 	position: relative;
 	z-index: 0;
@@ -215,35 +220,27 @@ input[type=email] {
 	margin-bottom: 10px;
 }
 
-.how-wrapper, .intro-wrapper, .current-deal-wrapper, .destination-wrapper, .deal-wrapper, .book-wrapper, .about-intro-wrapper, .team-wrapper, .curious-wrapper, .contact-wrapper, .faq-wrapper, .prices-wrapper, .free-wrapper {
+.wrapper {
 	background-color: $secondary-grey;
-	padding: 50px 0
+	padding: 50px 0;
+	margin-top: 50px;
+	@include shadow($x, $y, $blur, $color);
+	border-radius: 5px;
 }
 
-.excuse-wrapper {
-	background-color: $secondary-grey;
+.premium-wrapper {
+	@extend .wrapper;
 	padding: 0;
-	margin-top: -50px;
-    margin-bottom: 100px;
-}
-
-.how-wrapper {
-	margin-top: -50px;
-	padding-bottom: 25px;
 }
 
 .recent-deal-wrapper {
-	padding: 200px 0;
-	margin-top: -50px;
-	z-index: -1;
+	@extend .wrapper;
+	padding: 150px 0;	
 }
 
-.perfect-for-wrapper {
-	padding: 150px 0 0;
-}
-
-.intro-wrapper {
-	margin-top: -50px;
+.deal-wrapper {
+	@extend .wrapper;
+	padding: 35px;
 }
 
 .how-title {
@@ -294,20 +291,25 @@ input[type=email] {
 }
 
 .recent-deal {
-	font-size: $h1;
+	font-size: $h2;
 	color: $white;
 	font-family: $title-font-family;
-	margin-bottom: 25px;
-	font-weight: $title-font-weight;
+	margin-bottom: 15px;
+	font-weight: $extra-weight;
 	position: relative;	
-	height: 115px;
+}
+
+.home .recent-deal {
+	@extend .recent-deal;
+	font-size: $h1;
 }
 
 .normal-price {
 	color: $white;
-	font-size: $h3;
+	font-size: $h4;
 	position: relative;
 	height: 50px;
+	text-transform: uppercase;
 }
 
 .intro-subtitle {
@@ -326,113 +328,160 @@ input[type=email] {
 
 .perfect-for-bg {
 	background: $white;
-	padding-bottom: 100px;
+	padding: 50px 0 0;
 }
 
 // Single
-.single button:after, .last-resort:after {
-	border-bottom: none;
+.free-eyebrow, .premium-eyebrow {
+	font-style: italic;
 }
 
-.destination-wrapper {
-	margin-top: -50px;
-	margin-bottom: 50px;
+.free-eyebrow p, .premium-eyebrow p {
+	margin-bottom: 0;
 }
 
-.blog .recent-deal-wrapper {
-	padding: 300px 0;
-	margin-top: -50px;
-	z-index: 0;
+.single-deal-title {
+	font-size: $h1;
+	font-family: $base-font-family;
+	font-weight: $extra-weight;
+	color: $secondary-dark-blue;
 }
 
-.deal-wrapper {
-	margin-bottom: 100px;
-	position: relative;
-	z-index: 1;
-	margin-top: -50px;
-}
-
-.book-wrapper {
-	margin-top: -50px;
-}
-
-.image-break {
-	padding: 150px 0;
-}
-
-.screenshot-img:first-child {
-	margin-bottom: 50px;
-}
-
-.destination-title, .deal-title, .how-to-book-title {
-	position: relative;
-	z-index: 1;
-}
-
-.destination-icon {
-	width: 100px;
-    position: absolute;
-    top: 50px;
-    margin-left: -55px;
-}
-
-.deal-icon {
-	width: 200px;
-    position: absolute;
-    top: 50px;
-    margin-left: -100px;
-}
-
-.how-to-book-icon {
-	width: 130px;
-    position: absolute;
-    top: 50px;
-	left: 50%;
-    transform: translateX(-50%);
-}
-
-.post-wrapper-group-1 .recent-deal-title {
-	margin-bottom: 10px;
+.deal-meta {
 	font-size: $secondary-text-font-size;
+	text-transform: uppercase;
+	padding: 15px 0;
+	margin-bottom: 25px;
+	border-top: 1px solid $primary-grey;
+	border-bottom: 1px solid $primary-grey;
 }
 
-.post-wrapper-group-1 .recent-deal {
-	margin-bottom: 10px;
+.single-normal-price, .dates, .carry-on {
+	padding: 0;
 }
 
-.deals-second-group .recent-deal-title {
-	margin-bottom: 10px;
-	font-size: $secondary-text-font-size;	
+.single-normal-price img, .dates img, .carry-on img {
+	margin-top: -5px;
+	margin-right: 10px;
 }
 
-.deals-second-group .recent-deal {
-	margin-bottom: 10px;
+.how-to-book-title {
+	font-size: $h2;
+	font-family: $base-font-family;
+	font-weight: $extra-weight;
+	color: $secondary-dark-blue;
+	margin-top: 25px;
+}
+
+.book-copy {
+	margin-top: 25px;
+}
+
+.book-subhead {
+	font-style: italic;
+}
+
+.screenshot-one, .screenshot-two {
+	border: 1px solid $primary-grey;
+	margin: 25px 0;
 }
 
 .book-second-leg {
 	margin-top: 50px;
 }
 
-.sample-second-leg-button {
-	margin-top: 60px;
-}
-
-.sample-second-leg-button a {
-	border: none;
-    padding: 10px 30px;
-    background: #1976D2;
-    color: #ffffff;
-    border-radius: 5px;
-    margin: 50px 10px 5px 10px;
-}
-
-.sample-second-leg-button a:hover {
-	text-decoration: none;
-}
-
-.caveat {
+.encourage-text {
+	margin-top: 25px;
 	font-style: italic;
-	margin-top: 50px;
+}
+
+.single-reason {
+	padding: 0 35px;
+}
+
+.single-reason img {
+    position: absolute;
+    left: -3px;
+    top: -3px
+}
+
+.single-reasons-title {
+	font-size: $h2;
+	text-align: left;
+	color: $secondary-dark-blue;
+	font-weight: $extra-weight;
+}
+
+.single-reasons-subtitle {
+	margin-bottom: 25px;
+}
+
+.single-free-title {
+	font-size: $h2;
+	font-family: $base-font-family;
+	font-weight: $extra-weight;
+	color: $secondary-dark-blue;
+	margin-top: 25px;
+}
+
+.single .premium-badge {
+	position: absolute;
+	top: 30px;
+	right: 0;
+}
+
+.widget {
+	@extend .deal-wrapper;
+	font-size: 16px;
+}
+
+.textwidget p {
+	margin-bottom: 0;
+}
+
+.deal-sidebar-title {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: $secondary-dark-blue;
+	font-weight: $title-font-weight;
+    position: relative;
+    z-index: 1;
+	
+    &:before {
+        border-top: 2px solid $primary-blue;
+        content:"";
+        margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 40%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+
+    span { 
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
+        background: $secondary-grey; 
+        padding: 0 10px 0 0; 
+    }
+}
+
+.sidebar-deal {
+	padding: 0;
+}
+
+.single #mc_embed_signup form {
+	padding: 30px 0 10px 0%;
+}
+
+.single #mc_embed_signup form {
+	text-align: left !important;
+}
+
+.single #mc_embed_signup input.email {
+	margin: 0 !important;
+}
+
+.single .recent-deal {
+	font-size: $h3;
 }
 
 // About
@@ -453,30 +502,10 @@ input[type=email] {
 	font-size: $base-font-size;
 }
 
-.page-id-14 button:after {
-	display: none;
-}
-
-.page-id-14 .last-resort:after {
-	display: none;
-}
-
 // Contact
-.contact-wrapper {
-	margin-top: -50px;
-}
-
 .contact-copy {
 	font-size: $base-font-size;
 	line-height: $base-line-height;
-}
-
-.page-id-16 button:after {
-	display: none;
-}
-
-.page-id-16 .last-resort:after {
-	display: none;
 }
 
 // Blog
@@ -499,50 +528,31 @@ input[type=email] {
 	background-color: $white;
 }
 
-.post-wrapper, .post-wrapper-group-1 {
+.post-wrapper {
 	padding: 100px 0;
 	padding-left: 40px;
 	padding-right: 40px;
-	width: 30%;
 	margin: 25px 0;
 	border-radius: $base-border-radius;
 	position: relative;
-    z-index: inherit;
+    z-index: 0;
+	text-align: center;
+    min-height: 550px;	
+	@include shadow($x, $y, $blur, $color);
 }
 
-.post-wrapper-group-1:nth-child(3n) {
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-.post-wrapper:nth-child(3n-1) {
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-.post-wrapper-group-1 .recent-deal {
+.post-wrapper.recent-deal {
 	font-size: $h3;
 	font-weight: $title-font-weight;
 	position: relative;
 }
 
-.post-wrapper .recent-deal {
-	font-size: $h3;
-	font-weight: $title-font-weight;
-	position: relative;
-}
-
-.post-wrapper .normal-price {
+.post-wrapper.normal-deal {
 	font-size: $base-font-size;
 	position: relative;	
 }
 
-.post-wrapper-group-1 .normal-deal {
-	font-size: $base-font-size;
-	position: relative;	
-}
-
-.post-wrapper-group-1 .normal-price {
+.post-wrapper.normal-price {
 	font-size: $base-font-size;
 	position: relative;	
 }
@@ -571,10 +581,17 @@ input[type=email] {
     background: $secondary-dark-blue;
     position: absolute;
     top: 0;
-    opacity: .25;
+    opacity: .75;
     z-index: -1;
 	left: 0;
 	border-radius: 5px;
+}
+
+.blog .premium-badge {
+	position: absolute;
+    top: -25px;
+    transform: translateX(50%);
+    right: 50%;
 }
 
 // FAQ
@@ -623,27 +640,6 @@ ul .faq-menu  {
 	margin: 0 !important;
 }
 
-.faq-wrapper {
-	margin-bottom: 100px;
-	margin-top: -50px;
-}
-
-.faq-wrapper:first-child {
-	margin-top: -50px;
-}
-
-.page-id-18 .footer-signup {
-	margin-top: -150px;
-}
-
-.page-id-18 button:after {
-	display: none;
-}
-
-.page-id-18 .last-resort:after {
-	display: none;
-}
-
 .question {
 	display: inline-block;
 	cursor: pointer;
@@ -687,33 +683,32 @@ ul .faq-menu  {
 	box-sizing: border-box;
 }
 
-.cf:before,
-.cf:after{
+.cf:before, .cf:after {
 	display: table;
 	content: " ";
 }
 
-.cf:after{
+.cf:after {
 	clear: both
 }
 
-.header{
+.header {
 	text-align: center;
 	padding: 0px 15px;
 	margin-bottom: 30px;
 }
 
-.header h1{
+.header h1 {
 	font-size: 2.8rem;
 }
 
-.header p{
+.header p {
 	font-size: 1.3rem;
 	line-height: 150%;
 }
 
 /*fancy card styling*/
-.fancy-card{
+.fancy-card {
 	background: #eee;
 	width: 100%;
 	display: block;
@@ -728,7 +723,7 @@ ul .faq-menu  {
 	min-height: 350px;
 }
 
-.fancy-card .bg-overlay{
+.fancy-card .bg-overlay {
 	background: rgba(0,0,0,0.25);
 	position: absolute;
 	top: 0px;
@@ -738,7 +733,7 @@ ul .faq-menu  {
 	transition: all 200ms ease;
 }
 
-.fancy-card .content{
+.fancy-card .content {
 	padding: 30px 40px;
 	color: #fff;
 	text-align: center;
@@ -753,7 +748,7 @@ ul .faq-menu  {
 	flex-direction: row;
 }
 
-.fancy-card .content .primary{
+.fancy-card .content .primary {
 	text-transform: uppercase;
 	width: 100%;
 	transition: all 250ms ease 200ms;
@@ -764,7 +759,7 @@ ul .faq-menu  {
 	font-weight: $title-font-weight;
 }
 
-.fancy-card .content .secondary{
+.fancy-card .content .secondary {
 	position: absolute;
 	opacity: 0;
 	left: 0px;
@@ -775,7 +770,7 @@ ul .faq-menu  {
 }
 
 /*horizontal border elements (top & bottom)*/
-.fancy-card .v-border{
+.fancy-card .v-border {
 	position: absolute;
 	top: 0%;
 	left: 0%;
@@ -783,8 +778,7 @@ ul .faq-menu  {
 	height: 100%;
 }
 
-.fancy-card .v-border:before,
-.fancy-card .v-border:after{
+.fancy-card .v-border:before, .fancy-card .v-border:after {
 	width: 0%;
 	height: 3px;
 	left: 50%;
@@ -792,20 +786,20 @@ ul .faq-menu  {
 	background: $primary-blue;
 }
 
-.fancy-card .v-border:before{
+.fancy-card .v-border:before {
 	content: '';
 	top: 10%;
 	position: absolute;
 }
 
-.fancy-card .v-border:after{
+.fancy-card .v-border:after {
 	content: '';
 	bottom: 10%;
 	position: absolute;
 }
 
 /*horizontal elements (left & right)*/
-.fancy-card .h-border{
+.fancy-card .h-border {
 	position: absolute;
 	top: 0%;
 	left: 0%;
@@ -814,7 +808,7 @@ ul .faq-menu  {
 }
 
 .fancy-card .h-border:before,
-.fancy-card .h-border:after{
+.fancy-card .h-border:after {
 	height: 0%;
 	top: 50%;
 	width: 3px;
@@ -822,14 +816,14 @@ ul .faq-menu  {
 	background: $primary-blue;
 }
 
-.fancy-card .h-border:before{
+.fancy-card .h-border:before {
 	content: '';
 	left: 10%;
 	height: 0%;
 	position: absolute;
 }
 
-.fancy-card .h-border:after{
+.fancy-card .h-border:after {
 	content: '';
 	right: 10%;
 	position: absolute;
@@ -839,7 +833,7 @@ ul .faq-menu  {
 .fancy-card:active .v-border:before,
 .fancy-card:active .v-border:after,
 .fancy-card:hover .v-border:before,
-.fancy-card:hover .v-border:after{
+.fancy-card:hover .v-border:after {
 	width: 90%;
 	left: 5%;
 }
@@ -847,14 +841,14 @@ ul .faq-menu  {
 .fancy-card:active .h-border:before,
 .fancy-card:active .h-border:after,
 .fancy-card:hover .h-border:before,
-.fancy-card:hover .h-border:after{
+.fancy-card:hover .h-border:after {
 	height: 90%;
 	top: 5%;
 }
 
 /*hovering over card, adjust primary element*/
 .fancy-card:active .content .primary,
-.fancy-card:hover .content .primary{
+.fancy-card:hover .content .primary {
 	opacity: 0;
 	transform: translate3d(0px, 20px, 1px);
 	transition: all 200ms ease 0ms;
@@ -862,7 +856,7 @@ ul .faq-menu  {
 
 /*hoverijng over card, adjust secondary element*/
 .fancy-card:active .content .secondary,
-.fancy-card:hover .content .secondary{
+.fancy-card:hover .content .secondary {
 	opacity: 1;
 	transform: translate3d(0px, 0px, 1px);
 	transition: all 200ms ease 200ms;
@@ -902,8 +896,8 @@ ul .faq-menu  {
 }
 
 .reasons-title {
-	font-size: 36px;
-	font-weight: 900;
+	font-size: $h2;
+	font-weight: $extra-weight;
 	text-align: center;
 	padding: 50px 0 25px;
 }
@@ -917,12 +911,9 @@ ul .faq-menu  {
     margin: 0 auto;
 }
 
-.reasons-wrapper {
-	padding: 25px;
-}
-
 .recent-premium-title {
-	font-size: 24px;
+	font-size: $h2;
+	font-weight: $extra-weight;	
     padding: 50px 0 25px;	
 }
 
@@ -934,19 +925,15 @@ ul .faq-menu  {
 	line-height: 1.65em;
 }
 
-.page-id-187 .post-wrapper-group-1 .recent-deal {
+.premium-page .post-wrapper.recent-deal {
 	font-weight: 900;
 	height: 100px;
-}
-
-.page-id-187 .recent-deal-overlay {
-	z-index: 0;
-	opacity: .5;
 }
 
 .premium-cta {
 	background-color: $tertiary-green;
 	padding: 50px;
+	color: $white;
 }
 
 .premium-cta-title {
@@ -956,12 +943,14 @@ ul .faq-menu  {
 	color: #333;
     line-height: 1.25em;	
 	padding-top: 10px;
+	color: $white;	
 }
 
 .premium-cta-subtitle {
 	text-align: left;
 	padding: 15px 0;
 	color: #333;	
+	color: $white;	
 }
 
 .benefits-premium-cta {
@@ -970,10 +959,14 @@ ul .faq-menu  {
 
 .benefits-premium-cta p {
 	margin-bottom: 10px;
-	color: #333;	
+	color: $white;	
 }
 
 .benefits-premium-cta p:before {
+	content: "> ";
+}
+
+.feature-premium-cta p:before {
 	content: "> ";
 }
 
@@ -986,61 +979,6 @@ ul .faq-menu  {
 	margin-bottom: 50px;
 }
 
-.corner-ribbon{
-	width: 200px;
-	background: #e43;
-	position: absolute;
-	top: 15px;
-	left: -67px;
-	text-align: center;
-	line-height: 30px;
-	letter-spacing: 1px;
-	color: #f0f0f0;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	overflow: hidden;
-	font-size: $secondary-text-font-size;
-	text-transform: uppercase;
-}
-
-.corner-ribbon-blog {
-	width: 200px;
-	background: #e43;
-	position: absolute;
-	top: -15px;
-	transform: translateX(-50%);
-	left: 50%;
-	text-align: center;
-	line-height: 30px;
-	letter-spacing: 1px;
-	color: #fff;
-	font-size: 14px;
-	text-transform: uppercase;
-	font-weight: 900;
-	letter-spacing: 3px;
-	border-radius: 3px;
-	box-shadow: 0px 1px 3px #aaa;
-}
-
-.corner-ribbon-single {
-	width: 200px;
-	background: #e43;
-	position: absolute;
-	text-align: center;
-	line-height: 30px;
-	letter-spacing: 1px;
-	color: #fff;
-	font-size: 14px;
-	text-transform: uppercase;
-	font-weight: 900;
-	letter-spacing: 3px;
-	border-radius: 3px;
-	box-shadow: 0px 1px 3px #aaa;
-	transform: translateX(-50%);
-	top: -50px;
-	left: 50%;
-}
-
 .prices-title {
 	padding-bottom: 10px;
 }
@@ -1051,24 +989,11 @@ ul .faq-menu  {
     padding: 25px 50px 0;
 }
 
-.page-id-187 input[type="submit"] {
-	background-color: $primary-blue;
-	padding: 15px 30px;
-}
-
-.page-id-187 .underline-icon {
+.premium-page .underline-icon {
 	top: inherit;
 	margin-bottom: 25px;
 	position: relative;
 	margin-left: 0;
-}
-
-.page-id-187 .footer-signup {
-	display: none;
-}
-
-.page-id-187 .footer-nav {
-	margin-top: 50px;
 }
 
 .prices-button {
@@ -1134,11 +1059,11 @@ ul .faq-menu  {
 	padding-bottom: 50px;
 }
 
-.page-id-187 input[type=email] {
+.premium-page input[type=email] {
 	border: 10px solid $primary-grey;
 }
 
-.page-id-187 .text-input:after {
+.premium-page .text-input:after {
 	border-bottom: none;
 }
 
@@ -1167,44 +1092,12 @@ ul .faq-menu  {
 }
 
 // Refund Page
-.page-id-217 button:after {
-	display: none;
-}
-
-.page-id-217 .last-resort:after {
-	display: none;
-}
 
 // ToS Page
-.page-id-215 button:after {
-	display: none;
-}
-
-.page-id-215 .last-resort:after {
-	display: none;
-}
 
 // Privacy Policy Page
-.page-id-212 button:after {
-	display: none;
-}
-
-.page-id-212 .last-resort:after {
-	display: none;
-}
 
 //Signup Thank You
-.page-id-257 .footer-signup {
-	display: none;
-}
-
-.page-id-408 button:after {
-	display: none;
-}
-
-.page-id-408 .last-resort:after {
-	display: none;
-}
 
 // Thank You Page
 .thank-you-subtitle {
@@ -1221,14 +1114,6 @@ ul .faq-menu  {
 .final-thanks {
 	margin: 50px 0 0 0;
 	font-size: $h2;
-}
-
-.page-id-230 .footer-signup {
-	display: none;
-}
-
-.page-id-283 .footer-signup {
-	display: none;
 }
 
 // Register
@@ -1269,103 +1154,22 @@ ul .faq-menu  {
 }
 
 // Login
-.page-id-411 .footer-signup {
-	display: none;
-}
-
-.page-id-411 button:after {
-	display: none;
-}
-
-.page-id-411 .last-resort:after {
-	display: none;
-}
 
 // Confirmation Thank You
-.page-id-406 button:after {
-	display: none;
-}
-
-.page-id-406 .last-resort:after {
-	display: none;
-}
 
 // Signup Confirmation
-.page-id-404 button:after, .last-resort:after {
-	border-bottom: none;
-}
 
 // Account
-.page-id-410 button:after {
-	display: none;
-}
-
-.page-id-410 .last-resort:after {
-	display: none;
-}
 
 // 404
-.error404 .footer-signup {
-	margin-top: -100px;
-}
 
 // Footer
-.home .footer-signup {
-    padding-top: 150px;
+footer {
+	background-color: $primary-grey;
 }
 
-.blog .footer-signup {
-	margin-top: -75px;
-}
-
-.page-id-212 .footer-signup {
-	margin-top: -100px;
-}
-
-.page-id-215 .footer-signup {
-	margin-top: -100px;
-}
-
-.page-id-217 .footer-signup {
-	margin-top: -100px;
-}
-
-// Remove sign up form from Confirmation Premium page. 
-.page-id-406 .footer-signup {
-	display: none;
-}
-
-// Remove sign up form from Confirmation page.
-.page-id-404 .footer-signup {
-	display: none;
-}
-
-// Remove sign up form from Signup Thank You page.
-.page-id-408 .footer-signup {
-	display: none;
-}
-
-// Remove sign up form from Premium Account page.
-.page-id-410 .footer-signup {
-	display: none;
-}
-
-.postid-415 .footer-signup {
-	display: none;
-}
-
-.postid-416 .footer-signup {
-	display: none;
-}
-
-.postid-417 .footer-signup {
-	display: none;
-}
-
-.footer-signup {
-	padding: 200px 0 100px;
-	background-color: $primary-blue;
-	margin-top: -50px;
+.home footer {
+	background-color: $white;
 }
 
 .footer-cta {
@@ -1408,6 +1212,7 @@ ul .faq-menu  {
 	background-color: $secondary-dark-blue;
 	padding: 50px 0 25px;
 	color: $white;
+	margin-top: 50px;
 }
 
 #menu-legal {
@@ -1512,11 +1317,7 @@ ul .faq-menu  {
 		height: 100px;
 	}	
 	
-	.excuse-wrapper {
-		margin-bottom: 50px;
-	}
-	
-	.post-wrapper, .post-wrapper-group-1 {
+	.post-wrapper{
 		width: 100%;
 	}
 	
@@ -1727,6 +1528,11 @@ ul .faq-menu  {
 
 	.navbar-default .navbar-nav > li:nth-child(5) a:hover::after {
 		opacity: 0;
+	}
+	
+	.navbar-default .navbar-nav > li:nth-child(5) > a, .navbar-default .navbar-nav > li:nth-child(5) > a:focus {
+		border-bottom: none;
+		background-color: lighten($tertiary-green, 10%);		
 	}
 }
 

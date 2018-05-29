@@ -25,10 +25,10 @@ function cheapflightsfromtampa_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Single Deal Post Sidebar',
 		'id'            => 'single_deal_post_sidebar',
-		'before_widget' => '<div>',
+		'before_widget' => '<div class="widget">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="deal-sidebar-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h3 class="deal-sidebar-title"><span>',
+		'after_title'   => '</span></h3>',
 	) );
 
 }

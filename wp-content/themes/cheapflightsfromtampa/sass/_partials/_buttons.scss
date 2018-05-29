@@ -1,16 +1,81 @@
-/*_variables.scss */
+/*_buttons.scss */
 
 button {
-  border: none;
-  padding: 10px 20px;
-  background: $primary-blue;
-  color: $white;
-  border-radius: $base-border-radius;
-  margin: 50px 10px 5px 10px;
-  @include transition(all);
+	border: 5px solid $primary-blue;
+	padding: 10px;
+	background: lighten($primary-blue, 10%);	
+	color: $white;
+	border-radius: $base-border-radius;
+	margin: 15px 0px;
+	width: 85%;
+	text-transform: uppercase;
+	font-size: $base-font-size;
+	letter-spacing: 0.05em;
+	@include transition(all);
 }
 
+.blog button {
+	@extend button;
+	background: lighten($primary-blue, 10%);	
+}
+
+.single button {
+	width: 100%;
+}
+
+button:hover {
+	background: $primary-blue;	
+	border: 5px solid $primary-blue;
+}
+
+.blog button:hover {
+	background: $primary-blue;
+	border: 5px solid $primary-blue;		
+}
+
+button a, button a:hover {
+	color: $white;
+}
+
+/* Mailchimp button */
+#mc_embed_signup input.email {
+	margin: 0 auto 10px !important;
+    min-height: 50px !important;
+    text-align: center;
+    font-size: $base-font-size !important;
+    border: 6px solid $primary-grey !important;
+    width: 85% !important;
+}
+
+#placeholder {
+	color: #222 !important;
+}
+
+#mc_embed_signup form {
+	text-align: center !important;
+}
+
+#mc-embedded-subscribe {
+	border: 5px solid $tertiary-green !important;
+	padding: 10px !important;
+	background: lighten($tertiary-green, 10%) !important;	
+	color: $white !important;
+	border-radius: $base-border-radius !important;
+	margin: 15px 0px !important;
+	width: 85% !important;
+	text-transform: uppercase;	
+	letter-spacing: 0.05em;
+	@include transition(all);
+}
+
+#mc-embedded-subscribe:hover {
+	background: $tertiary-green !important;	
+	border: 5px solid $tertiary-green !important;
+}
 /*
+
+
+
 .single button:hover {
 	transform: translate(0px, -2px);
 }
@@ -154,6 +219,7 @@ input[type="submit"]:hover {
 	@extend .button-secondary;
 	width: auto;
 }
+
 
 // Mailchimp buttons
 .home button {
