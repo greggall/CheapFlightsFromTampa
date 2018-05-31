@@ -10,9 +10,13 @@ if( !empty($image) ): ?>
 <?php endif; ?>
 
 		<div class="row">
-
+			
+			<div class="hero-eyebrow"><?php the_field('hero_eyebrow', get_option('page_for_posts'))?></div>
+			<svg class="underline-icon" viewBox="0 0 32 32">
+			     <use xlink:href="#underline-icon" />
+			</svg>
 			<div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('blog_welcome_text', get_option('page_for_posts')); ?></div><!--/.welcome-text-->
-			<div class="welcome-subtitle col-md-8 col-md-offset-2"><?php the_field('home_welcome_subtitle', get_option('page_for_posts'))?></div><!--/.welcome-subtitle-->
+			<div class="welcome-subtitle col-md-8 col-md-offset-2"></div><!--/.welcome-subtitle-->
 
 		</div><!--/.row-->
 	</div><!--/.container-fluid-->
@@ -81,7 +85,7 @@ if( !empty($image) ): ?>
 								<input type="email" value="Enter your email address" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
 							    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 							    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
-							    <div class="clear"><input type="submit" value="Send Me Cheap Flight Deals!" name="subscribe" id="mc-embedded-subscribe"</div>
+							    <div class="clear"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"</div>
 							    </div>
 							</form>
 							</div><!--End mc_embed_signup-->

@@ -51,8 +51,9 @@ h3 {
 
 .hero {
 	background-size: cover !important;
-	padding: $title-margin-top 15px 250px;
+	padding: 175px 15px 100px;
 	background-color: $secondary-dark-blue;
+	text-align: center;
 }
 
 .title {
@@ -72,14 +73,6 @@ h3 {
 	font-weight: 900;
 }
 
-.blog .welcome-text {
-	color: $white;
-	font-size: $h1;
-	font-family: $title-font-family;
-	line-height: 49px;
-	margin-bottom: 25px;
-}
-
 .welcome-subtitle {
 	font-size: $h2;
 	line-height: 49px;
@@ -93,6 +86,22 @@ h3 {
 	margin-bottom: $title-margin-bottom;
 	line-height: 78px;
 	font-weight: $extra-weight;
+    margin-top: 30px;
+	text-transform: capitalize;
+}
+
+.hero-eyebrow {
+	text-transform: uppercase;
+    font-weight: 900;
+    color: $yellow;
+}
+
+.underline-icon {
+    width: 40px;
+    position: absolute;
+    margin: 0 auto;
+    margin-left: -20px;
+    fill: white;
 }
 
 // Bootstrap responsive images
@@ -129,6 +138,10 @@ img {
 	right: 0;
 	padding: 15px;
 	border: 3px solid #fff;
+	width: 57px;
+	background-color: transparent;
+    margin-right: 15px;
+	margin-top: 8px;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -137,6 +150,11 @@ img {
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 	background-color: $primary-blue;
+	border: 3px solid $white;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+	color: $white;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -168,14 +186,6 @@ img {
 	width: 225px;
 }
 
-.underline-icon {
-	width: 61px;
-    position: absolute;
-    top: 230px;
-    margin: 0 auto;
-    margin-left: -30px;
-}
-
 // Home Page
 .navbar-default {
 	position: absolute;
@@ -189,6 +199,10 @@ img {
 .email {
 	position: relative;
 	z-index: 0;
+}
+
+.home #mc_embed_signup form {
+	text-align: center;
 }
 
 input[type=email] {
@@ -231,6 +245,11 @@ input[type=email] {
 .premium-wrapper {
 	@extend .wrapper;
 	padding: 0;
+}
+
+.premium-wrapper-deals {
+	@extend .wrapper;
+	padding: 25px 25px 50px;
 }
 
 .recent-deal-wrapper {
@@ -326,6 +345,10 @@ input[type=email] {
 	line-height: $base-line-height;
 }
 
+.home-intro-img {
+	padding-bottom: 25px;
+}
+
 .perfect-for-bg {
 	background: $white;
 	padding: 50px 0 0;
@@ -350,14 +373,14 @@ input[type=email] {
 .deal-meta {
 	font-size: $secondary-text-font-size;
 	text-transform: uppercase;
-	padding: 15px 0;
 	margin-bottom: 25px;
 	border-top: 1px solid $primary-grey;
 	border-bottom: 1px solid $primary-grey;
+	padding: 0;
 }
 
 .single-normal-price, .dates, .carry-on {
-	padding: 0;
+	padding: 15px 0 10px;
 }
 
 .single-normal-price img, .dates img, .carry-on img {
@@ -371,14 +394,18 @@ input[type=email] {
 	font-weight: $extra-weight;
 	color: $secondary-dark-blue;
 	margin-top: 25px;
+	text-align: center;
 }
 
 .book-copy {
 	margin-top: 25px;
+	text-align: center;	
 }
 
 .book-subhead {
 	font-style: italic;
+	text-align: center;
+	font-size: 14px;	
 }
 
 .screenshot-one, .screenshot-two {
@@ -388,11 +415,13 @@ input[type=email] {
 
 .book-second-leg {
 	margin-top: 50px;
+	text-align: center;	
 }
 
 .encourage-text {
 	margin-top: 25px;
 	font-style: italic;
+	text-align: center;	
 }
 
 .single-reason {
@@ -410,6 +439,7 @@ input[type=email] {
 	text-align: left;
 	color: $secondary-dark-blue;
 	font-weight: $extra-weight;
+	padding-bottom: 10px;
 }
 
 .single-reasons-subtitle {
@@ -427,7 +457,14 @@ input[type=email] {
 .single .premium-badge {
 	position: absolute;
 	top: 30px;
-	right: 0;
+	right: 45px;
+}
+
+.sidebar-premium-badge {
+	position: absolute;
+    top: -25px;
+    transform: translateX(50%);
+    right: 50%;
 }
 
 .widget {
@@ -470,10 +507,7 @@ input[type=email] {
 
 .single #mc_embed_signup form {
 	padding: 30px 0 10px 0%;
-}
-
-.single #mc_embed_signup form {
-	text-align: left !important;
+	text-align: center;
 }
 
 .single #mc_embed_signup input.email {
@@ -529,7 +563,7 @@ input[type=email] {
 }
 
 .post-wrapper {
-	padding: 100px 0;
+	padding: 125px 0 100px;
 	padding-left: 40px;
 	padding-right: 40px;
 	margin: 25px 0;
@@ -537,7 +571,7 @@ input[type=email] {
 	position: relative;
     z-index: 0;
 	text-align: center;
-    min-height: 550px;	
+    min-height: 555px;	
 	@include shadow($x, $y, $blur, $color);
 }
 
@@ -587,7 +621,7 @@ input[type=email] {
 	border-radius: 5px;
 }
 
-.blog .premium-badge {
+.premium-badge {
 	position: absolute;
     top: -25px;
     transform: translateX(50%);
@@ -868,7 +902,7 @@ ul .faq-menu  {
 	background: rgba(0,0,0,0.25);
 }
 
-// Premium/Prices
+// Premium
 .excuse-title {
 	color: $white;
 	font-weight: 900;
@@ -885,36 +919,68 @@ ul .faq-menu  {
 	color: $white;
 }
 
-.option-title {
-	padding: 50px 0;
-	border-bottom: 1px #efefef solid;
+.premium-recent-deal {
+	@extend .recent-deal;
+	font-size: $h3;
 }
 
-.option-copy {
-	padding: 75px 75px 50px;
-	font-size: 20px;
+.premium-post-wrapper {
+	@extend .post-wrapper;
+	padding: 100px 0 50px;
+	min-height: 400px;
+}
+
+.premium-normal-price {
+	@extend .normal-price;
+	font-size: 14px;
+}
+
+.premium-jump button {
+	width: 60%;
+	margin-top: 50px;
+	border: 5px solid $tertiary-green;
+	padding: 10px !important;
+	background: lighten($tertiary-green, 10%);	
+	color: $white !important;
+	border-radius: $base-border-radius;
+	margin: 15px 0px !important;
+	text-transform: uppercase;	
+	letter-spacing: 0.05em;
+	@include transition(all);
+	
+}
+
+.premium-jump-text {
+	font-size: $h2;
+	color: $secondary-dark-blue;
+	font-weight: $extra-weight;
+	margin-top: 50px;
+}
+
+.premium-jump button:hover {
+	background: $tertiary-green;	
+	border: 5px solid $tertiary-green;
 }
 
 .reasons-title {
 	font-size: $h2;
 	font-weight: $extra-weight;
 	text-align: center;
-	padding: 50px 0 25px;
+	padding: 50px 15% 25px;
 }
 
 .reasons-subtitle {
-	font-size: 24px;
-	line-height: 1.65em;
+	font-size: $base-font-size;
+	line-height: 1.5em;
 	text-align: center;
-	padding: 0 0px 50px;
-    width: 90%;
+	padding: 0 12.5% 25px;
     margin: 0 auto;
 }
 
 .recent-premium-title {
 	font-size: $h2;
 	font-weight: $extra-weight;	
-    padding: 50px 0 25px;	
+    padding: 50px 15%;	
 }
 
 .reason {
@@ -986,14 +1052,7 @@ ul .faq-menu  {
 .prices-subtitle {
 	font-size: 20px;
     margin-bottom: 0px;
-    padding: 25px 50px 0;
-}
-
-.premium-page .underline-icon {
-	top: inherit;
-	margin-bottom: 25px;
-	position: relative;
-	margin-left: 0;
+    padding: 25px 50px 25px;
 }
 
 .prices-button {
@@ -1056,7 +1115,12 @@ ul .faq-menu  {
 }
 
 .free-title {
-	padding-bottom: 50px;
+	padding-bottom: 15px;
+}
+
+.free-subtitle {
+	margin-bottom: 25px;
+	padding: 0 15%;
 }
 
 .premium-page input[type=email] {
@@ -1317,13 +1381,13 @@ footer {
 		height: 100px;
 	}	
 	
-	.post-wrapper{
-		width: 100%;
+	.triangle-icon {
+		width: 20px;
+		height: 28px;
 	}
 	
-	.post-wrapper-group-1:nth-child(3n), .post-wrapper:nth-child(3n-1) {
-		margin-left: auto;
-		margin-right: auto;
+	.post-wrapper{
+		width: 100%;
 	}
 	
 	.deals-signup-title {
@@ -1377,6 +1441,12 @@ footer {
 	.carousel-icon {
 		margin-left: auto;
 	}	
+	
+	/* Single Deal */
+	.single-deal-title {
+		font-size: $h2;
+		padding: 10px 0;
+	}
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -1389,8 +1459,8 @@ footer {
 
 }
 
-/* Change Nav breakpoint */
 @media (max-width: 1000px) {
+	/* Change Nav breakpoint */	
 	.navbar-header {
         float: none;
 	}
@@ -1414,6 +1484,7 @@ footer {
 	.navbar-collapse.collapse.in {
 	    display: block !important;
 		text-align: center;
+		@include shadow($x, $y, $blur, $color);
 	}
 	
 	.navbar-nav {
@@ -1473,6 +1544,48 @@ footer {
 		font-weight: 900;
 		border-bottom: none;
 	}
+	
+	/*Single Deal Page*/
+	.premium-alert-img {
+		text-align: center;
+		padding-bottom: 30px;
+	}
+	
+	.single .premium-badge {
+		top: -45px;
+	    right: 45px;
+	}
+	
+	.single .premium-badge img {
+		width: 80px;
+	}
+	
+	.single-deal {
+		padding-left: 0;
+		padding-right: 0;
+	}	
+	
+	.main {
+		padding-left: 0;
+		padding-right: 0;		
+	}
+	
+	.sidebar {
+		padding-left: 0;
+		padding-right: 0;		
+	}
+	
+	.logo {
+		 width: 200px;
+	}	
+	
+	.navbar-brand {
+		 margin-top: 4px;		
+	} 
+	
+	.navbar-default .navbar-nav > li > a:focus {
+		color: $secondary-dark-blue;
+	}
 }
 
 @media (min-width: 1000px) {
@@ -1481,8 +1594,8 @@ footer {
 		top: 100%;
 		left: 0;
 		width: 100%;
-		height: 3px;
-		background: $white;
+		height: 2px;
+		background: $primary-grey;
 		content: '';
 		opacity: 0;
 		@include transition(all);
@@ -1494,7 +1607,7 @@ footer {
 
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
 		background-color: transparent;
-		color: $white;
+		color: $primary-grey;
 	}
 
 	.navbar-default .navbar-nav > li > a:hover::after {
@@ -1505,13 +1618,13 @@ footer {
 	}
 
 	.navbar-default .navbar-nav > li > a:hover {
-		color: $white;
+		color: $primary-grey;
 	}
 
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
 		color: $white;
 		background-color: transparent;
-		border-bottom: 3px solid white;
+		border-bottom: 2px solid $primary-grey;
 	}
 
 	.navbar-default .navbar-nav > li:nth-child(5) {

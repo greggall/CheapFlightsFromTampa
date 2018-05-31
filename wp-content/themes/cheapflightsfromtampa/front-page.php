@@ -15,7 +15,11 @@ if( !empty($image) ): ?>
 	<?php endif; ?>
 
 	<div class="row">
-
+		
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
 		<div class="welcome-text col-md-8 col-md-offset-2 text-center"><?php the_field('welcome_text'); ?></div><!--/.welcome-text-->
 			
 		<div class="email col-md-8 col-md-offset-2 text-center">
@@ -29,7 +33,7 @@ if( !empty($image) ): ?>
 				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address" required>
 			    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 			    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
-			    <div class="clear"><input type="submit" value="Send Me Cheap Flight Deals!" name="subscribe" id="mc-embedded-subscribe"></div>
+			    <div class="clear"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"></div>
 			    </div>
 			</form>
 			</div><!--End mc_embed_signup-->
@@ -136,6 +140,8 @@ if( !empty($image) ): ?>
 			<p class="recent-deal">Tampa to <?php echo $first_row_destination ?>: $<?php echo $first_row_price ?></p><!--/.recent-deal-->
 
 			<p class="normal-price">Normal Roundtrip Price: $<?php echo $first_row_normal_price ?></p><!--/.normal-price-->
+			
+			<div class="view-recent-deals"><a href="<?php echo site_url();?>/recent-deals"><button>View Recent Deals</button></a></div>
 
 		</div><!--/.recent-deal-wrapper-->
 	</div><!--/.row-->
@@ -151,16 +157,18 @@ if( !empty($image) ): ?>
 			<div class="col-md-5 col-md-offset-1">
 				<h1 class="title"><?php the_field('intro_title') ?></h1><!---/.intro-title-->
 				<div class="intro-subtitle"><?php the_field('intro_subtitle') ?></div><!--/.intro-subtitle-->
-			
-				<?php 
+				
+				<div class="home-intro-img">
+					<?php 
 
-				$image = get_field('intro_image');
+					$image = get_field('intro_image');
 
-				if( !empty($image) ): ?>
+					if( !empty($image) ): ?>
 
-					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
-				<?php endif; ?>
+					<?php endif; ?>
+				</div><!--home-intro-img-->
 				
 			</div><!--/.col-md-5-->
 
@@ -178,7 +186,7 @@ if( !empty($image) ): ?>
 					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address" required>
 				    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
-				    <div class="clear"><input type="submit" value="Send Me Cheap Flight Deals!" name="subscribe" id="mc-embedded-subscribe"></div>
+				    <div class="clear about-sign-up"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"></div>
 				    </div>
 				</form>
 				</div><!--End mc_embed_signup-->
@@ -211,6 +219,8 @@ if( !empty($image) ): ?>
 			<div class="recent-deal">Tampa to <?php echo $second_row_destination ?>: $<?php echo $second_row_price ?></div><!--/.recent-deal-->
 
 			<div class="normal-price">Normal Roundtrip Price: $<?php echo $second_row_normal_price ?></div><!--/.normal-price-->
+			
+			<div class="view-recent-deals"><a href="<?php echo site_url();?>/recent-deals"><button>View Recent Deals</button></a></div>
 
 		</div><!--/.recent-deal-wrapper-->
 	</div><!--/.row-->

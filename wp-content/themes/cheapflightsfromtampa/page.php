@@ -14,7 +14,11 @@
 <?php endif; ?>
     
 		<div class="row">
-
+			
+			<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+			<svg class="underline-icon" viewBox="0 0 32 32">
+			     <use xlink:href="#underline-icon" />
+			</svg>
 			<div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('about_welcome_text') ?></div><!--/.about-title-->
 
 		</div><!--/.row-->
@@ -57,7 +61,11 @@
 <?php endif; ?>
 
 		<div class="row">
-
+			
+			<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+			<svg class="underline-icon" viewBox="0 0 32 32">
+			     <use xlink:href="#underline-icon" />
+			</svg>
 			<div class="welcome-text col-md-10 col-md-offset-1"><?php the_field('contact_welcome_text') ?></div><!--/.about-title-->
 
 		</div><!--/.row-->
@@ -92,7 +100,11 @@
 <?php endif; ?>
     
 		<div class="row">
-
+			
+			<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+			<svg class="underline-icon" viewBox="0 0 32 32">
+			     <use xlink:href="#underline-icon" />
+			</svg>
 			<div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('faq_welcome_text') ?></div><!--/.about-title-->
 
 			<p class="jump col-md-12">jump to</p>
@@ -114,7 +126,7 @@
 				</li><!--/.faq-menu-item-->
 
 				<li class="faq-menu-item">
-				  <a href="#otas">OTAs</a>
+				  <a href="#otas">Online Travel Agencies (OTAs)</a>
 				</li><!--/.faq-menu-item-->
 
 				<li class="faq-menu-item">
@@ -365,7 +377,11 @@
 <?php endif; ?>
       
 	  <div class="row">
-
+		  
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>  
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('prices_welcome_text') ?></div><!--/.about-title-->
 
       </div><!--/.row-->
@@ -411,6 +427,57 @@
 			</div><!--/.wrapper-->
 			<?php endwhile; ?>
 			<?php endif; ?>
+			
+			<div class="premium-wrapper-deals col-md-10 col-md-offset-1">
+					
+				<div class="recent-premium-title"><?php the_field('recent_premium_title'); ?></div>
+				
+				<?php // retrieve three premium posts
+					$the_query = new WP_Query( array(
+												'posts_per_page' => '3',
+												'category_name' => 'premium',
+
+					) ); ?>
+
+					<?php if ( $the_query->have_posts() ) : ?>
+
+						<!-- the loop -->
+						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					
+							<div class="col-md-4">
+								<div class="premium-post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
+									
+									<?php if ( in_category('premium') ) { ?>
+			
+										<div class="premium-badge"><img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/premium_badge.svg"></div>
+				
+									<?php } ?>
+									
+									<div class="recent-deal-overlay"></div><!--/.recent-deal-overlay-->
+
+									<div class="premium-recent-deal">Tampa to <?php the_field('post_destination'); ?>: $<?php the_field('post_price'); ?></div><!--/.recent-deal-->
+
+									<div class="premium-normal-price">Normal Price: $<?php the_field('normal_roundtrip_price'); ?></div><!--/.normal-price-->
+						
+									<p><a href="<?php the_permalink();?>"><button>View Deal</button></a></p>
+								</div><!--/.post-wrapper-->
+							</div><!--/.col-md-4-->
+
+						<?php endwhile; ?>
+						<!-- end of the loop -->
+
+						<?php wp_reset_postdata(); ?>
+
+						<?php else : ?>
+							<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+						<?php endif; ?>
+						
+						<div class="col-md-12">
+							<div class="premium-jump-text"><?php the_field('premium_jump_text_1')?></div>
+							<div class="premium-jump"><a href="#signup"><button>Sign Up Today!</button></a></div>
+						</div>
+
+			</div><!--/.wrapper-->
 
 			<div class="premium-wrapper col-md-10 col-md-offset-1">
 				
@@ -441,45 +508,60 @@
 			</div><!--/.wrapper-->
 			<?php endwhile; ?>
 			<?php endif; ?>
+			
+			<div class="premium-wrapper-deals col-md-10 col-md-offset-1">
+					
+				<div class="recent-premium-title"><?php the_field('recent_premium_title'); ?></div>
+				
+				<?php // retrieve three premium posts
+					$the_query = new WP_Query( array(
+												'offset' => '3',
+												'posts_per_page' => '3',
+												'category_name' => 'premium',
 
-			<div class="premium-wrapper col-md-10 col-md-offset-1">
-				<?php if( have_rows('options') ):
+					) ); ?>
 
-				while( have_rows('options') ): the_row();
+					<?php if ( $the_query->have_posts() ) : ?>
 
-				// vars
-				$title = get_sub_field('title');
-				$option_1 = get_sub_field('option_1');
-				$option_2 = get_sub_field('option_2');
-				$option_1_bkcolor = get_sub_field('option_1_bkcolor');
-				$option_2_bkcolor = get_sub_field('option_2_bkcolor');
-				$background_image = get_sub_field('option_2_image');
+						<!-- the loop -->
+						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					
+							<div class="col-md-4">
+								<div class="premium-post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
+									
+									<?php if ( in_category('premium') ) { ?>
+			
+										<div class="premium-badge"><img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/premium_badge.svg"></div>
+				
+									<?php } ?>
+									
+									<div class="recent-deal-overlay"></div><!--/.recent-deal-overlay-->
 
-				?>
+									<div class="premium-recent-deal">Tampa to <?php the_field('post_destination'); ?>: $<?php the_field('post_price'); ?></div><!--/.recent-deal-->
 
-				<h1 class="option-title"><?php echo $title?></h1>
-
-				<div class="col-md-6 option-1" style="background-color: <?php the_sub_field('option_1_bkcolor'); ?>;">
-
-					<div class="option-copy text-left">
+									<div class="premium-normal-price">Normal Price: $<?php the_field('normal_roundtrip_price'); ?></div><!--/.normal-price-->
 						
-						<?php the_sub_field('option_1')?>
+									<p><a href="<?php the_permalink();?>"><button>View Deal</button></a></p>
+								</div><!--/.post-wrapper-->
+							</div><!--/.col-md-4-->
 
-						Or...
+						<?php endwhile; ?>
+						<!-- end of the loop -->
+
+						<?php wp_reset_postdata(); ?>
+
+						<?php else : ?>
+							<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+						<?php endif; ?>
 						
-					</div>
-
-				</div>
-
-				<div class="col-md-6 option-2" style="background: linear-gradient( <?php the_sub_field('option_2_bkcolor')?>, <?php the_sub_field('option_2_bkcolor')?> ), url('<?php echo $background_image['url']; ?>'); background-size: cover;" alt="<?php echo $image['alt']; ?>">
-
-					<div class="option-copy"><?php the_sub_field('option_2')?></div>
-
-				</div>
+						<div class="col-md-12">
+							<div class="premium-jump-text"><?php the_field('premium_jump_text_2')?></div>
+							<div class="premium-jump"><a href="#signup"><button>Sign Up Today!</button></a></div>
+						</div>
 
 			</div><!--/.wrapper-->
-			<?php endwhile; ?>
-			<?php endif; ?>
+
+			
 
 			<div class="premium-wrapper col-md-10 col-md-offset-1">
 
@@ -537,63 +619,27 @@
 			
 			</div><!--/.wrapper-->
 			
-			<div class="premium-wrapper col-md-10 col-md-offset-1">
-					
-				<div class="recent-premium-title"><?php the_field('recent_premium_title'); ?></div>
-				
-				<?php // retrieve nest six posts after the first
-					$the_query = new WP_Query( array('posts_per_page' => '3',
-
-					) ); ?>
-
-					<?php if ( $the_query->have_posts() ) : ?>
-
-						<!-- the loop -->
-						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					
-							<div class="col-md-4">
-								<div class="post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
-						
-									<div class="recent-deal-overlay"></div><!--/.recent-deal-overlay-->
-
-									<div class="recent-deal">Tampa to <?php the_field('post_destination'); ?>: $<?php the_field('post_price'); ?></div><!--/.recent-deal-->
-
-									<div class="normal-price">Normal Price: $<?php the_field('normal_roundtrip_price'); ?></div><!--/.normal-price-->
-						
-									<p><a href="<?php the_permalink();?>"><button>View Deal</button></a></p>
-								</div><!--/.post-wrapper-->
-							</div><!--/.col-md-4-->
-
-						<?php endwhile; ?>
-						<!-- end of the loop -->
-
-						<?php wp_reset_postdata(); ?>
-
-						<?php else : ?>
-							<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-						<?php endif; ?>
-
-			</div><!--/.wrapper-->
 			<?php endwhile; ?>
 			<?php endif; ?>
-
+			
+			
 			<div class="wrapper premium-cta col-md-10 col-md-offset-1">
-
+			<a id="signup"></a>
 				<div class="col-md-6">
-					<div class="premium-cta-title"><?php the_field('premium_cta_title'); ?></div>
-					<div class="premium-cta-subtitle"><?php the_field('premium_cta_subtitle'); ?></div>
-			        <div class="benefits-premium-cta"><?php if( have_rows('benefits') ): ?>
+					<div class="premium-cta-title"><?php the_field('title', 'option'); ?></div>
+					<div class="premium-cta-subtitle"><?php the_field('subtitle', 'option'); ?></div>
+			        <div class="benefits-premium-cta"><?php if( have_rows('features', 'option') ): ?>
 
-			          	<?php while( have_rows('benefits') ): the_row();
+			          	<?php while( have_rows('features', 'option') ): the_row();
 
 			          		// vars
-			          		$benefit = get_sub_field('benefit');
+			          		$feature = get_sub_field('feature');
 
 			          		?>
 
-			          			<?php if( $benefit ): ?>
+			          			<?php if( $feature ): ?>
 
-							  <p class="benefit"><?php the_sub_field('benefit') ?> </p>
+							  <p class="feature"><?php the_sub_field('feature') ?> </p>
 
 			          			<?php endif; ?>
 
@@ -614,6 +660,9 @@
 	        <div class="wrapper col-md-10 col-md-offset-1">
 
 	            <div class="title free-title col-md-12 text-center"><?php the_field('free_title') ?></div><!--/.col-md-6-->
+				
+				<div class="free-subtitle"><?php the_field('free_sign_up_subtitle', 'option') ?></div>
+				
 				<div class="email col-md-8 col-md-offset-2 text-center">
 
 					<!-- Begin MailChimp Signup Form -->
@@ -625,7 +674,7 @@
 						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address" required>
 					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 					    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
-					    <div class="clear"><input type="submit" value="Send Me Cheap Flight Deals!" name="subscribe" id="mc-embedded-subscribe"></div>
+					    <div class="clear"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"></div>
 					    </div>
 					</form>
 					</div><!--End mc_embed_signup-->
@@ -662,6 +711,10 @@
     	<?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('thank_you_title'); ?></div><!--/.about-title-->
  		<div class="thank-you-subtitle col-md-12"><?php the_field('thank_you_subtitle')?></div>
       </div><!--/.row-->
@@ -703,6 +756,10 @@
     	<?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('thank_you_title'); ?></div><!--/.about-title-->
  		<div class="thank-you-subtitle col-md-12"><?php the_field('thank_you_subtitle')?></div>
       </div><!--/.row-->
@@ -743,6 +800,10 @@
     <?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('signup_thanks_title'); ?></div><!--/.about-title-->
  		<div class="thank-you-subtitle col-md-12"><?php the_field('signup_thanks_subtitle')?></div>
       </div><!--/.row-->
@@ -783,6 +844,10 @@
     <?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('account_title'); ?></div><!--/.about-title-->
  		<div class="thank-you-subtitle col-md-8 col-md-offset-2"><?php the_field('account_subtitle')?></div>
       </div><!--/.row-->
@@ -823,6 +888,10 @@
     <?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('login_title'); ?></div><!--/.about-title-->
  		<div class="thank-you-subtitle col-md-8 col-md-offset-2"><?php the_field('login_subtitle')?></div>
       </div><!--/.row-->
@@ -859,6 +928,10 @@
     <?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_title(); ?></div><!--/.about-title-->
       </div><!--/.row-->
 
@@ -893,6 +966,10 @@
     <?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_title(); ?></div><!--/.about-title-->
       </div><!--/.row-->
 
@@ -927,6 +1004,10 @@
     <?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_title(); ?></div><!--/.about-title-->
       </div><!--/.row-->
 
@@ -960,6 +1041,10 @@
     <?php endif; ?>
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_title(); ?></div><!--/.about-title-->
       </div><!--/.row-->
 
@@ -987,6 +1072,10 @@
         ), url('https://cheapflightsfromtampa.com/wp-content/uploads/2017/06/UT.jpg');" alt="Sign Up to Become A Cheap Flights From Tampa Member!">
 
 	  <div class="row">
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<svg class="underline-icon" viewBox="0 0 32 32">
+		     <use xlink:href="#underline-icon" />
+		</svg>
         <div class="welcome-text col-md-8 col-md-offset-2"><?php the_title(); ?></div><!--/.about-title-->
       </div><!--/.row-->
 

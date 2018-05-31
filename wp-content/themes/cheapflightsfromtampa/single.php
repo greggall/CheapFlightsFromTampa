@@ -7,12 +7,12 @@ Template page for displaying single deal posts, both Premium and Free.
 <?php get_header(); ?>
 
 
-<div class="container-fluid">
+<div class="container-fluid ">
 	
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 single-deal">
 			
-			<div class="col-md-8">
+			<div class="col-md-8 main">
 			
 				<div class="deal-wrapper">
 		
@@ -100,7 +100,7 @@ Template page for displaying single deal posts, both Premium and Free.
 				
 					</div><!--/.screenshot-one-->
 	
-					<button><a href="<?php the_field('sample_first_leg'); ?>" target="_blank">Sample Tampa To <?php the_field('sample_first_leg_button'); ?> Flight</a></button>
+					<div class="sample-flight"><button><a href="<?php the_field('sample_first_leg'); ?>" target="_blank">Sample Tampa To <?php the_field('sample_first_leg_button'); ?> Flight</a></button></div><!--/.sample-flight-->
 			
 					
 					<?php if( get_field('book_second_leg') ): ?>
@@ -121,7 +121,7 @@ Template page for displaying single deal posts, both Premium and Free.
 				
 					
 					<?php if( get_field('sample_second_leg_button') ): ?>
-						<button><a href="<?php the_field('sample_second_leg'); ?>" target="_blank">Sample <?php the_field('sample_second_leg_button'); ?> Flight</a></button>
+						<div class="sample-flight"><button><a href="<?php the_field('sample_second_leg'); ?>" target="_blank">Sample <?php the_field('sample_second_leg_button'); ?> Flight</a></button></div><!--/.sample-flight-->
 					<?php endif; ?>
 					
 					<div class="encourage-text">
@@ -263,7 +263,7 @@ Template page for displaying single deal posts, both Premium and Free.
 							<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address" required>
 						    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 						    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
-						    <div class="clear"><input type="submit" value="Send Me Cheap Flight Deals!" name="subscribe" id="mc-embedded-subscribe"></div>
+						    <div class="clear"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"></div>
 						    </div>
 						</form>
 						</div><!--End mc_embed_signup-->
@@ -295,7 +295,13 @@ Template page for displaying single deal posts, both Premium and Free.
 
 									<div class="col-md-12 sidebar-deal">
 										<div class="post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
-										
+											
+											<?php if ( in_category('premium') ) { ?>
+			
+												<div class="sidebar-premium-badge"><img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/premium_badge.svg"></div>
+				
+											<?php } ?>
+											
 											<div class="recent-deal-overlay"></div><!--/.recent-deal-overlay-->
 
 											<div class="recent-deal">Tampa to <?php the_field('post_destination'); ?>: $<?php the_field('post_price'); ?></div><!--/.recent-deal-->
