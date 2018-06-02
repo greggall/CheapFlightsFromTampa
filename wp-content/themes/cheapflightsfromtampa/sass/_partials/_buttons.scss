@@ -80,10 +80,29 @@ button a, button a:hover {
 	width: 300px;
 }
 
-
 #mc-embedded-subscribe:hover {
 	background: $tertiary-green !important;	
 	border: 5px solid $tertiary-green !important;
+}
+
+/* MemberPress button */
+.mepr-submit {
+	border: 5px solid $primary-blue;
+	padding: 10px;
+	background: lighten($primary-blue, 10%);	
+	color: $white;
+	border-radius: $base-border-radius;
+	margin: 15px 0px;
+	width: 85%;
+	text-transform: uppercase;
+	font-size: $base-font-size;
+	letter-spacing: 0.05em;
+	@include transition(all);
+}
+
+.mepr-submit:hover {
+	background: $primary-blue;	
+	border: 5px solid $primary-blue;
 }
 
 @media(max-width:992px){

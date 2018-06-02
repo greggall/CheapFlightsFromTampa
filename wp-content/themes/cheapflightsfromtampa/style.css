@@ -8734,19 +8734,44 @@ button a, .blog button a, button a:hover {
   width: 300px;
 }
 
-/* line 84, sass/_partials/_buttons.scss */
+/* line 83, sass/_partials/_buttons.scss */
 #mc-embedded-subscribe:hover {
   background: #4CAF50 !important;
   border: 5px solid #4CAF50 !important;
 }
 
+/* MemberPress button */
+/* line 89, sass/_partials/_buttons.scss */
+.mepr-submit {
+  border: 5px solid #1976D2;
+  padding: 10px;
+  background: #378fe7;
+  color: #ffffff;
+  border-radius: 5px;
+  margin: 15px 0px;
+  width: 85%;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/* line 103, sass/_partials/_buttons.scss */
+.mepr-submit:hover {
+  background: #1976D2;
+  border: 5px solid #1976D2;
+}
+
 @media (max-width: 992px) {
-  /* line 90, sass/_partials/_buttons.scss */
+  /* line 109, sass/_partials/_buttons.scss */
   #mc_embed_signup input.email {
     width: 100% !important;
   }
 
-  /* line 94, sass/_partials/_buttons.scss */
+  /* line 113, sass/_partials/_buttons.scss */
   #mc-embedded-subscribe {
     width: 100% !important;
   }
@@ -9862,7 +9887,7 @@ ul .faq-menu {
 .recent-premium-title {
   font-size: 36px;
   font-weight: 900;
-  padding: 50px 15%;
+  padding: 50px 10%;
 }
 
 /* line 986, sass/style.scss */

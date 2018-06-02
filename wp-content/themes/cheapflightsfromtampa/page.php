@@ -398,8 +398,6 @@
 
 			</div><!--/.wrapper-->
 
-			<div class="premium-wrapper col-md-10 col-md-offset-1">
-
 				<?php if( have_rows('excuse_1') ):
 
 				while( have_rows('excuse_1') ): the_row();
@@ -412,7 +410,9 @@
 
 				?>
 
-				<div class="col-md-6" style="background-image: url('<?php echo $background_image['url']; ?>'); background-size: cover; min-height: 700px">
+			<div class="premium-wrapper col-md-10 col-md-offset-1" style="background-image: url('<?php echo $background_image['url']; ?>'); background-size: cover;">
+
+				<div class="col-md-6" >
 
 					<h1 class="excuse-title"><?php the_sub_field('title'); ?></h1>
 
@@ -478,22 +478,22 @@
 						</div>
 
 			</div><!--/.wrapper-->
+			
+			<?php if( have_rows('excuse_2') ):
 
-			<div class="premium-wrapper col-md-10 col-md-offset-1">
+			while( have_rows('excuse_2') ): the_row();
+
+			// vars
+			$title = get_sub_field('title');
+			$background_image = get_sub_field('background_image');
+			$copy_background_color = get_sub_field('copy_background_color');
+			$copy = get_sub_field('copy');
+
+			?>
+			
+			<div class="premium-wrapper col-md-10 col-md-offset-1" style="background-image: url('<?php echo $background_image['url']; ?>'); background-size: cover;">
 				
-				<?php if( have_rows('excuse_2') ):
-
-				while( have_rows('excuse_2') ): the_row();
-
-				// vars
-				$title = get_sub_field('title');
-				$background_image = get_sub_field('background_image');
-				$copy_background_color = get_sub_field('copy_background_color');
-				$copy = get_sub_field('copy');
-
-				?>
-
-				<div class="col-md-6" style="background-image: url('<?php echo $background_image['url']; ?>'); background-size: cover; min-height: 900px">
+				<div class="col-md-6">
 
 					<h1 class="excuse-title"><?php the_sub_field('title'); ?></h1>
 
