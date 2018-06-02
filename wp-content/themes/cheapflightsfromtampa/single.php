@@ -63,13 +63,12 @@ Template page for displaying single deal posts, both Premium and Free.
 					
 						</div><!--/.normal-price-->
 				
+						<?php if( get_field('carry_on_cost') ): ?>
 						<div class="carry-on col-md-4">
-					
-							<?php if( get_field('carry_on_cost') ): ?>
 								<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_carry_on_cost.svg">Carry-On Cost: $<?php the_field('carry_on_cost'); ?>
-							<?php endif; ?>
-					
 						</div>
+						<?php endif; ?>
+						
 					</div><!--/.deal-meta-->
 			
 					<div class="deal-copy"><?php the_field('deal_copy') ?></div><!--/.destination-copy-->

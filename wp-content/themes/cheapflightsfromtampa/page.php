@@ -410,7 +410,7 @@
 
 				?>
 
-			<div class="premium-wrapper col-md-10 col-md-offset-1" style="background-image: url('<?php echo $background_image['url']; ?>'); background-size: cover;">
+			<div class="premium-wrapper block-1 col-md-10 col-md-offset-1" style="background-image: url('<?php echo $background_image['url']; ?>');">
 
 				<div class="col-md-6" >
 
@@ -491,7 +491,7 @@
 
 			?>
 			
-			<div class="premium-wrapper col-md-10 col-md-offset-1" style="background-image: url('<?php echo $background_image['url']; ?>'); background-size: cover;">
+			<div class="premium-wrapper block-2 col-md-10 col-md-offset-1 " style="background-image: url('<?php echo $background_image['url']; ?>');">
 				
 				<div class="col-md-6">
 
