@@ -42,9 +42,37 @@ function website_functionname() {
 	if (!is_admin()) {
 		wp_register_script('template.js', get_template_directory_uri() . '/js/template.js', array('jquery') );
 		wp_enqueue_script('template.js');
+		wp_register_script('ddexitpop.js', get_template_directory_uri() . '/js/ddexitpop.js', array('jquery') );
+		wp_enqueue_script('ddexitpop.js');
+		
 	}
 }
 add_action('init', 'website_functionname');
+
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+function example_add_dashboard_widgets() {
+
+	wp_add_dashboard_widget(
+                 'example_dashboard_widget',         // Widget slug.
+                 'Premium City List',         // Title.
+                 'example_dashboard_widget_function' // Display function.
+        );	
+}
+add_action( 'wp_dashboard_setup', 'example_add_dashboard_widgets' );
+
+/**
+ * Create the function to output the contents of our Dashboard Widget.
+ */
+function example_dashboard_widget_function() {
+
+	// Display whatever it is you want to show.
+	echo "Hello World, I'm a great Dashboard Widget";
+	echo do_shortcode( '[mepr-account-info field="mepr_city"]' );
+}
 
 // Add Image sizes
 add_image_size( 'thumb-name', 100, 100, true );

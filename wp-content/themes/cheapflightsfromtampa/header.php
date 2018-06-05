@@ -69,7 +69,23 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
     <!--<link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico">-->
 
- 
+ 	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+	<?php if(is_single()); { ?>
+		
+
+		<script src="ddexitpop.js">
+
+		/***********************************************
+		* Exit Intent Pop Up Script (with mobile fallback)- By Dynamic Drive (www.dynamicdrive.com)
+		* Please keep this notice intact
+		* Visit http://www.dynamicdrive.com/ for full source code
+		***********************************************/
+
+		</script>
+	<?php } ?>
+	
   	
 	<!-- SVG Icon System -->
 

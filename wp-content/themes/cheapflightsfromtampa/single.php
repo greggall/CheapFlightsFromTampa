@@ -326,6 +326,20 @@ Template page for displaying single deal posts, both Premium and Free.
 		</div><!--/.col-md-12-->
 	</div><!--/.row-->
 	
+	<div id="ddexitpop1" class="ddexitpop">
+	    	<h1>Hold On For Just One Second!</h1>
+	    	<p>Before you leave, download our FREE e-book that shows you how to create a blog, step by step, in under 20 minutes!</p>
+	    	<p>You'll learn:</p>
+	    	<ul>
+	    	<li>Pick a Web Host</li>
+	    	<li>How to select the best CMS</li>
+	    	<li>Install and Choose a Theme</li>
+	    	<li>Promote and Set Up Social Profiles for your Blog</li>
+	    	</ul>
+	    	<a class="calltoaction" href="#" onClick="ddexitpop.hidepopup()">Download Free E-Book</a>
+    
+	    </div>
+	
 </div><!--/.container-fluid-->
 
 <?php get_footer(); ?>
