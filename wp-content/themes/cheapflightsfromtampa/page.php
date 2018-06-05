@@ -412,7 +412,7 @@
 
 			<div class="premium-wrapper block-1 col-md-10 col-md-offset-1" style="background-image: url('<?php echo $background_image['url']; ?>');">
 
-				<div class="col-md-6" >
+				<div class="col-md-6 block-1-title">
 
 					<h1 class="excuse-title"><?php the_sub_field('title'); ?></h1>
 
@@ -493,7 +493,7 @@
 			
 			<div class="premium-wrapper block-2 col-md-10 col-md-offset-1 " style="background-image: url('<?php echo $background_image['url']; ?>');">
 				
-				<div class="col-md-6">
+				<div class="col-md-6 block-2-title">
 
 					<h1 class="excuse-title"><?php the_sub_field('title'); ?></h1>
 

@@ -890,7 +890,6 @@ ul .faq-menu  {
 // Premium
 .block-1, .block-2 {
 	background-size: cover;
-	min-height: 600px;
 }
 
 .excuse-title {
@@ -1489,7 +1488,15 @@ div.closeexitpop{ /* Large x close button  */
 	}
 	
 	.excuse-title {
-		padding-top: 150px;
+		padding: 50px 15px 50px;;
+	}
+	
+	.block-1-title {
+		background-color: darken($tertiary-green, 10%);
+	}
+	
+	.block-2-title {
+		background-color: darken($primary-blue, 10%);		
 	}
 	
 	.excuse-copy {
