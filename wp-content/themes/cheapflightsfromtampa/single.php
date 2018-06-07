@@ -98,8 +98,10 @@ Template page for displaying single deal posts, both Premium and Free.
 						<?php endif; ?>
 				
 					</div><!--/.screenshot-one-->
-	
-					<div class="sample-flight"><button><a href="<?php the_field('sample_first_leg'); ?>" target="_blank">Sample Tampa To <?php the_field('sample_first_leg_button'); ?> Flight</a></button></div><!--/.sample-flight-->
+					
+					<?php if ( in_category('free') ): ?> 
+						<div class="sample-flight"><button><a href="<?php the_field('sample_first_leg'); ?>" target="_blank">Sample Tampa To <?php the_field('sample_first_leg_button'); ?> Flight</a></button></div><!--/.sample-flight-->
+					<?php endif; ?>	
 			
 					
 					<?php if( get_field('book_second_leg') ): ?>
@@ -119,9 +121,16 @@ Template page for displaying single deal posts, both Premium and Free.
 					<?php endif; ?>
 				
 					
-					<?php if( get_field('sample_second_leg_button') ): ?>
-						<div class="sample-flight"><button><a href="<?php the_field('sample_second_leg'); ?>" target="_blank">Sample <?php the_field('sample_second_leg_button'); ?> Flight</a></button></div><!--/.sample-flight-->
-					<?php endif; ?>
+					<?php if ( in_category('free') ): ?> 
+						<?php if( get_field('sample_second_leg_button') ): ?>
+							<div class="sample-flight"><button><a href="<?php the_field('sample_second_leg'); ?>" target="_blank">Sample <?php the_field('sample_second_leg_button'); ?> Flight</a></button></div><!--/.sample-flight-->
+						<?php endif; ?>
+					
+					<?php else: ?>
+							
+							<div class="single-learn-premium"><button><a href="https://cheapflightsfomtampa.com/premium">Learn More About Premium</a></button></div>
+						
+					<?php endif; ?>	
 					
 					<div class="encourage-text">
 				

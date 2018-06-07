@@ -903,7 +903,6 @@ ul .faq-menu  {
 .excuse-copy {
 	padding: 100px 50px 50px;
 	text-align: left;
-	font-size: 20px;
 	line-height: 1.65em;
 	color: $white;
 }
@@ -976,7 +975,6 @@ ul .faq-menu  {
     padding: 5% 5% 0 5%;
     height: 250px;
 	color: $white;
-	font-size: 20px;
 	line-height: 1.65em;
 }
 
@@ -992,7 +990,7 @@ ul .faq-menu  {
 }
 
 .premium-cta-title {
-	font-size: 48px;
+	font-size: $h2;
 	font-weight: 900;
 	text-align: left;
 	color: #333;
@@ -1501,6 +1499,22 @@ div.closeexitpop{ /* Large x close button  */
 	
 	.excuse-copy {
 		padding: 50px 15px 50px;
+	}
+	
+	.recent-premium-title {
+	    padding: 50px 15px;	
+	}
+	
+	.reasons {
+		padding: 50px 0;
+	}
+	
+	.reasons-title {
+		padding: 50px 15px 25px;
+	}
+	
+	.reasons-subtitle {
+		padding: 0 15px 25px
 	}
 	
 	.option-copy {

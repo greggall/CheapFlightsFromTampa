@@ -8681,8 +8681,13 @@ button a, .blog button a, button a:hover {
   color: #ffffff;
 }
 
+/* line 40, sass/_partials/_buttons.scss */
+.single-learn-premium {
+  text-align: center;
+}
+
 /* Mailchimp button */
-/* line 41, sass/_partials/_buttons.scss */
+/* line 45, sass/_partials/_buttons.scss */
 #mc_embed_signup input.email {
   margin: 0 auto 10px !important;
   min-height: 50px !important;
@@ -8692,22 +8697,22 @@ button a, .blog button a, button a:hover {
   width: 80% !important;
 }
 
-/* line 50, sass/_partials/_buttons.scss */
+/* line 54, sass/_partials/_buttons.scss */
 .single #mc_embed_signup input.email {
   width: 100% !important;
 }
 
-/* line 54, sass/_partials/_buttons.scss */
+/* line 58, sass/_partials/_buttons.scss */
 #placeholder {
   color: #222 !important;
 }
 
-/* line 58, sass/_partials/_buttons.scss */
+/* line 62, sass/_partials/_buttons.scss */
 #mc_embed_signup form {
   text-align: center !important;
 }
 
-/* line 62, sass/_partials/_buttons.scss */
+/* line 66, sass/_partials/_buttons.scss */
 #mc-embedded-subscribe {
   border: 5px solid #4CAF50 !important;
   padding: 10px !important;
@@ -8724,24 +8729,24 @@ button a, .blog button a, button a:hover {
   transition: all 0.2s ease;
 }
 
-/* line 75, sass/_partials/_buttons.scss */
+/* line 79, sass/_partials/_buttons.scss */
 .about-sign-up #mc-embedded-subscribe {
   width: 80% !important;
 }
 
-/* line 79, sass/_partials/_buttons.scss */
+/* line 83, sass/_partials/_buttons.scss */
 .view-recent-deals button {
   width: 300px;
 }
 
-/* line 83, sass/_partials/_buttons.scss */
+/* line 87, sass/_partials/_buttons.scss */
 #mc-embedded-subscribe:hover {
   background: #4CAF50 !important;
   border: 5px solid #4CAF50 !important;
 }
 
 /* MemberPress button */
-/* line 89, sass/_partials/_buttons.scss */
+/* line 93, sass/_partials/_buttons.scss */
 .mepr-submit {
   border: 5px solid #1976D2;
   padding: 10px;
@@ -8759,19 +8764,19 @@ button a, .blog button a, button a:hover {
   transition: all 0.2s ease;
 }
 
-/* line 103, sass/_partials/_buttons.scss */
+/* line 107, sass/_partials/_buttons.scss */
 .mepr-submit:hover {
   background: #1976D2;
   border: 5px solid #1976D2;
 }
 
 @media (max-width: 992px) {
-  /* line 109, sass/_partials/_buttons.scss */
+  /* line 113, sass/_partials/_buttons.scss */
   #mc_embed_signup input.email {
     width: 100% !important;
   }
 
-  /* line 113, sass/_partials/_buttons.scss */
+  /* line 117, sass/_partials/_buttons.scss */
   #mc-embedded-subscribe {
     width: 100% !important;
   }
@@ -9801,28 +9806,27 @@ ul .faq-menu {
 .excuse-copy {
   padding: 100px 50px 50px;
   text-align: left;
-  font-size: 20px;
   line-height: 1.65em;
   color: #ffffff;
 }
 
-/* line 911, sass/style.scss */
+/* line 910, sass/style.scss */
 .premium-recent-deal {
   font-size: 24px;
 }
 
-/* line 916, sass/style.scss */
+/* line 915, sass/style.scss */
 .premium-post-wrapper {
   padding: 100px 0 50px;
   min-height: 400px;
 }
 
-/* line 922, sass/style.scss */
+/* line 921, sass/style.scss */
 .premium-normal-price {
   font-size: 14px;
 }
 
-/* line 927, sass/style.scss */
+/* line 926, sass/style.scss */
 .premium-jump button {
   width: 60%;
   margin-top: 50px;
@@ -9840,7 +9844,7 @@ ul .faq-menu {
   transition: all 0.2s ease;
 }
 
-/* line 942, sass/style.scss */
+/* line 941, sass/style.scss */
 .premium-jump-text {
   font-size: 36px;
   color: #324B5A;
@@ -9848,13 +9852,13 @@ ul .faq-menu {
   margin-top: 50px;
 }
 
-/* line 949, sass/style.scss */
+/* line 948, sass/style.scss */
 .premium-jump button:hover {
   background: #4CAF50;
   border: 5px solid #4CAF50;
 }
 
-/* line 954, sass/style.scss */
+/* line 953, sass/style.scss */
 .reasons-title {
   font-size: 36px;
   font-weight: 900;
@@ -9862,7 +9866,7 @@ ul .faq-menu {
   padding: 50px 15% 25px;
 }
 
-/* line 961, sass/style.scss */
+/* line 960, sass/style.scss */
 .reasons-subtitle {
   font-size: 18px;
   line-height: 1.5em;
@@ -9871,38 +9875,37 @@ ul .faq-menu {
   margin: 0 auto;
 }
 
-/* line 969, sass/style.scss */
+/* line 968, sass/style.scss */
 .recent-premium-title {
   font-size: 36px;
   font-weight: 900;
   padding: 50px 10%;
 }
 
-/* line 975, sass/style.scss */
+/* line 974, sass/style.scss */
 .reason {
   padding: 5% 5% 0 5%;
   height: 250px;
   color: #ffffff;
-  font-size: 20px;
   line-height: 1.65em;
 }
 
-/* line 983, sass/style.scss */
+/* line 981, sass/style.scss */
 .premium-page .post-wrapper.recent-deal, .premium-page .post-wrapper.premium-recent-deal, .premium-page .premium-recent-deal.premium-post-wrapper, .premium-page .recent-deal.premium-post-wrapper {
   font-weight: 900;
   height: 100px;
 }
 
-/* line 988, sass/style.scss */
+/* line 986, sass/style.scss */
 .premium-cta {
   background-color: #4CAF50;
   padding: 50px;
   color: #ffffff;
 }
 
-/* line 994, sass/style.scss */
+/* line 992, sass/style.scss */
 .premium-cta-title {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 900;
   text-align: left;
   color: #333;
@@ -9911,7 +9914,7 @@ ul .faq-menu {
   color: #ffffff;
 }
 
-/* line 1004, sass/style.scss */
+/* line 1002, sass/style.scss */
 .premium-cta-subtitle {
   text-align: left;
   padding: 15px 0;
@@ -9919,51 +9922,51 @@ ul .faq-menu {
   color: #ffffff;
 }
 
-/* line 1011, sass/style.scss */
+/* line 1009, sass/style.scss */
 .benefits-premium-cta {
   text-align: left;
 }
 
-/* line 1015, sass/style.scss */
+/* line 1013, sass/style.scss */
 .benefits-premium-cta p {
   margin-bottom: 10px;
   color: #ffffff;
 }
 
-/* line 1020, sass/style.scss */
+/* line 1018, sass/style.scss */
 .benefits-premium-cta p:before {
   content: "> ";
 }
 
-/* line 1024, sass/style.scss */
+/* line 1022, sass/style.scss */
 .feature-premium-cta p:before {
   content: "> ";
 }
 
-/* line 1028, sass/style.scss */
+/* line 1026, sass/style.scss */
 .three-dollars-reg {
   padding-top: 10px;
 }
 
-/* line 1032, sass/style.scss */
+/* line 1030, sass/style.scss */
 .prices-wrapper {
   margin-top: -50px;
   margin-bottom: 50px;
 }
 
-/* line 1037, sass/style.scss */
+/* line 1035, sass/style.scss */
 .prices-title {
   padding-bottom: 10px;
 }
 
-/* line 1041, sass/style.scss */
+/* line 1039, sass/style.scss */
 .prices-subtitle {
   font-size: 20px;
   margin-bottom: 0px;
   padding: 25px 50px 25px;
 }
 
-/* line 1047, sass/style.scss */
+/* line 1045, sass/style.scss */
 .prices-button {
   background-color: #4CAF50;
   margin-top: 0;
@@ -9976,12 +9979,12 @@ ul .faq-menu {
   transition: all 0.2s ease;
 }
 
-/* line 1056, sass/style.scss */
+/* line 1054, sass/style.scss */
 .prices-button:hover {
   transform: translate(0px, -2px);
 }
 
-/* line 1060, sass/style.scss */
+/* line 1058, sass/style.scss */
 .lead-sign-up-button:after {
   border-bottom: 11px solid #2d682f;
   content: "";
@@ -9996,7 +9999,7 @@ ul .faq-menu {
   margin: 0 auto;
 }
 
-/* line 1074, sass/style.scss */
+/* line 1072, sass/style.scss */
 .sign-up-button {
   background-color: #4CAF50;
   margin-top: 0;
@@ -10009,12 +10012,12 @@ ul .faq-menu {
   transition: all 0.2s ease;
 }
 
-/* line 1083, sass/style.scss */
+/* line 1081, sass/style.scss */
 .sign-up-button:hover {
   transform: translate(0px, -2px);
 }
 
-/* line 1087, sass/style.scss */
+/* line 1085, sass/style.scss */
 .sign-up:after {
   border-bottom: 11px solid #2d682f;
   content: "";
@@ -10029,35 +10032,35 @@ ul .faq-menu {
   margin: 0 auto;
 }
 
-/* line 1101, sass/style.scss */
+/* line 1099, sass/style.scss */
 .secure {
   font-size: 12px;
   margin-top: 5px;
 }
 
-/* line 1106, sass/style.scss */
+/* line 1104, sass/style.scss */
 .free-title {
   padding-bottom: 15px;
 }
 
-/* line 1110, sass/style.scss */
+/* line 1108, sass/style.scss */
 .free-subtitle {
   margin-bottom: 25px;
   padding: 0 15%;
 }
 
-/* line 1115, sass/style.scss */
+/* line 1113, sass/style.scss */
 .premium-page input[type=email] {
   border: 10px solid #efefef;
 }
 
-/* line 1119, sass/style.scss */
+/* line 1117, sass/style.scss */
 .premium-page .text-input:after {
   border-bottom: none;
 }
 
 /* Override default Stripe button styles */
-/* line 1124, sass/style.scss */
+/* line 1122, sass/style.scss */
 .stripe-button-el {
   float: right;
   margin: 0;
@@ -10066,7 +10069,7 @@ ul .faq-menu {
   box-shadow: none !important;
 }
 
-/* line 1132, sass/style.scss */
+/* line 1130, sass/style.scss */
 .stripe-button-el span {
   display: block !important;
   min-height: 30px !important;
@@ -10082,81 +10085,81 @@ ul .faq-menu {
   text-shadow: none !important;
 }
 
-/* line 1156, sass/style.scss */
+/* line 1154, sass/style.scss */
 .thank-you-subtitle {
   color: #ffffff;
   font-size: 24px;
   font-style: italic;
 }
 
-/* line 1162, sass/style.scss */
+/* line 1160, sass/style.scss */
 .expect-title, .share-title {
   font-size: 24px;
   margin-bottom: 25px;
 }
 
-/* line 1167, sass/style.scss */
+/* line 1165, sass/style.scss */
 .final-thanks {
   margin: 50px 0 0 0;
   font-size: 36px;
 }
 
-/* line 1173, sass/style.scss */
+/* line 1171, sass/style.scss */
 .postid-415 .hero {
   padding-bottom: 50px;
 }
 
-/* line 1177, sass/style.scss */
+/* line 1175, sass/style.scss */
 .postid-416 .hero {
   padding-bottom: 50px;
 }
 
-/* line 1181, sass/style.scss */
+/* line 1179, sass/style.scss */
 .postid-417 .hero {
   padding-bottom: 50px;
 }
 
-/* line 1185, sass/style.scss */
+/* line 1183, sass/style.scss */
 .mepr_spacer {
   margin-top: -20px;
 }
 
-/* line 1189, sass/style.scss */
+/* line 1187, sass/style.scss */
 .single-memberpressproduct button:after {
   display: none;
 }
 
-/* line 1193, sass/style.scss */
+/* line 1191, sass/style.scss */
 .postid-417 button:after {
   display: none;
 }
 
-/* line 1197, sass/style.scss */
+/* line 1195, sass/style.scss */
 .single-memberpressproduct .last-resort:after {
   display: none;
 }
 
-/* line 1201, sass/style.scss */
+/* line 1199, sass/style.scss */
 .single-memberpressproduct .mepr_payment_method {
   display: none;
 }
 
-/* line 1205, sass/style.scss */
+/* line 1203, sass/style.scss */
 .single-memberpressproduct .mepr_price {
   display: none;
 }
 
-/* line 1220, sass/style.scss */
+/* line 1218, sass/style.scss */
 footer {
   background-color: #efefef;
 }
 
-/* line 1224, sass/style.scss */
+/* line 1222, sass/style.scss */
 .home footer {
   background-color: #ffffff;
 }
 
-/* line 1228, sass/style.scss */
+/* line 1226, sass/style.scss */
 .footer-cta {
   color: #ffffff;
   font-size: 61px;
@@ -10164,7 +10167,7 @@ footer {
   margin-bottom: 25px;
 }
 
-/* line 1235, sass/style.scss */
+/* line 1233, sass/style.scss */
 .footer-subtitle {
   font-size: 36px;
   font-family: "Nunito Sans", HelveticaNeue, Arial, sans-serif;
@@ -10172,34 +10175,34 @@ footer {
   line-height: 49px;
 }
 
-/* line 1242, sass/style.scss */
+/* line 1240, sass/style.scss */
 .footer-logo {
   width: 300px;
   margin: 15px 0 40px;
 }
 
-/* line 1247, sass/style.scss */
+/* line 1245, sass/style.scss */
 .social-media-menu {
   margin: 20px 0 50px;
 }
 
-/* line 1251, sass/style.scss */
+/* line 1249, sass/style.scss */
 .social-media-menu li {
   display: inline;
   padding: 0 5px;
 }
 
-/* line 1256, sass/style.scss */
+/* line 1254, sass/style.scss */
 .social-media-menu li a:hover {
   text-decoration: none;
 }
 
-/* line 1260, sass/style.scss */
+/* line 1258, sass/style.scss */
 .social-media-menu li img {
   width: 45px;
 }
 
-/* line 1264, sass/style.scss */
+/* line 1262, sass/style.scss */
 .footer-nav {
   background-color: #324B5A;
   padding: 50px 0 25px;
@@ -10207,75 +10210,75 @@ footer {
   margin-top: 50px;
 }
 
-/* line 1271, sass/style.scss */
+/* line 1269, sass/style.scss */
 #menu-legal {
   padding-left: 0;
   text-align: center;
 }
 
-/* line 1276, sass/style.scss */
+/* line 1274, sass/style.scss */
 #menu-legal li {
   display: inline-block;
   font-size: 18px;
 }
 
-/* line 1281, sass/style.scss */
+/* line 1279, sass/style.scss */
 #menu-legal li a {
   color: #ffffff;
 }
 
-/* line 1285, sass/style.scss */
+/* line 1283, sass/style.scss */
 #menu-legal li:after {
   content: "|";
   padding: 0px 15px;
   margin-right: -7px;
 }
 
-/* line 1291, sass/style.scss */
+/* line 1289, sass/style.scss */
 #menu-legal li:last-child:after {
   content: "";
   padding: 0px 4px;
   margin-right: -7px;
 }
 
-/* line 1297, sass/style.scss */
+/* line 1295, sass/style.scss */
 #menu-footer-menu {
   padding-left: 0;
   text-align: center;
   margin-bottom: 10px;
 }
 
-/* line 1303, sass/style.scss */
+/* line 1301, sass/style.scss */
 #menu-footer-menu li {
   display: inline-block;
   font-size: 24px;
 }
 
-/* line 1308, sass/style.scss */
+/* line 1306, sass/style.scss */
 #menu-footer-menu li a {
   color: #ffffff;
 }
 
-/* line 1312, sass/style.scss */
+/* line 1310, sass/style.scss */
 #menu-footer-menu li:after {
   content: "|";
   padding: 0px 15px;
   margin-right: -7px;
 }
 
-/* line 1318, sass/style.scss */
+/* line 1316, sass/style.scss */
 #menu-footer-menu li:last-child:after {
   content: "";
   padding: 0px;
   margin-right: -7px;
 }
 
-/* line 1324, sass/style.scss */
+/* line 1322, sass/style.scss */
 .copyright {
   margin-bottom: 0;
 }
 
-/* line 1332, sass/style.scss */
+/* line 1330, sass/style.scss */
 #ddexitpopwrapper {
   /* dynamically generated wrapper DIV that surrounds exit pop content DIV */
   display: flex;
@@ -10290,7 +10293,7 @@ footer {
   justify-content: center;
 }
 
-/* line 1345, sass/style.scss */
+/* line 1343, sass/style.scss */
 #ddexitpopwrapper .veil {
   /* dynamically generated "overlay" DIV that covers entire window when pop up is shown */
   left: 0;
@@ -10305,7 +10308,7 @@ footer {
   cursor: default;
 }
 
-/* line 1359, sass/style.scss */
+/* line 1357, sass/style.scss */
 .ddexitpop {
   /* user defined exit popup DIV style */
   width: 90%;
@@ -10329,7 +10332,7 @@ footer {
   visibility: hidden;
 }
 
-/* line 1380, sass/style.scss */
+/* line 1378, sass/style.scss */
 .ddexitpop .calltoaction {
   /* demo button style */
   display: inline-block;
@@ -10346,7 +10349,7 @@ footer {
   color: white !important;
 }
 
-/* line 1396, sass/style.scss */
+/* line 1394, sass/style.scss */
 div.closeexitpop {
   /* Large x close button  */
   width: 70px;
@@ -10361,23 +10364,23 @@ div.closeexitpop {
   right: 10px;
 }
 
-/* line 1410, sass/style.scss */
+/* line 1408, sass/style.scss */
 #ddexitpopwrapper.open {
   pointer-events: auto;
 }
 
-/* line 1414, sass/style.scss */
+/* line 1412, sass/style.scss */
 #ddexitpopwrapper.open .veil {
   /* style of veil when exit pop is open */
   display: block;
 }
 
-/* line 1418, sass/style.scss */
+/* line 1416, sass/style.scss */
 #ddexitpopwrapper.open div.closeexitpop {
   display: block;
 }
 
-/* line 1422, sass/style.scss */
+/* line 1420, sass/style.scss */
 #ddexitpopwrapper.open .ddexitpop {
   /* style of exit pop content DIV when exit pop is open */
   visibility: visible;
@@ -10385,7 +10388,7 @@ div.closeexitpop {
 
 /* #### CSS that's applied when the viewing area's height is 765px or less #### */
 @media screen and (max-height: 765px) {
-  /* line 1430, sass/style.scss */
+  /* line 1428, sass/style.scss */
   .ddexitpop {
     top: 0;
     /* don't shift exit pop up upwards 100px on screens that aren't very tall */
@@ -10393,126 +10396,146 @@ div.closeexitpop {
 }
 /* Small devices (tablets, 768px and down) */
 @media (max-width: 767px) {
-  /* line 1444, sass/style.scss */
+  /* line 1442, sass/style.scss */
   .title {
     font-size: 36px;
     line-height: 41px;
   }
 
-  /* line 1449, sass/style.scss */
+  /* line 1447, sass/style.scss */
   .welcome-text {
     font-size: 36px;
     line-height: 48px;
   }
 
-  /* line 1454, sass/style.scss */
+  /* line 1452, sass/style.scss */
   .recent-deal, .home .recent-deal, .premium-recent-deal {
     font-size: 36px;
   }
 
-  /* line 1458, sass/style.scss */
+  /* line 1456, sass/style.scss */
   .navbar-brand > img {
     margin: 0 auto;
   }
 
-  /* line 1463, sass/style.scss */
+  /* line 1461, sass/style.scss */
   .login-button {
     display: none;
   }
 
-  /* line 1467, sass/style.scss */
+  /* line 1465, sass/style.scss */
   .icon {
     width: 125px;
     height: 100px;
   }
 
-  /* line 1472, sass/style.scss */
+  /* line 1470, sass/style.scss */
   .triangle-icon {
     width: 20px;
     height: 28px;
   }
 
-  /* line 1477, sass/style.scss */
+  /* line 1475, sass/style.scss */
   .post-wrapper, .premium-post-wrapper {
     width: 100%;
   }
 
-  /* line 1481, sass/style.scss */
+  /* line 1479, sass/style.scss */
   .deals-signup-title {
     font-size: 36px;
     line-height: 61px;
   }
 
-  /* line 1486, sass/style.scss */
+  /* line 1484, sass/style.scss */
   .faq-body {
     padding: 0 50px;
   }
 
-  /* line 1490, sass/style.scss */
+  /* line 1488, sass/style.scss */
   .excuse-title {
     padding: 50px 15px 50px;
   }
 
-  /* line 1494, sass/style.scss */
+  /* line 1492, sass/style.scss */
   .block-1-title {
     background-color: #3d8b40;
   }
 
-  /* line 1498, sass/style.scss */
+  /* line 1496, sass/style.scss */
   .block-2-title {
     background-color: #145ca4;
   }
 
-  /* line 1502, sass/style.scss */
+  /* line 1500, sass/style.scss */
   .excuse-copy {
     padding: 50px 15px 50px;
   }
 
-  /* line 1506, sass/style.scss */
+  /* line 1504, sass/style.scss */
+  .recent-premium-title {
+    padding: 50px 15px;
+  }
+
+  /* line 1508, sass/style.scss */
+  .reasons {
+    padding: 50px 0;
+  }
+
+  /* line 1512, sass/style.scss */
+  .reasons-title {
+    padding: 50px 15px 25px;
+  }
+
+  /* line 1516, sass/style.scss */
+  .reasons-subtitle {
+    padding: 0 15px 25px;
+  }
+
+  /* line 1520, sass/style.scss */
   .option-copy {
     padding: 75px 15px 50px;
   }
 
-  /* line 1510, sass/style.scss */
+  /* line 1524, sass/style.scss */
   .premium-cta {
     padding: 15px;
     padding-bottom: 50px;
   }
 
-  /* line 1515, sass/style.scss */
+  /* line 1529, sass/style.scss */
   .premium-cta-title {
     padding-top: 50px;
   }
 
-  /* line 1519, sass/style.scss */
+  /* line 1533, sass/style.scss */
   .footer-cta {
     font-size: 36px;
     line-height: 61px;
   }
 
-  /* line 1524, sass/style.scss */
+  /* line 1538, sass/style.scss */
   #menu-footer-menu {
     margin-bottom: 45px;
   }
 
-  /* line 1528, sass/style.scss */
+  /* line 1542, sass/style.scss */
   .footer-subtitle {
     font-size: 24px;
     line-height: 41px;
   }
 
-  /* line 1533, sass/style.scss */
+  /* line 1547, sass/style.scss */
   .carousel-caption {
     margin-left: auto;
   }
 
-  /* line 1537, sass/style.scss */
+  /* line 1551, sass/style.scss */
   .carousel-icon {
     margin-left: auto;
   }
 
   /* Single Deal */
-  /* line 1542, sass/style.scss */
+  /* line 1556, sass/style.scss */
   .single-deal-title {
     font-size: 36px;
     padding: 10px 0;
@@ -10522,23 +10545,23 @@ div.closeexitpop {
 /* Medium devices (desktops, 992px and up) */
 @media (max-width: 1000px) {
   /* Change Nav breakpoint */
-  /* line 1560, sass/style.scss */
+  /* line 1574, sass/style.scss */
   .navbar-header {
     float: none;
   }
 
-  /* line 1564, sass/style.scss */
+  /* line 1578, sass/style.scss */
   .navbar-toggle {
     display: block;
   }
 
-  /* line 1568, sass/style.scss */
+  /* line 1582, sass/style.scss */
   .navbar-collapse {
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  /* line 1573, sass/style.scss */
+  /* line 1587, sass/style.scss */
   .navbar-collapse.collapse {
     display: none !important;
     background-color: #fafafa;
@@ -10546,7 +10569,7 @@ div.closeexitpop {
     z-index: 1;
   }
 
-  /* line 1580, sass/style.scss */
+  /* line 1594, sass/style.scss */
   .navbar-collapse.collapse.in {
     display: block !important;
     text-align: center;
@@ -10555,24 +10578,24 @@ div.closeexitpop {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   }
 
-  /* line 1586, sass/style.scss */
+  /* line 1600, sass/style.scss */
   .navbar-nav {
     float: none !important;
     margin: 7.5px -15px;
   }
 
-  /* line 1591, sass/style.scss */
+  /* line 1605, sass/style.scss */
   .navbar-nav > li {
     float: none;
   }
 
-  /* line 1595, sass/style.scss */
+  /* line 1609, sass/style.scss */
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  /* line 1600, sass/style.scss */
+  /* line 1614, sass/style.scss */
   .navbar-form {
     padding: 10px 15px;
     margin-top: 8px;
@@ -10587,7 +10610,7 @@ div.closeexitpop {
     float: none !important;
   }
 
-  /* line 1614, sass/style.scss */
+  /* line 1628, sass/style.scss */
   .navbar-default .navbar-nav > li > a {
     color: #324B5A;
     padding: 35px;
@@ -10595,12 +10618,12 @@ div.closeexitpop {
     margin: auto 20%;
   }
 
-  /* line 1621, sass/style.scss */
+  /* line 1635, sass/style.scss */
   .navbar-default .navbar-nav > li:last-child > a {
     border-bottom: none;
   }
 
-  /* line 1625, sass/style.scss */
+  /* line 1639, sass/style.scss */
   #menu-header {
     position: relative;
     z-index: 1;
@@ -10610,12 +10633,12 @@ div.closeexitpop {
     text-align: center;
   }
 
-  /* line 1634, sass/style.scss */
+  /* line 1648, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) {
     background-color: #4CAF50;
   }
 
-  /* line 1638, sass/style.scss */
+  /* line 1652, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) a {
     color: #ffffff;
     font-weight: 900;
@@ -10623,58 +10646,58 @@ div.closeexitpop {
   }
 
   /*Single Deal Page*/
-  /* line 1645, sass/style.scss */
+  /* line 1659, sass/style.scss */
   .premium-alert-img {
     text-align: center;
     padding-bottom: 30px;
   }
 
-  /* line 1650, sass/style.scss */
+  /* line 1664, sass/style.scss */
   .single .premium-badge {
     top: -45px;
     right: 45px;
   }
 
-  /* line 1655, sass/style.scss */
+  /* line 1669, sass/style.scss */
   .single .premium-badge img {
     width: 80px;
   }
 
-  /* line 1659, sass/style.scss */
+  /* line 1673, sass/style.scss */
   .single-deal {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 1664, sass/style.scss */
+  /* line 1678, sass/style.scss */
   .main {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 1669, sass/style.scss */
+  /* line 1683, sass/style.scss */
   .sidebar {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 1674, sass/style.scss */
+  /* line 1688, sass/style.scss */
   .logo {
     width: 200px;
   }
 
-  /* line 1678, sass/style.scss */
+  /* line 1692, sass/style.scss */
   .navbar-brand {
     margin-top: 4px;
   }
 
-  /* line 1682, sass/style.scss */
+  /* line 1696, sass/style.scss */
   .navbar-default .navbar-nav > li > a:focus {
     color: #324B5A;
   }
 }
 @media (min-width: 1000px) {
-  /* line 1688, sass/style.scss */
+  /* line 1702, sass/style.scss */
   .navbar-default .navbar-nav > li > a::after {
     position: absolute;
     top: 100%;
@@ -10694,13 +10717,13 @@ div.closeexitpop {
     margin: 0;
   }
 
-  /* line 1704, sass/style.scss */
+  /* line 1718, sass/style.scss */
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
     background-color: transparent;
     color: #efefef;
   }
 
-  /* line 1709, sass/style.scss */
+  /* line 1723, sass/style.scss */
   .navbar-default .navbar-nav > li > a:hover::after {
     opacity: 1;
     -webkit-transform: translateY(0px);
@@ -10708,19 +10731,19 @@ div.closeexitpop {
     transform: translateY(0px);
   }
 
-  /* line 1716, sass/style.scss */
+  /* line 1730, sass/style.scss */
   .navbar-default .navbar-nav > li > a:hover {
     color: #efefef;
   }
 
-  /* line 1720, sass/style.scss */
+  /* line 1734, sass/style.scss */
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
     color: #ffffff;
     background-color: transparent;
     border-bottom: 2px solid #efefef;
   }
 
-  /* line 1726, sass/style.scss */
+  /* line 1740, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) {
     background-color: #4CAF50;
     color: #ffffff;
@@ -10729,17 +10752,17 @@ div.closeexitpop {
     border-radius: 5px;
   }
 
-  /* line 1734, sass/style.scss */
+  /* line 1748, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) a:hover {
     background-color: #6ec071;
   }
 
-  /* line 1738, sass/style.scss */
+  /* line 1752, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) a:hover::after {
     opacity: 0;
   }
 
-  /* line 1742, sass/style.scss */
+  /* line 1756, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) > a, .navbar-default .navbar-nav > li:nth-child(5) > a:focus {
     border-bottom: none;
     background-color: #6ec071;

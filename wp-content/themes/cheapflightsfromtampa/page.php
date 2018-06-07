@@ -418,7 +418,7 @@
 
 				</div><!--/.col-md-6-->
 
-				<div class="col-md-6" style="background-color: <?php the_sub_field('copy_background_color'); ?>; min-height: 700px">
+				<div class="col-md-6" style="background-color: <?php the_sub_field('copy_background_color'); ?>;">
 
 					<div class="excuse-copy"><?php the_sub_field('copy'); ?></div>
 
@@ -499,7 +499,7 @@
 
 				</div><!--/.col-md-6-->
 
-				<div class="col-md-6" style="background-color: <?php the_sub_field('copy_background_color'); ?>; min-height: 900px">
+				<div class="col-md-6" style="background-color: <?php the_sub_field('copy_background_color'); ?>;">
 
 					<div class="excuse-copy"><?php the_sub_field('copy'); ?></div>
 
@@ -589,7 +589,7 @@
 
 				</div><!--/.col-md-12-->
 
-				<div class="col-md-12" style="background: linear-gradient( <?php the_sub_field('background_color')?>, <?php the_sub_field('background_color')?> ), url('<?php echo $background_image_reason['url']; ?>'); background-size: cover;" alt="<?php echo $image['alt']; ?>">
+				<div class="col-md-12 reasons" style="background: linear-gradient( <?php the_sub_field('background_color')?>, <?php the_sub_field('background_color')?> ), url('<?php echo $background_image_reason['url']; ?>'); background-size: cover;" alt="<?php echo $image['alt']; ?>">
 
 					  <div class="col-md-6 reason">
 					  	<?php the_sub_field('reason_one'); ?>
