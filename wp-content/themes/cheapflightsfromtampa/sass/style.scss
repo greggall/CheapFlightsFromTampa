@@ -49,6 +49,26 @@ h3 {
 	font-size: $h3;
 }
 
+/* Notification Bar */
+.notification-bar {
+	background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+	z-index: 99;
+	width: 100%;
+	@include shadow($x, $y, $blur, $color);	
+}
+
+.notification-bar p {
+	margin-bottom: 0;
+}
+
+.sticky {
+	position: fixed;
+}
+
 .hero {
 	background-size: cover !important;
 	padding: 175px 15px 100px;

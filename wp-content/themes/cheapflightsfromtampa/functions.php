@@ -136,6 +136,18 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+// Add Notification Bar Options page
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Notification Bar',
+		'menu_title'	=> 'Notification Bar',
+		'menu_slug' 	=> 'notification-bar',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}
+
 // Remove url and email fields from comments form
 function alter_comment_form_fields($fields){
     $fields['email'] = '';  //removes email field

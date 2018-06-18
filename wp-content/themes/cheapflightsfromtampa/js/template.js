@@ -42,7 +42,17 @@
 	
 	$(document).ready(function(){		
 			
-					
+		$(window).scroll(function() {    
+		    var scroll = $(window).scrollTop();
+
+		     //>=, not <=
+		    if (scroll > 0) {
+		        //clearHeader, not clearheader - caps H
+		        $(".notification-bar").addClass("sticky");
+		    } else {
+		    	$(".notification-bar").removeClass("sticky");
+		    }
+		}); 			
 	});
 	
 	$(document).ready(function(){		
@@ -71,6 +81,12 @@
 
 		
 					
+	});
+	
+	$(document).ready(function(){
+			
+		
+			
 	});
 	
 	$(document).ready(function(){

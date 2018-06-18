@@ -169,6 +169,16 @@
 			Use coupon code UPGRADE to save 30% off a Premium subscription! <a href="https://cheapflightsfromtampa.com/premium/" style="font-weight: bold">Sign Up Here!</a>
 			
 	  </div>--><!--/.coming-soon-wrapper-->
+	
+	  <?php if( get_field('text', 'options') ): ?>
+	  
+	  <div class="notification-bar" id="notification-bar">
+	  	
+		<?php the_field('text', 'options'); ?>
+		
+	  </div><!--/.notification-bar-->
+	  
+	  <?php endif; ?>	
 	  
 	  <nav class="navbar navbar-default">
 	    <div class="container-fluid">
