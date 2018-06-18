@@ -1524,8 +1524,8 @@ div.closeexitpop{ /* Large x close button  */
 	}
 	
 	.wrapper {
-		padding-left: 0;
-		padding-right: 0;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 	
 	.about-title {
@@ -1805,6 +1805,12 @@ div.closeexitpop{ /* Large x close button  */
 	
 	.navbar-default .navbar-nav > li > a:focus {
 		color: $secondary-dark-blue;
+	}
+	
+	/* About */
+	.team-member {
+		width: auto;
+		height: auto;
 	}
 }
 

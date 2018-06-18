@@ -334,16 +334,16 @@ Template page for displaying single deal posts, both Premium and Free.
 			
 		</div><!--/.col-md-12-->
 		
-		<div id="ddexitpop1" class="ddexitpop">
+		<!--<div id="ddexitpop1" class="ddexitpop">
 			
 			<div class="closeexitpop"></div>
 	
-	    	<h1><?php the_field('popup_title', 'option'); ?></h1>
-			<div class="popup-content"><?php the_field('popup_content', 'option')?></div>
+	    	<h1><?php //the_field('popup_title', 'option'); ?></h1>
+			<div class="popup-content"><?php //the_field('popup_content', 'option')?></div>
 	    	
-	    	<div class="popup three-dollars-reg"><?php the_field('sign_up', 'option'); ?></div>
+	    	<div class="popup three-dollars-reg"><?php //the_field('sign_up', 'option'); ?></div>
 			
-		</div>
+		</div>-->
 		
 	</div><!--/.row-->
 	

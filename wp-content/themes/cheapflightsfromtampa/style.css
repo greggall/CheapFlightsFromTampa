@@ -10564,8 +10564,8 @@ div.closeexitpop {
 
   /* line 1526, sass/style.scss */
   .wrapper, .premium-wrapper, .premium-wrapper-deals, .recent-deal-wrapper, .deal-wrapper, .widget {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   /* line 1531, sass/style.scss */
@@ -10892,9 +10892,16 @@ div.closeexitpop {
   .navbar-default .navbar-nav > li > a:focus {
     color: #324B5A;
   }
+
+  /* About */
+  /* line 1811, sass/style.scss */
+  .team-member {
+    width: auto;
+    height: auto;
+  }
 }
 @media (min-width: 1000px) {
-  /* line 1812, sass/style.scss */
+  /* line 1818, sass/style.scss */
   .navbar-default .navbar-nav > li > a::after {
     position: absolute;
     top: 100%;
@@ -10914,13 +10921,13 @@ div.closeexitpop {
     margin: 0;
   }
 
-  /* line 1828, sass/style.scss */
+  /* line 1834, sass/style.scss */
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
     background-color: transparent;
     color: #efefef;
   }
 
-  /* line 1833, sass/style.scss */
+  /* line 1839, sass/style.scss */
   .navbar-default .navbar-nav > li > a:hover::after {
     opacity: 1;
     -webkit-transform: translateY(0px);
@@ -10928,19 +10935,19 @@ div.closeexitpop {
     transform: translateY(0px);
   }
 
-  /* line 1840, sass/style.scss */
+  /* line 1846, sass/style.scss */
   .navbar-default .navbar-nav > li > a:hover {
     color: #efefef;
   }
 
-  /* line 1844, sass/style.scss */
+  /* line 1850, sass/style.scss */
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
     color: #ffffff;
     background-color: transparent;
     border-bottom: 2px solid #efefef;
   }
 
-  /* line 1850, sass/style.scss */
+  /* line 1856, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) {
     background-color: #4CAF50;
     color: #ffffff;
@@ -10949,17 +10956,17 @@ div.closeexitpop {
     border-radius: 5px;
   }
 
-  /* line 1858, sass/style.scss */
+  /* line 1864, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) a:hover {
     background-color: #6ec071;
   }
 
-  /* line 1862, sass/style.scss */
+  /* line 1868, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) a:hover::after {
     opacity: 0;
   }
 
-  /* line 1866, sass/style.scss */
+  /* line 1872, sass/style.scss */
   .navbar-default .navbar-nav > li:nth-child(5) > a, .navbar-default .navbar-nav > li:nth-child(5) > a:focus {
     border-bottom: none;
     background-color: #6ec071;

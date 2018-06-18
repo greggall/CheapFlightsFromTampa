@@ -906,16 +906,16 @@
 
 	        </div><!--./free-wrapper-->
 			
-			<div id="ddexitpop1" class="ddexitpop">
+			<!--<div id="ddexitpop1" class="ddexitpop">
 				
 				<div class="closeexitpop">X</div>
 		
-		    	<h1><?php the_field('popup_title', 'option'); ?></h1>
-				<div class="popup-content"><?php the_field('popup_content', 'option')?></div>
+		    	<h1><?php //the_field('popup_title', 'option'); ?></h1>
+				<div class="popup-content"><?php //the_field('popup_content', 'option')?></div>
 		    	
-		    	<div class="popup three-dollars-reg"><?php the_field('three_dollar_register'); ?></div>
+		    	<div class="popup three-dollars-reg"><?php //the_field('three_dollar_register'); ?></div>
 				
-			</div>
+			</div>-->
 
 	    </div><!--/.row-->
 	  </div><!--/.container-fluid-->

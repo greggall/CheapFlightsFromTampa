@@ -159,16 +159,6 @@
   </head>
 
   <body <?php body_class(); ?>>
-	  
-	<!--  <div class="coming-soon-wrapper" style="background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;">
-	  	
-			Use coupon code UPGRADE to save 30% off a Premium subscription! <a href="https://cheapflightsfromtampa.com/premium/" style="font-weight: bold">Sign Up Here!</a>
-			
-	  </div>--><!--/.coming-soon-wrapper-->
 	
 	  <?php if( get_field('text', 'options') ): ?>
 	  
