@@ -42,12 +42,20 @@ function website_functionname() {
 	if (!is_admin()) {
 		wp_register_script('template.js', get_template_directory_uri() . '/js/template.js', array('jquery') );
 		wp_enqueue_script('template.js');
-		wp_register_script('ddexitpop.js', get_template_directory_uri() . '/js/ddexitpop.js', array('jquery') );
-		wp_enqueue_script('ddexitpop.js');
-		
 	}
 }
 add_action('init', 'website_functionname');
+
+// Add exit pop up js to premium page
+/*
+function exitpopup() {
+    if ( is_single() || is_page('premium') ) {	        
+   		wp_register_script('ddexitpop.js', get_template_directory_uri() . '/js/ddexitpop.js', array('jquery') );
+   		wp_enqueue_script('ddexitpop.js');
+	}	
+}
+add_action( 'wp_enqueue_scripts', 'exitpopup' );
+*/
 
 /**
  * Add a widget to the dashboard.
@@ -111,6 +119,18 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' 	=> 'Single Deal Post Funnel',
 		'menu_title'	=> 'Single Deal Post Funnel',
 		'menu_slug' 	=> 'single-deal-post-funnel',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}
+
+// Add Exit Popup Options page
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Exit Popup',
+		'menu_title'	=> 'Exit Popup',
+		'menu_slug' 	=> 'exit-popup',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));

@@ -41,6 +41,26 @@ button a, button a:hover {
 	text-align: center;
 }
 
+.premium-jump button {
+	width: 60%;
+	margin-top: 50px;
+	border: 5px solid $tertiary-green;
+	padding: 10px !important;
+	background: lighten($tertiary-green, 10%);	
+	color: $white !important;
+	border-radius: $base-border-radius;
+	margin: 15px 0px !important;
+	text-transform: uppercase;	
+	letter-spacing: 0.05em;
+	@include transition(all);
+	
+}
+
+.premium-jump button:hover {
+	background: $tertiary-green;	
+	border: 5px solid $tertiary-green;
+}
+
 /* Mailchimp button */
 #mc_embed_signup input.email {
 	margin: 0 auto 10px !important;
@@ -51,7 +71,21 @@ button a, button a:hover {
     width: 80% !important;
 }
 
+/*Single Mailchimp form*/
 .single #mc_embed_signup input.email {
+	width: 100% !important;
+}
+
+/* About page Mailchimp form */
+#mc_embed_signup input.about {
+    width: 100% !important;
+}
+
+.about-free-signup #mc_embed_signup form {
+	padding-left: 0 !important;
+}
+
+.about #mc-embedded-subscribe {
 	width: 100% !important;
 }
 
@@ -116,5 +150,9 @@ button a, button a:hover {
 	
 	#mc-embedded-subscribe {
 		width: 100% !important;
+	}
+	
+	.premium-jump button {
+		width: 100%;
 	}
 }

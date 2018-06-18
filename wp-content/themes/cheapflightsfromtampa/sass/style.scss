@@ -221,7 +221,7 @@ input[type=email] {
 
 .wrapper {
 	background-color: $secondary-grey;
-	padding: 50px 0;
+	padding: 50px;
 	margin-top: 50px;
 	@include shadow($x, $y, $blur, $color);
 	border-radius: 5px;
@@ -504,19 +504,88 @@ input[type=email] {
 }
 
 // About
-.about-intro-wrapper {
-	margin-top: -50px;
+.about-title {
+	font-size: $h2;
+	font-weight: $extra-weight;
+	text-align: center;
+	font-family: $base-font-family;
+}
+
+.about-subtitle {
+	font-size: $h3;
+	text-align: center;
+	font-family: $base-font-family;
+	line-height: 1.5em;
 	margin-bottom: 50px;
 }
 
-.about-intro {
-	font-size: $base-font-size;
-	line-height: $base-line-height;
+.about-image img {
+	margin-bottom: 25px;
 }
 
-.team-wrapper {
-	margin-bottom: 50px;
+.free-option-title {
+	text-align: center;
+	border: 5px solid $primary-grey;
+	padding: 25px 15px;	
+	margin-bottom: 0;	
 }
+
+.premium-option-title {
+	text-align: center;
+	border: 5px solid $tertiary-green;
+	padding: 25px 15px;
+	font-weight: $extra-weight;
+	margin-bottom: 0;	
+}
+
+.about-free-benefits {
+	border: 5px solid $primary-grey;
+	padding: 25px 15px 0;
+	border-top: none;
+}
+
+.about-premium-benefits {
+	border: 5px solid $tertiary-green;
+	padding: 25px 15px;
+	border-top: none;	
+}
+
+.about-benefits-list li {
+	margin-bottom: 10px;
+}
+
+.team-member {
+	padding: 5%;
+	text-align: center;
+	width: 45%;
+	margin: 2.5%;
+	border: 2px solid $primary-grey;
+	border-radius: 5px;
+	height: 650px;
+}
+
+.team-member img {
+	width: 250px;
+	border-radius: 100%;
+	border: 10px solid $secondary-dark-blue;
+	@include shadow($x, $y, $blur, $color);	
+}
+
+.team-member-name {
+	text-align: center;
+	font-weight: $extra-weight;
+}
+
+.team-member-job {
+	text-align: center;
+	font-style: italic;
+	margin-bottom: 25px;
+}
+
+.team-member-description {
+	text-align: left;
+}
+
 .curious-copy {
 	font-size: $base-font-size;
 }
@@ -888,6 +957,15 @@ ul .faq-menu  {
 }
 
 // Premium
+.prices-subtitle {
+	text-align: center;
+	padding: 30px;
+}
+
+.prices-subtitle h2 {
+	margin-bottom: 25px;
+}
+
 .block-1, .block-2 {
 	background-size: cover;
 }
@@ -923,21 +1001,6 @@ ul .faq-menu  {
 	font-size: 14px;
 }
 
-.premium-jump button {
-	width: 60%;
-	margin-top: 50px;
-	border: 5px solid $tertiary-green;
-	padding: 10px !important;
-	background: lighten($tertiary-green, 10%);	
-	color: $white !important;
-	border-radius: $base-border-radius;
-	margin: 15px 0px !important;
-	text-transform: uppercase;	
-	letter-spacing: 0.05em;
-	@include transition(all);
-	
-}
-
 .premium-jump-text {
 	font-size: $h2;
 	color: $secondary-dark-blue;
@@ -945,9 +1008,8 @@ ul .faq-menu  {
 	margin-top: 50px;
 }
 
-.premium-jump button:hover {
-	background: $tertiary-green;	
-	border: 5px solid $tertiary-green;
+.reasons {
+	padding: 25px;
 }
 
 .reasons-title {
@@ -972,7 +1034,7 @@ ul .faq-menu  {
 }
 
 .reason {
-    padding: 5% 5% 0 5%;
+    padding: 25px;
     height: 250px;
 	color: $white;
 	line-height: 1.65em;
@@ -1030,16 +1092,6 @@ ul .faq-menu  {
 .prices-wrapper {
 	margin-top: -50px;
 	margin-bottom: 50px;
-}
-
-.prices-title {
-	padding-bottom: 10px;
-}
-
-.prices-subtitle {
-	font-size: 20px;
-    margin-bottom: 0px;
-    padding: 25px 50px 25px;
 }
 
 .prices-button {
@@ -1107,7 +1159,7 @@ ul .faq-menu  {
 
 .free-subtitle {
 	margin-bottom: 25px;
-	padding: 0 15%;
+	padding: 0 30px 0;
 }
 
 .premium-page input[type=email] {
@@ -1323,10 +1375,7 @@ footer {
 	margin-bottom: 0;
 }
 
-
-
-
-
+// Exit Popup
 #ddexitpopwrapper { /* dynamically generated wrapper DIV that surrounds exit pop content DIV */
     display: flex;
     position: fixed;
@@ -1335,7 +1384,7 @@ footer {
     width: 100%;
     height: 100%;
     z-index: 1000;
-		pointer-events: none;
+	pointer-events: none;
     align-items: center;
     justify-content: center;
 }
@@ -1346,7 +1395,7 @@ footer {
     width: 100%;
     height: 100%;
     position: fixed;
-    background-color: rgba(0,0,0,.7);
+    background-color: $primary-color-dark-blue-rgba;
     content: "";
     z-index: 1;
     display: none;
@@ -1355,41 +1404,42 @@ footer {
 
 
 .ddexitpop { /* user defined exit popup DIV style */
-    width: 90%;
-    max-width: 700px;
-    border: 2px solid black;
-    padding: 10px;
-    z-index: 2;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    border: 20px solid black;
-    background: white;
-    left: 0;
-    top: -100px; /* shift popup DIV upwards by 100px from middle of screen */
+	width: 90%;
+	max-width: 700px;
+	padding: 25px;
+	z-index: 2;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	border-radius: 10px;
+	background: $tertiary-green;
+	color: $white;
+	text-align: center;
+	left: 0;
+	@include shadow($x, $y, $blur, $color);
+	top: -100px; /* shift popup DIV upwards by 100px from middle of screen */
 		-webkit-animation-duration: .5s; /* customize animation duration */
 		animation-duration: .5s; /* customize animation duration */
-    visibility: hidden;
+	visibility: hidden;
 }
 
-
-
-.ddexitpop .calltoaction{ /* demo button style */
-	display: inline-block;
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 15px;
-    background: #15C5FF;
-    display: block;
-    width: 80%;
-    font: bold 24px Arial;
-    box-shadow: 0 0 15px gray, 0 0 10px gray inset;
-    margin: 10px auto;
-    text-align: center;
-    color: white !important;
+.ddexitpop h1 {
+	font-weight: $extra-weight;
+	margin-bottom: 10px;
 }
 
+.popup .mepr_bold {
+	display: none;
+}
+
+.popup-content p {
+	margin: 0;
+}
+
+.popup .mp-form-submit {
+	text-align: center;
+}
 
 div.closeexitpop{ /* Large x close button  */
 	width: 70px;
@@ -1404,6 +1454,9 @@ div.closeexitpop{ /* Large x close button  */
 	right: 10px;
 }
 
+.closeexitpop::before {
+	content: "X";
+}
 
 #ddexitpopwrapper.open{
 	pointer-events: auto;
@@ -1421,7 +1474,6 @@ div.closeexitpop{ /* Large x close button  */
     visibility: visible;
 }
 
-
 /* #### CSS that's applied when the viewing area's height is 765px or less #### */
 
 @media screen and (max-height: 765px){
@@ -1429,12 +1481,6 @@ div.closeexitpop{ /* Large x close button  */
 		top: 0; /* don't shift exit pop up upwards 100px on screens that aren't very tall */
 	}
 }
-
-
-
-
-
-
 
 
 /* Small devices (tablets, 768px and down) */
@@ -1456,6 +1502,31 @@ div.closeexitpop{ /* Large x close button  */
 	.navbar-brand > img {
 		margin: 0 auto;
 	}
+	
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.about-title {
+		padding-left: 15px;
+		padding-right: 15px;		
+	}
+	
+	.about-subtitle {
+		padding-left: 15px;
+		padding-right: 15px;		
+	}	
+	
+	.free-option {
+		padding: 0;
+	    margin: 0 -15px;
+	}
+	
+	.premium-option {
+		padding: 0;
+	    margin: 0 -15px;
+	}	
 	
 	// Remove login button
 	.login-button {
@@ -1486,7 +1557,8 @@ div.closeexitpop{ /* Large x close button  */
 	}
 	
 	.excuse-title {
-		padding: 50px 15px 50px;;
+		padding: 50px 15px 50px;
+		text-align: center;
 	}
 	
 	.block-1-title {
@@ -1505,8 +1577,21 @@ div.closeexitpop{ /* Large x close button  */
 	    padding: 50px 15px;	
 	}
 	
+	.prices-subtitle {
+		text-align: left;
+	}
+	
+	.prices-subtitle h2 {
+		text-align: center;
+	}
+	
 	.reasons {
-		padding: 50px 0;
+		padding: 15px 30px 15px;
+		padding-top: 50px;
+	}
+	
+	.reason {
+		padding: 0;
 	}
 	
 	.reasons-title {
@@ -1528,11 +1613,16 @@ div.closeexitpop{ /* Large x close button  */
 	
 	.premium-cta-title {
 		padding-top: 50px;
+		text-align: center;
 	}
 	
 	.footer-cta {
 		font-size: $h2;
 		line-height: 61px;
+	}
+	
+	.free-subtitle {
+		text-align: left;
 	}
 	
 	#menu-footer-menu {

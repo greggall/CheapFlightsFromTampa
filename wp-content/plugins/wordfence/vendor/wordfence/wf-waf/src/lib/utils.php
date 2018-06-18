@@ -13,7 +13,7 @@ class wfWAFUtils {
 		if (wfWAFUtils::strlen($ip) == 16 && wfWAFUtils::substr($ip, 0, 12) == "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff") {
 			$ip = wfWAFUtils::substr($ip, 12, 4);
 		}
-		return self::hasIPv6Support() ? inet_ntop($ip) : self::_inet_ntop($ip);
+		return self::hasIPv6Support() ? @inet_ntop($ip) : self::_inet_ntop($ip);
 	}
 
 	/**
@@ -24,7 +24,7 @@ class wfWAFUtils {
 	 */
 	public static function inet_pton($ip) {
 		// convert the 4 char IPv4 to IPv6 mapped version.
-		$pton = str_pad(self::hasIPv6Support() ? inet_pton($ip) : self::_inet_pton($ip), 16,
+		$pton = str_pad(self::hasIPv6Support() ? @inet_pton($ip) : self::_inet_pton($ip), 16,
 			"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff\x00\x00\x00\x00", STR_PAD_LEFT);
 		return $pton;
 	}
@@ -534,7 +534,12 @@ class wfWAFUtils {
 	 */
 	public static function iniSizeToBytes($val) {
 		$val = trim($val);
+		if (preg_match('/^\d+$/', $val)) {
+			return (int) $val;
+		}
+		
 		$last = strtolower(substr($val, -1));
+		$val = (int) substr($val, 0, -1);
 		switch ($last) {
 			case 'g':
 				$val *= 1024;
@@ -544,7 +549,7 @@ class wfWAFUtils {
 				$val *= 1024;
 		}
 		
-		return intval($val);
+		return $val;
 	}
 	
 	public static function reverseLookup($IP) {
@@ -755,14 +760,106 @@ class wfWAFUtils {
 		return ($bin_network === $bin_ip);
 	}
 	
+	/**
+	 * Behaves exactly like PHP's parse_url but uses WP's compatibility fixes for early PHP 5 versions.
+	 * 
+	 * @param string $url
+	 * @param int $component
+	 * @return mixed
+	 */
+	public static function parse_url($url, $component = -1) {
+		$to_unset = array();
+		$url = strval($url);
+		
+		if (substr($url, 0, 2) === '//') {
+			$to_unset[] = 'scheme';
+			$url = 'placeholder:' . $url;
+		}
+		elseif (substr($url, 0, 1) === '/') {
+			$to_unset[] = 'scheme';
+			$to_unset[] = 'host';
+			$url = 'placeholder://placeholder' . $url;
+		}
+		
+		$parts = @parse_url($url);
+		
+		if ($parts === false) { // Parsing failure
+			return $parts;
+		}
+		
+		// Remove the placeholder values
+		foreach ($to_unset as $key) {
+			unset($parts[$key]);
+		}
+		
+		if ($component === -1) {
+			return $parts;
+		}
+		
+		$translation = array(
+			PHP_URL_SCHEME   => 'scheme',
+			PHP_URL_HOST     => 'host',
+			PHP_URL_PORT     => 'port',
+			PHP_URL_USER     => 'user',
+			PHP_URL_PASS     => 'pass',
+			PHP_URL_PATH     => 'path',
+			PHP_URL_QUERY    => 'query',
+			PHP_URL_FRAGMENT => 'fragment',
+		);
+		
+		$key = false;
+		if (isset($translation[$component])) {
+			$key = $translation[$component];
+		}
+		
+		if ($key !== false && is_array($parts) && isset($parts[$key])) {
+			return $parts[$key];
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Validates the URL, supporting both scheme-relative and path-relative formats.
+	 * 
+	 * @param $url
+	 * @return mixed
+	 */
+	public static function validate_url($url) {
+		$url = strval($url);
+		
+		if (substr($url, 0, 2) === '//') {
+			$url = 'placeholder:' . $url;
+		}
+		elseif (substr($url, 0, 1) === '/') {
+			$url = 'placeholder://placeholder' . $url;
+		}
+		
+		return filter_var($url, FILTER_VALIDATE_URL);
+	}
+	
 	public static function rawPOSTBody() {
 		global $HTTP_RAW_POST_DATA;
 		if (empty($HTTP_RAW_POST_DATA)) { //Defined if always_populate_raw_post_data is on, PHP < 7, and the encoding type is not multipart/form-data
-			$data = file_get_contents('php://input'); //Available if the encoding type is not multipart/form-data; it can only be read once prior to PHP 5.6 so we save it in $HTTP_RAW_POST_DATA for WP Core and others
+			$avoidPHPInput = false;
+			try {
+				$avoidPHPInput = wfWAF::getSharedStorageEngine() && wfWAF::getSharedStorageEngine()->getConfig('avoid_php_input', false);
+			}
+			catch (Exception $e) {
+				//Ignore
+			}
 			
-			//For our purposes, we don't currently need the raw POST body if it's multipart/form-data since the data will be in $_POST/$_FILES. If we did, we could reconstruct the body here.
-			
-			$HTTP_RAW_POST_DATA = $data;
+			if ($avoidPHPInput) { //Some custom PHP builds break reading from php://input
+				//Reconstruct the best possible approximation of it from $_POST if populated -- won't help JSON or other raw payloads
+				$data = http_build_query($_POST, '', '&');
+			}
+			else {
+				$data = file_get_contents('php://input'); //Available if the encoding type is not multipart/form-data; it can only be read once prior to PHP 5.6 so we save it in $HTTP_RAW_POST_DATA for WP Core and others
+				
+				//For our purposes, we don't currently need the raw POST body if it's multipart/form-data since the data will be in $_POST/$_FILES. If we did, we could reconstruct the body here.
+				
+				$HTTP_RAW_POST_DATA = $data;
+			}
 		}
 		else {
 			$data =& $HTTP_RAW_POST_DATA;

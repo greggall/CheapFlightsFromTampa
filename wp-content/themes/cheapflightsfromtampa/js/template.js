@@ -58,7 +58,17 @@
 	});
 	
 	$(document).ready(function(){		
-		
+		ddexitpop.init({
+			contentsource: ['id', 'ddexitpop1'],
+			fxclass: 'random',
+			displayfreq: 'always',
+			mobileshowafter: 0,
+			onddexitpop: function($popup){
+				console.log('Exit Pop Animation Class Name: ' + ddexitpop.settings.fxclass)
+			}
+
+		})
+
 		
 					
 	});

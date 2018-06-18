@@ -333,21 +333,19 @@ Template page for displaying single deal posts, both Premium and Free.
 			</div><!--/.sidebar-->
 			
 		</div><!--/.col-md-12-->
-	</div><!--/.row-->
+		
+		<div id="ddexitpop1" class="ddexitpop">
+			
+			<div class="closeexitpop"></div>
 	
-	<div id="ddexitpop1" class="ddexitpop">
-	    	<h1>Hold On For Just One Second!</h1>
-	    	<p>Before you leave, download our FREE e-book that shows you how to create a blog, step by step, in under 20 minutes!</p>
-	    	<p>You'll learn:</p>
-	    	<ul>
-	    	<li>Pick a Web Host</li>
-	    	<li>How to select the best CMS</li>
-	    	<li>Install and Choose a Theme</li>
-	    	<li>Promote and Set Up Social Profiles for your Blog</li>
-	    	</ul>
-	    	<a class="calltoaction" href="#" onClick="ddexitpop.hidepopup()">Download Free E-Book</a>
-    
-	    </div>
+	    	<h1><?php the_field('popup_title', 'option'); ?></h1>
+			<div class="popup-content"><?php the_field('popup_content', 'option')?></div>
+	    	
+	    	<div class="popup three-dollars-reg"><?php the_field('sign_up', 'option'); ?></div>
+			
+		</div>
+		
+	</div><!--/.row-->
 	
 </div><!--/.container-fluid-->
 

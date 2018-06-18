@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- Get about page -->
+<!-- Get About page -->
 <?php if ( is_page('about')) { ?>
 
 	<?php // get hero image custom field and display as background image
@@ -31,15 +31,238 @@
 
 	        <div class="wrapper col-md-10 col-md-offset-1">
 	           
-			    <div class="title col-md-5 col-md-offset-1"><?php the_field('about_title') ?></div><!--/.about-title-->
-	            <div class="about-intro col-md-5"><?php the_field('about_intro') ?></div><!--/.about-intro-->
+			    <h2 class="about-title"><?php the_field('about_title') ?></h2><!--/.about-title-->
+			    <h3 class="about-subtitle"><?php the_field('about_subtitle') ?></h3><!--/.about-title-->				
+				<div class="about-image col-md-6">
+					
+					<?php 
 
-	        </div><!--/.about-intro-wrapper-->
+					$image = get_field('about_image');
+
+					if( !empty($image) ): ?>
+
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+					<?php endif; ?>
+					
+				</div><!--/.about-image-->
+	            <div class="about-intro col-md-6"><?php the_field('about_intro') ?></div><!--/.about-intro-->
+
+	        </div><!--/.wrapper-->
+			
+	        <div class="wrapper col-md-10 col-md-offset-1">
+	           
+			    <h2 class="about-title"><?php the_field('overview_title') ?></h2><!--/.about-title-->
+			    <h3 class="about-subtitle"><?php the_field('overview_subtitle') ?></h3><!--/.about-title-->				
+				<div class="about-image col-md-6">
+					
+					<?php 
+
+					$image = get_field('overview_image');
+
+					if( !empty($image) ): ?>
+
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+					<?php endif; ?>
+					
+				</div><!--/.about-image-->
+	            <div class="about-intro col-md-6"><?php the_field('overview_intro') ?></div><!--/.about-intro-->
+
+	        </div><!--/.wrapper-->
+			
+			<div class="wrapper col-md-10 col-md-offset-1">
+				
+				<div class="single-deal-post-funnel col-md-12">
+
+					<h2 class="about-title"><?php the_field('about_why_title'); ?></h2>
+					<h3 class="about-subtitle"><?php the_field('about_why_subtitle'); ?></h3>
+
+					<div class="reasons-wrapper col-md-12">
+						
+						  <h3 class="about-subtitle"><?php the_field('reasons_subtitle'); ?></h3>
+						  
+  	  					  <?php $subscribe_reasons = get_field('subscribe_reasons', 'options');
+
+	  					  if ( $subscribe_reasons ): ?>
+
+						  <div class="col-md-6 single-reason">
+							<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">  
+						  	<?php echo $subscribe_reasons['reason_one']; ?>
+						  </div><!--/.col-md-4-->
+
+						  <div class="col-md-6 single-reason">
+							<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">  
+						  	<?php echo $subscribe_reasons['reason_two']; ?>
+						  </div><!--/.col-md-4-->
+
+						  <div class="col-md-6 single-reason">
+						  	<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">
+							<?php echo $subscribe_reasons['reason_three']; ?>
+						  </div><!--/.col-md-4-->
+
+						  <div class="col-md-6 single-reason">
+						  	<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">
+							<?php echo $subscribe_reasons['reason_four']; ?>
+						  </div><!--/.col-md-4-->
+
+						  <div class="col-md-6 single-reason">
+						  	<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">
+							<?php echo $subscribe_reasons['reason_five']; ?>
+						  </div><!--/.col-md-4-->
+
+						  <div class="col-md-6 single-reason">
+						  	<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">
+							<?php echo $subscribe_reasons['reason_six']; ?>
+						  </div><!--/.col-md-4-->
+						  
+						  <?php endif; ?>
+
+					</div><!--/.reasons-wrapper-->
+				</div><!--/.single-post-deal-funnel-->
+				
+			</div><!--/.wrapper-->
+			
+	        <div class="wrapper col-md-10 col-md-offset-1">
+	        	
+			    <h2 class="about-title"><?php the_field('options_title') ?></h2><!--/.about-title-->
+			    <h3 class="about-subtitle"><?php the_field('options_subtitle') ?></h3><!--/.about-title-->
+				
+				<div class="options-wrapper col-md-12">
+					
+					<div class="premium-option col-md-6">
+						
+						<h3 class="premium-option-title"><?php the_field('premium_option_title'); ?></h3><!--/.premium-option-title-->
+						
+						<div class="about-premium-benefits">
+							<ul class="about-benefits-list">
+								<?php
+
+								// check if the repeater field has rows of data
+								if( have_rows('premium_benefits') ):
+
+								 	// loop through the rows of data
+								    while ( have_rows('premium_benefits') ) : the_row(); ?>
+									
+									<li>
+										<?php // display a sub field value
+								        the_sub_field('benefit'); ?>
+									</li>
+								<?php endwhile;
+
+								else :
+
+								    // no rows found
+
+								endif;
+
+								?>
+							</ul>
+							
+							<div class="three-dollars-reg"><?php the_field('sign_up', 'option'); ?></div>
+							
+						</div><!--/.about-premium-benefits-->
+						
+					</div><!--/.premium-option-->
+					
+					<div class="free-option col-md-6">
+						
+						<h3 class="free-option-title"><?php the_field('free_option_title'); ?></h3><!--/.free-option-title-->
+						
+						<div class="about-free-benefits">
+							<ul class="about-benefits-list">
+								<?php
+
+								// check if the repeater field has rows of data
+								if( have_rows('free_benefits') ):
+
+								 	// loop through the rows of data
+								    while ( have_rows('free_benefits') ) : the_row(); ?>
+								
+									<li>
+								        <?php // display a sub field value
+								        the_sub_field('benefit');?>
+									</li>
+								<?php endwhile;
+
+								else :
+
+								    // no rows found
+
+								endif;
+
+								?>
+							</ul>
+							
+							<div class="about-free-signup">
+						
+								<!-- Begin MailChimp Signup Form -->
+								<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+								<div id="mc_embed_signup">
+								<form action="//cheapflightsfromtampa.us16.list-manage.com/subscribe/post?u=bc044b5ce916ab5cd6505c30d&amp;id=597366555e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+								    <div id="mc_embed_signup_scroll">
+
+									<input type="email" value="" name="EMAIL" class="about email" id="mce-EMAIL" placeholder="Enter your email address" required>
+								    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+								    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
+								    <div class="clear about"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"></div>
+								    </div>
+								</form>
+								</div><!--End mc_embed_signup-->
+						
+							</div><!--/.about-free-signup-->
+							
+						</div><!--/.free-premium-benefits-->
+						
+					</div><!--/.free-option-->				
+					
+				</div><!--/.options-wrapper-->
+				
+	        </div><!--/.wrapper-->		
+			
+			<div class="wrapper col-md-10 col-md-offset-1">
+				
+			    <h2 class="about-title"><?php the_field('meet_team_title') ?></h2><!--/.about-title-->
+			    <h3 class="about-subtitle"><?php the_field('meet_team_subtitle') ?></h3><!--/.about-title-->
+				
+				<?php if( have_rows('team_member') ): ?>
+
+					<?php while( have_rows('team_member') ): the_row(); 
+
+						// vars
+						$image = get_sub_field('image');
+						$name = get_sub_field('name');
+						$job_title = get_sub_field('job_title');
+						$description = get_sub_field('description');						
+
+						?>
+					
+						<div class="col-md-6 team-member">
+
+							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+							
+							<?php if( $name ): ?>
+								<h3 class="team-member-name"><?php echo $name; ?></h3><!--/.team-member-name-->
+							<?php endif; ?>
+
+							<?php if( $job_title ): ?>
+								<div class="team-member-job"><?php echo $job_title; ?></div><!--/.team-member-job-->
+							<?php endif; ?>				
+
+						    <div class="team-member-description"><?php echo $description; ?></div>
+					
+						</div><!--/.col-md-6-->	
+
+					<?php endwhile; ?>
+
+				<?php endif; ?>
+				
+			</div><!--/.wrapper-->	
 
 	        <div class="wrapper col-md-10 col-md-offset-1">
-
-	            <div class="title col-md-5 col-md-offset-1"><?php the_field('curious_title') ?></div><!--/.curious-title-->
-	            <div class="curious-copy col-md-5"><?php the_field('curious_copy') ?></div><!--/.curious-copy-->
+				
+			    <h2 class="about-title"><?php the_field('curious_title') ?></h2><!--/.about-title-->
+			    <h3 class="about-subtitle"><?php the_field('curious_copy') ?></h3><!--/.about-title-->
 
 	        </div><!--./curious-wrapper-->
 
@@ -474,7 +697,7 @@
 						
 						<div class="col-md-12">
 							<div class="premium-jump-text"><?php the_field('premium_jump_text_1')?></div>
-							<div class="premium-jump"><a href="#signup"><button>Sign Up Today!</button></a></div>
+							<div class="premium-jump"><a href="#signup"><button>Yes, Send Me The Deals!</button></a></div>
 						</div>
 
 			</div><!--/.wrapper-->
@@ -556,7 +779,7 @@
 						
 						<div class="col-md-12">
 							<div class="premium-jump-text"><?php the_field('premium_jump_text_2')?></div>
-							<div class="premium-jump"><a href="#signup"><button>Sign Up Today!</button></a></div>
+							<div class="premium-jump"><a href="#signup"><button>Yes, Sign Me Up!</button></a></div>
 						</div>
 
 			</div><!--/.wrapper-->
@@ -682,6 +905,17 @@
 				</div><!--/.email-->
 
 	        </div><!--./free-wrapper-->
+			
+			<div id="ddexitpop1" class="ddexitpop">
+				
+				<div class="closeexitpop">X</div>
+		
+		    	<h1><?php the_field('popup_title', 'option'); ?></h1>
+				<div class="popup-content"><?php the_field('popup_content', 'option')?></div>
+		    	
+		    	<div class="popup three-dollars-reg"><?php the_field('three_dollar_register'); ?></div>
+				
+			</div>
 
 	    </div><!--/.row-->
 	  </div><!--/.container-fluid-->
