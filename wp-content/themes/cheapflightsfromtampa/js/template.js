@@ -68,7 +68,7 @@
 	});
 	
 	$(document).ready(function(){		
-		ddexitpop.init({
+		/*ddexitpop.init({
 			contentsource: ['id', 'ddexitpop1'],
 			fxclass: 'random',
 			displayfreq: 'always',
@@ -77,16 +77,33 @@
 				console.log('Exit Pop Animation Class Name: ' + ddexitpop.settings.fxclass)
 			}
 
-		})
+		})*/
 
 		
 					
 	});
 	
 	$(document).ready(function(){
-			
 		
-			
+		jQuery(function($){
+			$('#filter').submit(function(){
+				var filter = $('#filter');
+				$.ajax({
+					url:filter.attr('action'),
+					data:filter.serialize(), // form data
+					type:filter.attr('method'), // POST
+					beforeSend:function(xhr){
+						filter.find('button').text('Processing...'); // changing the button label
+					},
+					success:function(data){
+						filter.find('button').text('Apply filter'); // changing the button label back
+						$('#response').html(data); // insert data
+					}
+				});
+				return false;
+			});
+		});
+		
 	});
 	
 	$(document).ready(function(){

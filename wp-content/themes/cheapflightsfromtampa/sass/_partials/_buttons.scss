@@ -16,7 +16,8 @@ button {
 
 .blog button {
 	@extend button;
-	background: lighten($primary-blue, 10%);	
+	background: lighten($primary-blue, 10%);
+	width: 250px;	
 }
 
 .sample-flight {
@@ -41,6 +42,7 @@ button a, button a:hover {
 	text-align: center;
 }
 
+/* commented out 6/29 - don't think is needed
 .premium-jump button {
 	width: 60%;
 	margin-top: 50px;
@@ -59,6 +61,30 @@ button a, button a:hover {
 .premium-jump button:hover {
 	background: $tertiary-green;	
 	border: 5px solid $tertiary-green;
+}*/
+
+.premium-page button {
+	width: 320px;
+	margin-top: 50px;
+	border: 5px solid $tertiary-green;
+	padding: 10px !important;
+	background: lighten($tertiary-green, 10%);	
+	color: $white !important;
+	border-radius: $base-border-radius;
+	margin: 15px 0px !important;
+	text-transform: uppercase;	
+	letter-spacing: 0.05em;
+	@include transition(all);
+}
+
+.premium-page button:hover {
+	background: $tertiary-green;	
+	border: 5px solid $tertiary-green;
+}
+
+.home-premium-button {
+	width: 60%;
+	margin: 0 auto;
 }
 
 /* Mailchimp button */
@@ -131,7 +157,7 @@ button a, button a:hover {
 	color: $white;
 	border-radius: $base-border-radius;
 	margin: 15px 0px;
-	width: 85%;
+	width: 100%;
 	text-transform: uppercase;
 	font-size: $base-font-size;
 	letter-spacing: 0.05em;
@@ -153,6 +179,10 @@ button a, button a:hover {
 	}
 	
 	.premium-jump button {
+		width: 100%;
+	}
+	
+	.home-premium-button {
 		width: 100%;
 	}
 }

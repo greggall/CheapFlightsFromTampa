@@ -25,14 +25,14 @@
 
 	</div><!--/.container-fluid-->
 
-	<div class="container-fluid text-left">
+	<div class="container-fluid">
    
 	   	<div class="row">
 
 	        <div class="wrapper col-md-10 col-md-offset-1">
 	           
-			    <h2 class="about-title"><?php the_field('about_title') ?></h2><!--/.about-title-->
-			    <h3 class="about-subtitle"><?php the_field('about_subtitle') ?></h3><!--/.about-title-->				
+			    <h2 class="title"><?php the_field('about_title') ?></h2><!--/.about-title-->
+			    <h3 class="subtitle"><?php the_field('about_subtitle') ?></h3><!--/.about-title-->				
 				<div class="about-image col-md-6">
 					
 					<?php 
@@ -52,8 +52,8 @@
 			
 	        <div class="wrapper col-md-10 col-md-offset-1">
 	           
-			    <h2 class="about-title"><?php the_field('overview_title') ?></h2><!--/.about-title-->
-			    <h3 class="about-subtitle"><?php the_field('overview_subtitle') ?></h3><!--/.about-title-->				
+			    <h2 class="title"><?php the_field('overview_title') ?></h2><!--/.about-title-->
+			    <h3 class="subtitle"><?php the_field('overview_subtitle') ?></h3><!--/.about-title-->				
 				<div class="about-image col-md-6">
 					
 					<?php 
@@ -71,159 +71,36 @@
 
 	        </div><!--/.wrapper-->
 			
+			
 			<div class="wrapper col-md-10 col-md-offset-1">
-				
-				<div class="single-deal-post-funnel col-md-12">
 
-					<h2 class="about-title"><?php the_field('about_why_title'); ?></h2>
-					<h3 class="about-subtitle"><?php the_field('about_why_subtitle'); ?></h3>
+	            <h2 class="title"><?php the_field('free_title') ?></h2><!--/.col-md-6-->
+		
+				<h3 class="subtitle"><?php the_field('free_subtitle') ?></h3>
+		
+				<div class="email col-md-12 text-center">
 
-					<div class="reasons-wrapper col-md-12">
-						
-						  <h3 class="about-subtitle"><?php the_field('reasons_subtitle'); ?></h3>
-						  
-  	  					  <?php $subscribe_reasons = get_field('subscribe_reasons', 'options');
+					<!-- Begin MailChimp Signup Form -->
+					<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+					<div id="mc_embed_signup">
+					<form action="//cheapflightsfromtampa.us16.list-manage.com/subscribe/post?u=bc044b5ce916ab5cd6505c30d&amp;id=597366555e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					    <div id="mc_embed_signup_scroll">
 
-	  					  if ( $subscribe_reasons ): ?>
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address" required>
+					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
+					    <div class="clear"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"></div>
+					    </div>
+					</form>
+					</div><!--End mc_embed_signup-->
 
-						  <div class="col-md-6 single-reason">
-							<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">  
-						  	<?php echo $subscribe_reasons['reason_one']; ?>
-						  </div><!--/.col-md-4-->
-
-						  <div class="col-md-6 single-reason">
-							<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">  
-						  	<?php echo $subscribe_reasons['reason_two']; ?>
-						  </div><!--/.col-md-4-->
-
-						  <div class="col-md-6 single-reason">
-						  	<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">
-							<?php echo $subscribe_reasons['reason_three']; ?>
-						  </div><!--/.col-md-4-->
-
-						  <div class="col-md-6 single-reason">
-						  	<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">
-							<?php echo $subscribe_reasons['reason_four']; ?>
-						  </div><!--/.col-md-4-->
-
-						  <div class="col-md-6 single-reason">
-						  	<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">
-							<?php echo $subscribe_reasons['reason_five']; ?>
-						  </div><!--/.col-md-4-->
-
-						  <div class="col-md-6 single-reason">
-						  	<img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/ic_check_circle.svg">
-							<?php echo $subscribe_reasons['reason_six']; ?>
-						  </div><!--/.col-md-4-->
-						  
-						  <?php endif; ?>
-
-					</div><!--/.reasons-wrapper-->
-				</div><!--/.single-post-deal-funnel-->
-				
+				</div><!--/.email-->
 			</div><!--/.wrapper-->
 			
-	        <div class="wrapper col-md-10 col-md-offset-1">
-	        	
-			    <h2 class="about-title"><?php the_field('options_title') ?></h2><!--/.about-title-->
-			    <h3 class="about-subtitle"><?php the_field('options_subtitle') ?></h3><!--/.about-title-->
-				
-				<div class="options-wrapper col-md-12">
-					
-					<div class="premium-option col-md-6">
-						
-						<h3 class="premium-option-title"><?php the_field('premium_option_title'); ?></h3><!--/.premium-option-title-->
-						
-						<div class="about-premium-benefits">
-							<ul class="about-benefits-list">
-								<?php
-
-								// check if the repeater field has rows of data
-								if( have_rows('premium_benefits') ):
-
-								 	// loop through the rows of data
-								    while ( have_rows('premium_benefits') ) : the_row(); ?>
-									
-									<li>
-										<?php // display a sub field value
-								        the_sub_field('benefit'); ?>
-									</li>
-								<?php endwhile;
-
-								else :
-
-								    // no rows found
-
-								endif;
-
-								?>
-							</ul>
-							
-							<div class="three-dollars-reg"><?php the_field('sign_up', 'option'); ?></div>
-							
-						</div><!--/.about-premium-benefits-->
-						
-					</div><!--/.premium-option-->
-					
-					<div class="free-option col-md-6">
-						
-						<h3 class="free-option-title"><?php the_field('free_option_title'); ?></h3><!--/.free-option-title-->
-						
-						<div class="about-free-benefits">
-							<ul class="about-benefits-list">
-								<?php
-
-								// check if the repeater field has rows of data
-								if( have_rows('free_benefits') ):
-
-								 	// loop through the rows of data
-								    while ( have_rows('free_benefits') ) : the_row(); ?>
-								
-									<li>
-								        <?php // display a sub field value
-								        the_sub_field('benefit');?>
-									</li>
-								<?php endwhile;
-
-								else :
-
-								    // no rows found
-
-								endif;
-
-								?>
-							</ul>
-							
-							<div class="about-free-signup">
-						
-								<!-- Begin MailChimp Signup Form -->
-								<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-								<div id="mc_embed_signup">
-								<form action="//cheapflightsfromtampa.us16.list-manage.com/subscribe/post?u=bc044b5ce916ab5cd6505c30d&amp;id=597366555e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-								    <div id="mc_embed_signup_scroll">
-
-									<input type="email" value="" name="EMAIL" class="about email" id="mce-EMAIL" placeholder="Enter your email address" required>
-								    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-								    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
-								    <div class="clear about"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"></div>
-								    </div>
-								</form>
-								</div><!--End mc_embed_signup-->
-						
-							</div><!--/.about-free-signup-->
-							
-						</div><!--/.free-premium-benefits-->
-						
-					</div><!--/.free-option-->				
-					
-				</div><!--/.options-wrapper-->
-				
-	        </div><!--/.wrapper-->		
-			
 			<div class="wrapper col-md-10 col-md-offset-1">
 				
-			    <h2 class="about-title"><?php the_field('meet_team_title') ?></h2><!--/.about-title-->
-			    <h3 class="about-subtitle"><?php the_field('meet_team_subtitle') ?></h3><!--/.about-title-->
+			    <h2 class="title"><?php the_field('meet_team_title') ?></h2><!--/.about-title-->
+			    <h3 class="subtitle"><?php the_field('meet_team_subtitle') ?></h3><!--/.about-title-->
 				
 				<?php if( have_rows('team_member') ): ?>
 
@@ -261,8 +138,8 @@
 
 	        <div class="wrapper col-md-10 col-md-offset-1">
 				
-			    <h2 class="about-title"><?php the_field('curious_title') ?></h2><!--/.about-title-->
-			    <h3 class="about-subtitle"><?php the_field('curious_copy') ?></h3><!--/.about-title-->
+			    <h2 class="title"><?php the_field('curious_title') ?></h2><!--/.about-title-->
+			    <h3 class="subtitle"><?php the_field('curious_copy') ?></h3><!--/.about-title-->
 
 	        </div><!--./curious-wrapper-->
 
@@ -299,10 +176,10 @@
     
 		<div class="row">
 
-			<div class="wrapper col-md-10 col-md-offset-1">
+			<div class="wrapper col-md-8 col-md-offset-2">
 
-		        <div class="title text-left col-md-5 col-md-offset-1"><?php the_field('contact_title') ?></div><!--/.contact-title-->
-		        <div class="contact-copy col-md-5 text-left"><?php the_field('contact_copy') ?></div><!--/.contact-copy-->
+		        <h2 class="title"><?php the_field('contact_title') ?></h2><!--/.contact-title-->
+		        <div class="contact-copy"><?php the_field('contact_copy') ?></div><!--/.contact-copy-->
 
 			</div><!--/.contact-wrapper-->
 
@@ -370,7 +247,7 @@
 		  <!-- General FAQ section -->
 		  <div class="wrapper col-md-10 col-md-offset-1">
 
-		    <div class="title">General</div>
+		    <h2 class="title">General</h2>
 
 		    <?php if( have_rows('general') ): ?>
 
@@ -416,7 +293,7 @@
 		  <!-- Deals/Emails FAQ section -->
 		  <div class="wrapper col-md-10 col-md-offset-1">
 
-		    <div class="title">The Deals</div>
+		    <h2 class="title">The Deals</h2>
 
 		    <?php if( have_rows('deals_emails') ): ?>
 
@@ -459,7 +336,7 @@
 		  <!-- Flights FAQ section -->
 		  <div class="wrapper col-md-10 col-md-offset-1">
 
-		    <div class="title">The Alerts</div>
+		    <h2 class="title">The Alerts</h2>
 
 		    <?php if( have_rows('flights') ): ?>
 
@@ -503,7 +380,7 @@
 		  <!-- OTA FAQ section -->
 		  <div class="wrapper col-md-10 col-md-offset-1">
 
-		    <div class="title">OTAs</div>
+		    <h2 class="title">OTAs</h2>
 
 		    <?php if( have_rows('otas') ): ?>
 
@@ -547,7 +424,7 @@
 		  <!-- Contact FAQ section -->
 		  <div class="wrapper col-md-10 col-md-offset-1">
 
-		    <div class="title">Contact</div>
+		    <h2 class="title">Contact</h2>
 
 		    <?php if( have_rows('contact') ): ?>
 
@@ -601,65 +478,41 @@
       
 	  <div class="row">
 		  
-		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+		<div class="hero-eyebrow"><?php the_field('hero_eyebrow'); ?></div>
 		<svg class="underline-icon" viewBox="0 0 32 32">
 		     <use xlink:href="#underline-icon" />
 		</svg>  
-        <div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('prices_welcome_text') ?></div><!--/.about-title-->
+        <div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('prices_welcome_text'); ?></div><!--/.about-title-->
+		
+		<div class="welcome-subtitle col-md-8 col-md-offset-2"><?php the_field('welcome_subtitle'); ?></div><!--welcome-subtitle-->
+		
+		<div class="premium-page"><a href="#signup"><button>Go Premium Today!</button></a></div>
 
       </div><!--/.row-->
 
     </div><!--/.container-fluid-->
 
-	<div class="container-fluid text-center premium-page">
+	<div class="container-fluid">
 
 	    <div class="row">
-
-	        <div class="premium-wrapper col-md-10 col-md-offset-1">
-
-				<div class="prices-subtitle"><?php the_field('prices_subtitle') ?></div><!--/.about-intro-->
-
-			</div><!--/.wrapper-->
-
-				<?php if( have_rows('excuse_1') ):
-
-				while( have_rows('excuse_1') ): the_row();
-
-				// vars
-				$title = get_sub_field('title');
-				$background_image = get_sub_field('background_image');
-				$copy_background_color = get_sub_field('copy_background_color');
-				$copy = get_sub_field('copy');
-
-				?>
-
-			<div class="premium-wrapper block-1 col-md-10 col-md-offset-1" style="background-image: url('<?php echo $background_image['url']; ?>');">
-
-				<div class="col-md-6 block-1-title">
-
-					<h1 class="excuse-title"><?php the_sub_field('title'); ?></h1>
-
-				</div><!--/.col-md-6-->
-
-				<div class="col-md-6" style="background-color: <?php the_sub_field('copy_background_color'); ?>;">
-
-					<div class="excuse-copy"><?php the_sub_field('copy'); ?></div>
-
-				</div><!--/.col-md-6-->
-
-			</div><!--/.wrapper-->
-			<?php endwhile; ?>
-			<?php endif; ?>
 			
-			<div class="premium-wrapper-deals col-md-10 col-md-offset-1">
+			<div class="wrapper waiting col-md-10 col-md-offset-1">
+				
+				<h2 class="title"><?php the_field('recent_premium_title'); ?></h2>
+				<h3 class="subtitle"><?php the_field('prices_subtitle') ?></h3><!--/.about-intro-->
 					
-				<div class="recent-premium-title"><?php the_field('recent_premium_title'); ?></div>
 				
 				<?php // retrieve three premium posts
 					$the_query = new WP_Query( array(
 												'posts_per_page' => '3',
-												'category_name' => 'premium',
-
+												'tax_query' => array(
+														array(
+															'taxonomy' => 'deal_category',
+															'field'    => 'slug',
+															'terms'    => 'premium-page',
+														),
+													),
+												'post_type' => 'recent_deal',
 					) ); ?>
 
 					<?php if ( $the_query->have_posts() ) : ?>
@@ -670,7 +523,7 @@
 							<div class="col-md-4">
 								<div class="premium-post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
 									
-									<?php if ( in_category('premium') ) { ?>
+									<?php if ( has_term('premium', 'deal_category') ) { ?>
 			
 										<div class="premium-badge"><img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/premium_badge.svg"></div>
 				
@@ -694,163 +547,119 @@
 						<?php else : ?>
 							<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 						<?php endif; ?>
-						
-						<div class="col-md-12">
-							<div class="premium-jump-text"><?php the_field('premium_jump_text_1')?></div>
-							<div class="premium-jump"><a href="#signup"><button>Yes, Send Me The Deals!</button></a></div>
-						</div>
 
 			</div><!--/.wrapper-->
 			
-			<?php if( have_rows('excuse_2') ):
-
-			while( have_rows('excuse_2') ): the_row();
-
-			// vars
-			$title = get_sub_field('title');
-			$background_image = get_sub_field('background_image');
-			$copy_background_color = get_sub_field('copy_background_color');
-			$copy = get_sub_field('copy');
-
-			?>
 			
-			<div class="premium-wrapper block-2 col-md-10 col-md-offset-1 " style="background-image: url('<?php echo $background_image['url']; ?>');">
+			<div class="wrapper col-md-10 col-md-offset-1">
 				
-				<div class="col-md-6 block-2-title">
+				<div class="single-deal-post-funnel col-md-12">
 
-					<h1 class="excuse-title"><?php the_sub_field('title'); ?></h1>
-
-				</div><!--/.col-md-6-->
-
-				<div class="col-md-6" style="background-color: <?php the_sub_field('copy_background_color'); ?>;">
-
-					<div class="excuse-copy"><?php the_sub_field('copy'); ?></div>
-
-				</div><!--/.col-md-6-->
-
-			</div><!--/.wrapper-->
-			<?php endwhile; ?>
-			<?php endif; ?>
-			
-			<div class="premium-wrapper-deals col-md-10 col-md-offset-1">
+					<h2 class="title"><?php the_field('problem_title'); ?></h2>
+					<div class="col-md-8 col-md-offset-2 premium-copy"><?php the_field('problem_copy'); ?></div>
+				</div><!--/.single-post-deal-funnel-->
+				
+				<div class="single-deal-post-funnel col-md-12">
 					
-				<div class="recent-premium-title"><?php the_field('recent_premium_title'); ?></div>
-				
-				<?php // retrieve three premium posts
-					$the_query = new WP_Query( array(
-												'offset' => '3',
-												'posts_per_page' => '3',
-												'category_name' => 'premium',
-
-					) ); ?>
-
-					<?php if ( $the_query->have_posts() ) : ?>
-
-						<!-- the loop -->
-						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<h2 class="title"><?php the_field('dont_understand'); ?></h2>
+					<div class="col-md-8 col-md-offset-2 premium-copy"><?php the_field('dont_understand_copy'); ?></div>
 					
-							<div class="col-md-4">
-								<div class="premium-post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
+					<?php // retrieve three premium posts
+						$the_query = new WP_Query( array(
+													'posts_per_page' => '3',
+													'offset' => '3',
+													'tax_query' => array(
+															array(
+																'taxonomy' => 'deal_category',
+																'field'    => 'slug',
+																'terms'    => 'premium-page',
+															),
+														),
+													'post_type' => 'recent_deal',
+						) ); ?>
+
+						<?php if ( $the_query->have_posts() ) : ?>
+
+							<!-- the loop -->
+							<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					
+								<div class="col-md-4">
+									<div class="premium-post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
 									
-									<?php if ( in_category('premium') ) { ?>
+										<?php if ( has_term('premium', 'deal_category') ) { ?>
 			
-										<div class="premium-badge"><img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/premium_badge.svg"></div>
+											<div class="premium-badge"><img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/premium_badge.svg"></div>
 				
-									<?php } ?>
+										<?php } ?>
 									
-									<div class="recent-deal-overlay"></div><!--/.recent-deal-overlay-->
+										<div class="recent-deal-overlay"></div><!--/.recent-deal-overlay-->
 
-									<div class="premium-recent-deal">Tampa to <?php the_field('post_destination'); ?>: $<?php the_field('post_price'); ?></div><!--/.recent-deal-->
+										<div class="premium-recent-deal">Tampa to <?php the_field('post_destination'); ?>: $<?php the_field('post_price'); ?></div><!--/.recent-deal-->
 
-									<div class="premium-normal-price">Normal Price: $<?php the_field('normal_roundtrip_price'); ?></div><!--/.normal-price-->
+										<div class="premium-normal-price">Normal Price: $<?php the_field('normal_roundtrip_price'); ?></div><!--/.normal-price-->
 						
-									<p><a href="<?php the_permalink();?>"><button>View Deal</button></a></p>
-								</div><!--/.post-wrapper-->
-							</div><!--/.col-md-4-->
+										<p><a href="<?php the_permalink();?>"><button>View Deal</button></a></p>
+									</div><!--/.post-wrapper-->
+								</div><!--/.col-md-4-->
 
-						<?php endwhile; ?>
-						<!-- end of the loop -->
+							<?php endwhile; ?>
+							<!-- end of the loop -->
 
-						<?php wp_reset_postdata(); ?>
+							<?php wp_reset_postdata(); ?>
 
-						<?php else : ?>
-							<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-						<?php endif; ?>
-						
-						<div class="col-md-12">
-							<div class="premium-jump-text"><?php the_field('premium_jump_text_2')?></div>
-							<div class="premium-jump"><a href="#signup"><button>Yes, Sign Me Up!</button></a></div>
-						</div>
+							<?php else : ?>
+								<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+							<?php endif; ?>
 
-			</div><!--/.wrapper-->
-
-			
-
-			<div class="premium-wrapper col-md-10 col-md-offset-1">
-
-				<?php if( have_rows('why_subscribe') ):
-
-					while( have_rows('why_subscribe') ): the_row();
-
-						// vars
-						$title = get_sub_field('title');
-						$subtitle = get_sub_field('subtitle');
-						$background_image_reason = get_sub_field('background_image');
-						$background_color = get_sub_field('background_color');
-						$reason_one = get_sub_field('reason_one');
-						$reason_two = get_sub_field('reason_two');
-						$reason_three = get_sub_field('reason_three');
-						$reason_four = get_sub_field('reason_four');
-						$reason_five = get_sub_field('reason_five');
-						$reason_six = get_sub_field('reason_six');
-						?>
-
-				<div class="col-md-12">
-
-					<div class="reasons-title"><?php the_sub_field('title')?></div>
-					<div class="reasons-subtitle"><?php the_sub_field('subtitle')?></div>
-
-				</div><!--/.col-md-12-->
-
-				<div class="col-md-12 reasons" style="background: linear-gradient( <?php the_sub_field('background_color')?>, <?php the_sub_field('background_color')?> ), url('<?php echo $background_image_reason['url']; ?>'); background-size: cover;" alt="<?php echo $image['alt']; ?>">
-
-					  <div class="col-md-6 reason">
-					  	<?php the_sub_field('reason_one'); ?>
-					  </div><!--/.col-md-4-->
-
-					  <div class="col-md-6 reason">
-					  	<?php the_sub_field('reason_two'); ?>
-					  </div><!--/.col-md-4-->
-
-					  <div class="col-md-6 reason">
-					  	<?php the_sub_field('reason_three'); ?>
-					  </div><!--/.col-md-4-->
-
-					  <div class="col-md-6 reason">
-					  	<?php the_sub_field('reason_four'); ?>
-					  </div><!--/.col-md-4-->
-
-					  <div class="col-md-6 reason">
-					  	<?php the_sub_field('reason_five'); ?>
-					  </div><!--/.col-md-4-->
-
-					  <div class="col-md-6 reason">
-					  	<?php the_sub_field('reason_six'); ?>
-					  </div><!--/.col-md-4-->
-
-				</div><!--/.col-md-12-->
+				</div><!--/.single-post-deal-funnel-->
 			
 			</div><!--/.wrapper-->
 			
-			<?php endwhile; ?>
-			<?php endif; ?>
+			<div class="wrapper col-md-10 col-md-offset-1">
+				
+				<div class="single-deal-post-funnel col-md-12">
+
+					<h2 class="title"><?php the_field('different_title'); ?></h2>
+					<div class="col-md-8 col-md-offset-2 premium-copy"><?php the_field('different_copy'); ?></div>
+
+				</div><!--/.single-post-deal-funnel-->
+				
+			</div><!--/.wrapper-->
 			
+			<div class="wrapper col-md-10 col-md-offset-1">
+				
+				<div class="single-deal-post-funnel col-md-12">
+
+					<h2 class="title"><?php the_field('guides_title'); ?></h2>
+					<div class="col-md-8 col-md-offset-2 premium-copy"><?php the_field('guides_copy'); ?></div>
+
+				</div><!--/.single-post-deal-funnel-->
+				
+				<div class="single-deal-post-funnel col-md-12">
+
+					<h2 class="title"><?php the_field('trust_funds_title'); ?></h2>
+					<div class="col-md-8 col-md-offset-2 premium-copy"><?php the_field('trust_funds_copy'); ?></div>
+
+				</div><!--/.single-post-deal-funnel-->
+				
+			</div><!--/.wrapper-->
+			
+			<div class="wrapper col-md-10 col-md-offset-1">
+				
+				<div class="single-deal-post-funnel col-md-12">
+
+					<h2 class="title"><?php the_field('flight_truth_title'); ?></h2>
+					<div class="col-md-8 col-md-offset-2 premium-copy"><?php the_field('flight_truth_copy'); ?></div>
+
+				</div><!--/.single-post-deal-funnel-->
+				
+			</div><!--/.wrapper-->
 			
 			<div class="wrapper premium-cta col-md-10 col-md-offset-1">
 			<a id="signup"></a>
 				<div class="col-md-6">
-					<div class="premium-cta-title"><?php the_field('title', 'option'); ?></div>
-					<div class="premium-cta-subtitle"><?php the_field('subtitle', 'option'); ?></div>
+					<div class="premium-cta-title"><?php the_field('premium_cta_title'); ?></div>
+					<div class="premium-cta-subtitle"><?php the_field('premium_cta_subtitle'); ?></div>
 			        <div class="benefits-premium-cta"><?php if( have_rows('features', 'option') ): ?>
 
 			          	<?php while( have_rows('features', 'option') ): the_row();
@@ -958,16 +767,12 @@
 	<div class="container-fluid text-left">
 	    <div class="row">
 
-	        <div class="wrapper col-md-10 col-md-offset-1">
-	            <div class="title col-md-5 col-md-offset-1"><?php the_field('what_next_title')?></div><!--/.about-title-->
-				<div class="col-md-5">
-
-					<div class="expect-title"><?php the_field('expect_title')?></div><!--/.expect-title-->
-					<div class="expect-content"><?php the_field('expect_content')?></div><!--/.expect-content-->
-
-				</div>
-
-				<div class="col-md-12 text-center final-thanks"><?php the_field('final_thanks')?></div><!--/.final-thanks-->
+	        <div class="wrapper col-md-8 col-md-offset-2">
+				
+				<h2 class="title"><?php the_field('what_next_title')?></h2><!--/.about-title-->
+				<h3 class="subtitle"><?php the_field('expect_title')?></h3><!--/.expect-title-->
+				<div class="expect-content"><?php the_field('expect_content')?></div><!--/.expect-content-->
+				
 	        </div><!--/.aobut-intro-wrapper-->
 
 	    </div><!--/.row-->
@@ -1003,14 +808,11 @@
 	<div class="container-fluid text-left">
 	    <div class="row">
 
-	        <div class="wrapper col-md-10 col-md-offset-1">
-	            <div class="title col-md-3 col-md-offset-1"><?php the_field('what_next_title')?></div><!--/.about-title-->
-				<div class="col-md-6 col-md-offset-1">
+	        <div class="wrapper col-md-8 col-md-offset-2">
+	            <h2 class="title"><?php the_field('what_next_title')?></h2><!--/.about-title-->
 
-					<div class="expect-title"><?php the_field('expect_title')?></div><!--/.expect-title-->
-					<div class="expect-content"><?php the_field('expect_content')?></div><!--/.expect-content-->
-
-				</div>
+				<h3 class="subtitle"><?php the_field('expect_title')?></h3><!--/.expect-title-->
+				<div class="expect-content"><?php the_field('expect_content')?></div><!--/.expect-content-->
 
 	        </div><!--/.aobut-intro-wrapper-->
 
@@ -1047,14 +849,11 @@
 	<div class="container-fluid text-left">
 	    <div class="row">
 
-	        <div class="wrapper col-md-10 col-md-offset-1">
-	            <div class="title col-md-5 col-md-offset-1"><?php the_field('check_email')?></div><!--/.about-title-->
-				<div class="col-md-5">
+	        <div class="wrapper col-md-8 col-md-offset-2">
 
-					<div class="check-title"><?php the_field('check_title')?></div><!--/.expect-title-->
-					<div class="check-content"><?php the_field('check_content')?></div><!--/.expect-content-->
-
-				</div>
+	            <div class="title"><?php the_field('check_email')?></div><!--/.about-title-->
+				<div class="check-title"><?php the_field('check_title')?></div><!--/.expect-title-->
+				<div class="check-content"><?php the_field('check_content')?></div><!--/.expect-content-->
 
 	        </div><!--/.aobut-intro-wrapper-->
 
@@ -1258,43 +1057,154 @@
 
 	    </div><!--/.row-->
 	 </div><!--/.container-fluid-->
+	 
+<!-- Recent Deals -->
 
-<?php } elseif ( is_page('blog')) { ?>
+<?php } elseif ( is_page('recent-deals')) { ?>
 
 
-    <?php // get hero image custom field and display as background image
+   <?php // get hero image custom field and display as background image
 
-    $image = get_field('privacy_policy_hero', 'options');
+   $image = get_field('hero_image');
 
-    if( !empty($image) ): ?>
+   if( !empty($image) ): ?>
 
-    <div class="hero container-fluid text-center" style="background: linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
-        ), url('<?php echo $image ?>');" alt="<?php echo $image['alt']; ?>">
-    <?php endif; ?>
+   	<div class="hero container-fluid text-center" style="background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('<?php echo $image['url']; ?>');" alt="<?php echo $image['alt']; ?>">
+   <?php endif; ?>
 
-	  <div class="row">
-		<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
-		<svg class="underline-icon" viewBox="0 0 32 32">
-		     <use xlink:href="#underline-icon" />
-		</svg>
-        <div class="welcome-text col-md-8 col-md-offset-2"><?php the_title(); ?></div><!--/.about-title-->
-      </div><!--/.row-->
+   		<div class="row">
+			
+   			<div class="hero-eyebrow"><?php the_field('hero_eyebrow')?></div>
+   			<svg class="underline-icon" viewBox="0 0 32 32">
+   			     <use xlink:href="#underline-icon" />
+   			</svg>
+   			<div class="welcome-text col-md-8 col-md-offset-2"><?php the_field('welcome_text'); ?></div><!--/.welcome-text-->
+   			<div class="welcome-subtitle col-md-8 col-md-offset-2"></div><!--/.welcome-subtitle-->
 
-    </div><!--/.container-fluid-->
+   		</div><!--/.row-->
+   	</div><!--/.container-fluid-->
 
-	<div class="container-fluid text-left">
-	    <div class="row">
 
-	        <div class="wrapper col-md-10 col-md-offset-1">
+   <div class="container-fluid past-deals-bg">
+   	<div class="row">
+		
+   		<div class="col-md-12 past-deals-group-1">
 
-				<div class="col-md-10 col-md-offset-1"><?php the_content()?></div>
+   		<?php // retrieve nest six posts after the first
+   				$the_query = new WP_Query( array(
+											'posts_per_page' => '6',
+											'post_type' => 'recent_deal'
 
-	        </div><!--/.aobut-intro-wrapper-->
+   				) ); ?>
 
-	    </div><!--/.row-->
-	 </div><!--/.container-fluid-->
+   				<?php if ( $the_query->have_posts() ) : ?>
+
+   					<!-- the loop -->
+   					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							
+   						<div class="col-md-4">
+							
+   							<div class="post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
+								
+   								<?php if ( has_term('premium', 'deal_category') ) { ?>
+			
+   									<div class="premium-badge"><img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/premium_badge.svg"></div>
+				
+   								<?php } ?>
+							
+   								<div class="recent-deal-overlay"></div><!--/.recent-deal-overlay-->
+
+   								<div class="recent-deal">Tampa to <?php the_field('post_destination'); ?>: $<?php the_field('post_price'); ?></div><!--/.recent-deal-->
+
+   								<div class="normal-price">Normal Price: $<?php the_field('normal_roundtrip_price'); ?></div><!--/.normal-price-->
+							
+   								<p><a href="<?php the_permalink();?>"><button>View Deal</button></a></p>
+   							</div><!--/.post-wrapper-->
+   						</div><!--/.col-md-4-->
+
+   					<?php endwhile; ?>
+   					<!-- end of the loop -->
+
+   					<?php wp_reset_postdata(); ?>
+
+   					<?php else : ?>
+   						<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+   					<?php endif; ?>
+
+   				</div><!--/.col-md-10-->
+
+   				<div class="deals-signup col-md-12 text-center">
+
+   					<div class="deals-signup-wrapper col-md-8 col-md-offset-2">
+
+   							<div class="title deals-signup-title"><?php the_field('deals_signup_title') ?></div><!--/.deals-signup-title-->
+
+   							<!-- Begin MailChimp Signup Form -->
+   							<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+   							<div id="mc_embed_signup">
+   							<form action="//cheapflightsfromtampa.us16.list-manage.com/subscribe/post?u=bc044b5ce916ab5cd6505c30d&amp;id=597366555e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+   							    <div id="mc_embed_signup_scroll">
+	
+   								<input type="email" value="Enter your email address" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+   							    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+   							    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bc044b5ce916ab5cd6505c30d_597366555e" tabindex="-1" value=""></div>
+   							    <div class="clear"><input type="submit" value="Send Me Cheap Flights!" name="subscribe" id="mc-embedded-subscribe"</div>
+   							    </div>
+   							</form>
+   							</div><!--End mc_embed_signup-->
+
+   					</div><!--./deals-signup-wrapper-->
+
+   				</div><!--/.col-md-12-->
+   				</div>
+
+   				<div class="col-md-12 deals-second-group">
+
+   				<?php // retrieve from post 8 on
+   						$the_query = new WP_Query( array('offset' => '6',
+   												 'posts_per_page' => '6',
+												 'post_type' => 'recent_deal'
+   						) ); ?>
+
+   						<?php if ( $the_query->have_posts() ) : ?>
+
+   							<!-- the loop -->
+   							<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+   								<div class="col-md-4">
+									
+   									<div class="post-wrapper" style="background: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
+										
+   										<?php if ( in_category('premium') ) { ?>
+					
+   											<div class="premium-badge"><img src="<?php echo site_url(); ?>/wp-content/themes/cheapflightsfromtampa/images/premium_badge.svg"></div>
+							
+   										<?php } ?>
+									
+   										<div class="recent-deal-overlay"></div><!--/.recent-deal-overlay-->
+
+   										<div class="recent-deal">Tampa to <?php the_field('post_destination'); ?>: $<?php the_field('post_price'); ?></div><!--/.recent-deal-->
+
+   										<div class="normal-price">Normal Price: $<?php the_field('normal_roundtrip_price'); ?></div><!--/.normal-price-->
+									
+   										<p><a href="<?php the_permalink();?>"><button>View Deal</button></a></p>
+
+   									</div><!--/.post-wrapper-->
+   								</div><!--/.col-md-4-->
+
+   							<?php endwhile; ?>
+   							<!-- end of the loop -->
+
+   							<?php wp_reset_postdata(); ?>
+
+   							<?php else : ?>
+   								<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+   							<?php endif; ?>
+
+   				</div><!--/.col-md-10-->
+
+   	</div><!--/.row-->
+   </div><!--/.container-fluid-->
 
 
 <!-- Get Register Pages -->

@@ -30,12 +30,29 @@ function cheapflightsfromtampa_widgets_init() {
 		'before_title'  => '<h3 class="deal-sidebar-title"><span>',
 		'after_title'   => '</span></h3>',
 	) );
+	
+	register_sidebar( array(
+		'name'          => 'Single Blog Post Sidebar',
+		'id'            => 'single_blog_post_sidebar',
+		'before_widget' => '<div class="widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="deal-sidebar-title"><span>',
+		'after_title'   => '</span></h3>',
+	) );
 
 }
 add_action( 'widgets_init', 'cheapflightsfromtampa_widgets_init' );
 
 // Gotta have featured images!
-add_theme_support( 'post-thumbnails', array( 'post', 'portfolio', 'background', 'page', 'blog_posts' ) );
+add_theme_support( 'post-thumbnails', array( 'post', 'portfolio', 'background', 'page', 'recent_deal' ) );
+
+// Add image size for blog posts
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+	add_image_size('blog-post', 600, 372, true);
+	add_image_size('related-post', 300, 600, true);
+}
+
 
 // Adding your own custom JS file
 function website_functionname() {
@@ -81,9 +98,6 @@ function example_dashboard_widget_function() {
 	echo "Hello World, I'm a great Dashboard Widget";
 	echo do_shortcode( '[mepr-account-info field="mepr_city"]' );
 }
-
-// Add Image sizes
-add_image_size( 'thumb-name', 100, 100, true );
 
 // Register menus
 function register_my_menus() {
@@ -149,33 +163,146 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 // Remove url and email fields from comments form
-function alter_comment_form_fields($fields){
-    $fields['email'] = '';  //removes email field
-    $fields['url'] = '';  //removes website field
-    return $fields;
-}
-add_filter('comment_form_default_fields','alter_comment_form_fields');
+
 
 // Breadcrumb
-function get_breadcrumb() {
-    echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-    if (is_category() || is_single()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        the_category(' &nbsp;&nbsp;&#187;&nbsp;&nbsp; ');
-            if (is_single()) {
-                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-                the_title();
-            }
-    } elseif (is_page()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        echo the_title();
-    } elseif (is_search()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
-        echo '"<em>';
-        echo the_search_query();
-        echo '</em>"';
-    }
+function the_breadcrumb() {
+		echo '<ul class="crumbs">';
+	if (!is_home()) {
+		echo '<li><a href="';
+		echo get_option('home');
+		echo '">';
+		echo 'Home';
+		echo "</a></li>";
+		if (is_category() || is_single()) {
+			echo '<li>';
+			the_category(' </li><li> ');
+			if (is_single()) {
+				echo "</li><li>";
+				the_title();
+				echo '</li>';
+			}
+		} elseif (is_page()) {
+			echo '<li>';
+			echo the_title();
+			echo '</li>';
+		}
+	}
+	elseif (is_tag()) {single_tag_title();}
+	elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+	elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+	elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+	elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+	elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+	elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+	echo '</ul>';
 }
+
+// Ajax Load More 
+add_action( 'wp_enqueue_scripts', 'misha_script_and_styles');
+function misha_script_and_styles() {
+	// absolutely need it, because we will get $wp_query->query_vars and $wp_query->max_num_pages from it.
+	global $wp_query;
+ 
+	// when you use wp_localize_script(), do not enqueue the target script immediately
+	wp_register_script( 'misha_scripts', get_stylesheet_directory_uri() . '/script.js', array('jquery') );
+ 
+	// passing parameters here
+	// actually the <script> tag will be created and the object "misha_loadmore_params" will be inside it 
+	wp_localize_script( 'misha_scripts', 'misha_loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+ 
+ 	wp_enqueue_script( 'misha_scripts' );
+}
+
+
+add_action('wp_ajax_loadmorebutton', 'misha_loadmore_ajax_handler');
+add_action('wp_ajax_nopriv_loadmorebutton', 'misha_loadmore_ajax_handler');
+ 
+function misha_loadmore_ajax_handler(){
+ 
+	// prepare our arguments for the query
+	$params = json_decode( stripslashes( $_POST['query'] ), true ); // query_posts() takes care of the necessary sanitization 
+	$params['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+	$params['post_status'] = 'publish';
+ 
+	// it is always better to use WP_Query but not here
+	query_posts( $params );
+ 
+	if( have_posts() ) :
+ 
+		// run the loop
+		while( have_posts() ): the_post();
+ 
+			// look into your theme code how the posts are inserted, but you can use your own HTML of course
+			// do you remember? - my example is adapted for Twenty Seventeen theme
+			get_template_part( 'template-parts/post/content', get_post_format() );
+			// for the test purposes comment the line above and uncomment the below one
+			// the_title();
+ 
+ 
+		endwhile;
+	endif;
+	die; // here we exit the script and even no wp_reset_query() required!
+}
+ 
+
+add_action('wp_ajax_mishafilter', 'misha_filter_function'); 
+add_action('wp_ajax_nopriv_mishafilter', 'misha_filter_function');
+ 
+function misha_filter_function(){
+	
+	// for taxonomies / categories
+		if( isset( $_POST['categoryfilter'] ) )
+			$args['tax_query'] = array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'id',
+					'terms' => $_POST['categoryfilter']
+				)
+			);
+ 
+ 
+	query_posts( $args );
+ 
+	global $wp_query;
+ 
+	if( have_posts() ) :
+ 
+ 		ob_start(); // start buffering because we do not need to print the posts now
+ 
+		while( have_posts() ): the_post();
+ 
+			// adapted for Twenty Seventeen theme
+			get_template_part( 'template-parts/post/content', get_post_format() );
+ 
+		endwhile;
+ 
+ 		$posts_html = ob_get_contents(); // we pass the posts to variable
+   		ob_end_clean(); // clear the buffer
+	else:
+		$posts_html = '<p>Nothing found for your criteria.</p>';
+	endif;
+ 
+	// no wp_reset_query() required
+ 
+ 	echo json_encode( array(
+		'posts' => json_encode( $wp_query->query_vars ),
+		'max_page' => $wp_query->max_num_pages,
+		'found_posts' => $wp_query->found_posts,
+		'content' => $posts_html
+	) );
+ 
+	die();
+}
+
+
+
+ 
 
 /* Defer Javascript parsing code breaks Advanced Custom Fields Plugin */
 

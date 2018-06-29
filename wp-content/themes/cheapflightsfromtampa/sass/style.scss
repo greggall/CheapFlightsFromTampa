@@ -25,6 +25,7 @@ body {
 	color: $secondary-dark-blue;
 	font-size: $base-font-size;
 	font-family: $base-font-family;
+	line-height: 1.75;
 }
 
 a {
@@ -77,11 +78,18 @@ h3 {
 }
 
 .title {
+	font-size: $h2;
 	font-weight: $extra-weight;
-	padding-bottom: 50px;
-	font-family: $title-font-family;
-	color: $primary-blue;
-	font-size: $h1;
+	text-align: center;
+	font-family: $base-font-family;
+}
+
+.subtitle {
+	font-size: $h3;
+	text-align: center;
+	font-family: $base-font-family;
+	line-height: 1.5em;
+	margin-bottom: 50px;
 }
 
 .welcome-text {
@@ -93,6 +101,10 @@ h3 {
 	font-weight: $extra-weight;
     margin-top: 40px;
 	text-transform: capitalize;
+}
+
+.home .welcome-text {
+	margin-bottom: 0;
 }
 
 .hero-eyebrow {
@@ -107,6 +119,10 @@ h3 {
     margin: 0 auto;
     margin-left: -20px;
     fill: white;
+}
+
+label {
+	font-weight: normal;
 }
 
 // Bootstrap responsive images
@@ -221,6 +237,10 @@ input[type=email] {
 	z-index: 1;
 }
 
+input {
+	color: $secondary-dark-blue;
+}
+
 .text-input:after {
 	border-bottom: 5px solid $primary-grey;
 	content: "";
@@ -265,11 +285,6 @@ input[type=email] {
 .deal-wrapper {
 	@extend .wrapper;
 	padding: 35px;
-}
-
-.how-title {
-	padding-top: 0;
-	padding-bottom: 75px;
 }
 
 .how-section-title {
@@ -323,11 +338,6 @@ input[type=email] {
 	position: relative;	
 }
 
-.home .recent-deal {
-	@extend .recent-deal;
-	font-size: $h1;
-}
-
 .normal-price {
 	color: $white;
 	font-size: $h4;
@@ -359,7 +369,138 @@ input[type=email] {
 	padding: 50px 0 0;
 }
 
-// Single
+// Blog
+.blog-post {
+	width: 40%;
+	margin: 0 5%;
+}
+
+.blog-post:nth-child(odd) {
+	float: left;
+	margin-left: 7%;
+    margin-top: -17%;
+}
+
+.blog-post:nth-child(even) {
+	float: right;
+    margin-top: -12%;
+	margin-right: 8%;	
+}
+
+.blog-post:first-child {
+	margin-top: 0px;
+}
+
+.blog-post-image img {
+	border-radius: 5px 5px 0 0;
+}
+
+.blog-post-title {
+	font-size: $h3;
+	font-family: $base-font-family;
+	font-weight: $extra-weight;
+	text-align: left;
+	padding: 25px;
+}
+
+.blog-post-wrapper {
+	@extend .wrapper;
+	padding: 0;
+	padding-bottom: 30px;
+	margin-top: 0;
+	@include transition(all);
+}
+
+.blog-post-wrapper:hover {
+	box-shadow: 0 2px 25px rgba(0, 0, 0, 0.35);
+}
+
+#misha_filters {
+    position: absolute;
+    right: 9%;
+    width: 40%;
+    z-index: 1;
+}
+
+#misha_loadmore {
+	margin-top: 75px;
+}
+
+.filter {
+	text-align: center;
+	padding: 50px 0;
+}
+
+.filter select {
+	font-size: $h3;
+	font-family: $base-font-family;
+}
+
+form ul li {
+	display: inline;
+}
+
+.blog-container {
+	margin-top: 50px;
+}
+
+.blog-post-title {
+
+}
+
+// Single Blog
+.single-post .title {
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+.single-post .featured-image {
+	margin-bottom: 25px;
+}
+
+.crumbs {
+	padding-left: 0;
+	font-size: $h5;
+	text-transform: uppercase;
+}
+
+.crumbs li {
+	display: inline;
+}
+
+.crumbs li:after {
+	content: " > ";
+}
+
+.crumbs li:last-child:after {
+	content: none;
+}
+
+.related-container {
+    margin: 25px -15px;
+}
+
+.related-post-wrapper {
+	@include shadow($x, $y, $blur, $color);	
+	@include transition(all);
+    border-radius: 5px;
+	margin-bottom: 15px;
+}
+
+/*same as .blog-post-wrapper:hover */
+.related-post-wrapper:hover {
+	box-shadow: 0 2px 25px rgba(0, 0, 0, 0.35);	
+}
+
+.related-post-title {
+	font-size: $h4;
+    padding: 15px;
+    margin: 0;
+	font-weight: $extra-weight;
+	line-height: 1.5;
+}
+
+// Single Deal
 .free-eyebrow, .premium-eyebrow {
 	font-style: italic;
 }
@@ -511,7 +652,7 @@ input[type=email] {
 }
 
 .single #mc_embed_signup form {
-	padding: 30px 0 10px 0%;
+	padding: 0 0 10px 0%;
 	text-align: center;
 }
 
@@ -524,21 +665,6 @@ input[type=email] {
 }
 
 // About
-.about-title {
-	font-size: $h2;
-	font-weight: $extra-weight;
-	text-align: center;
-	font-family: $base-font-family;
-}
-
-.about-subtitle {
-	font-size: $h3;
-	text-align: center;
-	font-family: $base-font-family;
-	line-height: 1.5em;
-	margin-bottom: 50px;
-}
-
 .about-image img {
 	margin-bottom: 25px;
 }
@@ -568,6 +694,10 @@ input[type=email] {
 	border: 5px solid $tertiary-green;
 	padding: 25px 15px;
 	border-top: none;	
+}
+
+.about-benefits-list {
+	padding-left: 20px;
 }
 
 .about-benefits-list li {
@@ -614,9 +744,10 @@ input[type=email] {
 .contact-copy {
 	font-size: $base-font-size;
 	line-height: $base-line-height;
+	margin-top: 50px;
 }
 
-// Blog
+// Recent Deal
 .current-deal-wrapper {
 	margin-top: -50px;
 	position: relative;
@@ -630,6 +761,7 @@ input[type=email] {
 .past-deals-group-1 {
 	position: relative;
 	z-index: 1;
+	margin-top: 50px;
 }
 
 .past-deals-bg {
@@ -674,7 +806,6 @@ input[type=email] {
 .deals-signup-title {
 	color: $white;
 	line-height: 78px;
-	padding-bottom: 50px;
 }
 
 .deals-second-group {
@@ -977,6 +1108,17 @@ ul .faq-menu  {
 }
 
 // Premium
+.welcome-subtitle {
+	@extend .subtitle;
+	color: $white;
+	font-style: italic;
+	margin-bottom: 0;
+}
+
+.waiting .subtitle {
+	margin-bottom: 25px;
+}
+
 .prices-subtitle {
 	text-align: center;
 	padding: 30px;
@@ -984,6 +1126,13 @@ ul .faq-menu  {
 
 .prices-subtitle h2 {
 	margin-bottom: 25px;
+}
+
+.overlay {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
 }
 
 .block-1, .block-2 {
@@ -1058,6 +1207,10 @@ ul .faq-menu  {
     height: 250px;
 	color: $white;
 	line-height: 1.65em;
+}
+
+.reason p {
+	margin-bottom: 10px;
 }
 
 .premium-page .post-wrapper.recent-deal {
@@ -1190,6 +1343,14 @@ ul .faq-menu  {
 	border-bottom: none;
 }
 
+.premium-copy {
+	margin-top: 10px;
+}
+
+.premium-copy p {
+	margin-bottom: 15px;
+}
+
 /* Override default Stripe button styles */
 .stripe-button-el {
 	float: right;
@@ -1214,6 +1375,195 @@ ul .faq-menu  {
     text-shadow: none !important;
 }
 
+//Table Styles
+* {
+  box-sizing: border-box;
+}
+
+.table__wrapper {
+  width: 100%;
+}
+
+.table__wrapper .table {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+/* ------- Presentational Formatting --------- */
+h1 {
+  text-align: center;
+}
+
+.center {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+tbody {
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+}
+
+.table thead tr {
+  border-bottom: 1px solid;
+}
+
+.table > thead > tr > th {
+	border-bottom: 1px solid;
+}
+
+.table td,
+.table th {
+  padding: .5em;
+}
+
+.table td p,
+.table th p {
+	margin-bottom: 0;
+	padding: 20px;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td {
+	vertical-align: middle;
+	padding: 8px 20px;
+}
+
+.table th {
+  text-align: left;
+}
+
+.table th[scope="col"] {
+  text-align: center;
+  font-size: $h3;
+}
+
+.table th[scope="row"] {
+	font-weight: 400;
+}
+
+.table td[data-header="Premium"] {
+	border-left: 1px solid;
+	border-right: 1px solid;
+	text-align: center;
+}
+
+.table td[data-header="Free"] {
+	border-right: 1px solid;
+	text-align: center;
+}
+
+@media screen and (max-width:991px) {
+  .table {
+    margin: 0 auto;
+    width: 100%;
+    border-spacing: 0;
+  }
+  
+  tbody {
+	  border-bottom: none;
+	  border-left: none;
+  }
+  
+  .table thead {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+  
+  .table tbody,
+  .table tr,
+  .table th,
+  .table td {
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  
+  .table tr td,
+  .table tr th {
+    padding: 2em 1em;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    border: 1px solid;
+    border-top: none;
+    width: 100%;
+    white-space: normal;
+  }
+  
+  .table th[scope="row"] {
+    width: 100%;
+    text-align: center;
+    display: block;
+    background-color: $primary-grey;
+    margin: 0 auto;
+	padding: 1em 0;
+    border: 1px solid;
+    margin-top: 25px;
+  }
+  
+  .table td[data-header]:before {
+    content: attr(data-header);
+    display: block;
+    float: left;
+    width: 50%;
+    color: #000000;
+    font-weight: 400;
+    text-align: left;
+	padding-top: 20px;
+  }
+  
+  .table td[data-header] > * {
+    display: block;
+    width: 50%;
+    float: right;
+    clear: right;
+    padding-left: 1em;
+    margin-top: 0;
+  }
+  
+  .table td[data-header]:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    border-right: 1px solid;
+    padding-bottom: 200%;
+    display: block;
+  }
+  
+  .table td[data-header="Premium"] {
+  	text-align: left;
+  }
+
+  .table td[data-header="Free"] {
+  	text-align: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .center {
+    width: 100%;
+  }
+}
+
 // Refund Page
 
 // ToS Page
@@ -1221,6 +1571,9 @@ ul .faq-menu  {
 // Privacy Policy Page
 
 //Signup Thank You
+.check-title {
+	margin-top: 50px;
+}
 
 // Thank You Page
 .thank-you-subtitle {
@@ -1232,6 +1585,7 @@ ul .faq-menu  {
 .expect-title, .share-title {
 	font-size: $h3;
 	margin-bottom: 25px;
+	text-align: center;
 }
 
 .final-thanks {
@@ -1289,10 +1643,6 @@ ul .faq-menu  {
 // Footer
 footer {
 	background-color: $primary-grey;
-}
-
-.home footer {
-	background-color: $white;
 }
 
 .footer-cta {
@@ -1514,10 +1864,6 @@ div.closeexitpop{ /* Large x close button  */
 		font-size: $h2;
 		line-height: 48px;
 	}
-	
-	.recent-deal {
-		font-size: $h2;
-	}
 
 	.navbar-brand > img {
 		margin: 0 auto;
@@ -1526,6 +1872,11 @@ div.closeexitpop{ /* Large x close button  */
 	.wrapper {
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+	
+	.premium-wrapper {
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 	
 	.about-title {
@@ -1577,16 +1928,8 @@ div.closeexitpop{ /* Large x close button  */
 	}
 	
 	.excuse-title {
-		padding: 50px 15px 50px;
+		padding: 50px 15px 0;
 		text-align: center;
-	}
-	
-	.block-1-title {
-		background-color: darken($tertiary-green, 10%);
-	}
-	
-	.block-2-title {
-		background-color: darken($primary-blue, 10%);		
 	}
 	
 	.excuse-copy {
@@ -1755,15 +2098,15 @@ div.closeexitpop{ /* Large x close button  */
 	    text-align: center;
 	}
 	
-	.navbar-default .navbar-nav > li:nth-child(5) {
+	/*.navbar-default .navbar-nav > li:nth-child(6) {
 		background-color: $tertiary-green;
 	}
 	
-	.navbar-default .navbar-nav > li:nth-child(5) a {
+	.navbar-default .navbar-nav > li:nth-child(6) a {
 		color: $white;
 		font-weight: 900;
 		border-bottom: none;
-	}
+	}*/
 	
 	/*Single Deal Page*/
 	.premium-alert-img {
@@ -1812,6 +2155,56 @@ div.closeexitpop{ /* Large x close button  */
 		width: auto;
 		height: auto;
 	}
+	
+	/* Blog Page */
+
+	.blog-post {
+		width: auto;
+		margin: 1% 0 0 0;
+	}
+
+	.blog-post:nth-child(odd) {
+		float: none;
+		margin-left: auto;
+	    margin-top: 50px;
+	}
+
+	.blog-post:nth-child(even) {
+		float: none;
+	    margin-top: 50px;	
+	}
+
+	.blog-post:first-child {
+		margin-top: 0px;
+	}
+
+	.blog-post-image img {
+		border-radius: 5px 5px 0 0;
+	}
+
+	.blog-post-title {
+		font-size: $h3;
+		font-family: $base-font-family;
+		font-weight: $extra-weight;
+		text-align: left;
+		padding: 25px;
+	}
+	
+	.blog-post-wrapper {
+		padding-left: 0;
+		padding-right: 0;		
+	}
+	
+	.blog-post:nth-child(even) {
+		margin-right: 0%;	
+	}
+	
+	#misha_filters {
+		position: relative;
+	    margin: -50px auto 25px;
+	    right: auto;
+	    width: 100%;
+	}
 }
 
 @media (min-width: 1000px) {
@@ -1853,7 +2246,7 @@ div.closeexitpop{ /* Large x close button  */
 		border-bottom: 2px solid $primary-grey;
 	}
 
-	.navbar-default .navbar-nav > li:nth-child(5) {
+	/*.navbar-default .navbar-nav > li:nth-child(6) {
 		background-color: $tertiary-green;
 		color: $white;
 		padding: 5px 0px;
@@ -1861,18 +2254,18 @@ div.closeexitpop{ /* Large x close button  */
 	    border-radius: 5px;
 	}
 
-	.navbar-default .navbar-nav > li:nth-child(5) a:hover {
+	.navbar-default .navbar-nav > li:nth-child(6) a:hover {
 		background-color: lighten($tertiary-green, 10%);
 	}
 
-	.navbar-default .navbar-nav > li:nth-child(5) a:hover::after {
+	.navbar-default .navbar-nav > li:nth-child(6) a:hover::after {
 		opacity: 0;
 	}
 	
-	.navbar-default .navbar-nav > li:nth-child(5) > a, .navbar-default .navbar-nav > li:nth-child(5) > a:focus {
+	.navbar-default .navbar-nav > li:nth-child(6) > a, .navbar-default .navbar-nav > li:nth-child(6) > a:focus {
 		border-bottom: none;
 		background-color: lighten($tertiary-green, 10%);		
-	}
+	}*/
 }
 
 /* Large devices (large desktops, 1200px and up) */
